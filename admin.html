@@ -1,186 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Admin Dashboard | Nwachukwu Election Watch</title>
-
-<style>
+<meta name="description" content="Administration dashboard for Nwachukwu Election Watch.">
+<title>Admin Dashboard | Nwachukwu Election Watch</title><style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background: #f3f5f9;
-    color: #202b3c;
+    font-family: Arial, sans-serif;
+    background: #f4f6fa;
+    color: #222;
+    line-height: 1.6;
 }
 
 header {
-    background: #071d3b;
+    background: #071b3a;
     color: white;
-    padding: 20px;
+    padding: 25px 15px;
+    text-align: center;
 }
 
-.header-content {
-    max-width: 1200px;
-    margin: auto;
+header h1 {
+    color: #e5b342;
+}
+
+nav {
+    background: #102b52;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
     flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
 }
 
-header h2 {
-    color: #f3c64e;
-    font-size: 21px;
-}
-
-header p {
-    font-size: 12px;
-    margin-top: 5px;
-}
-
-.header-links a {
+nav a {
     color: white;
     text-decoration: none;
-    margin-left: 15px;
+    padding: 9px 12px;
     font-size: 14px;
 }
 
-.header-links a:hover {
-    color: #f3c64e;
+nav a:hover {
+    background: #e5b342;
+    color: #071b3a;
+    border-radius: 4px;
 }
 
 .container {
     max-width: 1200px;
     margin: 30px auto;
-    padding: 0 15px;
+    padding: 20px;
 }
 
-.welcome {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    margin-bottom: 25px;
-    border-left: 5px solid #d6a928;
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
-.welcome h1 {
-    color: #071d3b;
-    margin-bottom: 8px;
+.topbar h2 {
+    color: #071b3a;
+}
+
+.login-link {
+    display: inline-block;
+    background: #e5b342;
+    color: #071b3a;
+    padding: 10px 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .notice {
-    background: #fff4d5;
-    border: 1px solid #e8cf85;
-    padding: 13px;
-    border-radius: 6px;
-    margin-top: 15px;
-    font-size: 13px;
-    line-height: 1.6;
+    background: #fff4d6;
+    border-left: 5px solid #e5b342;
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 4px;
+}
+
+.warning {
+    background: #fff0f0;
+    border-left: 5px solid #c62828;
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 4px;
 }
 
 .stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .stat-card {
     background: white;
-    padding: 23px;
-    border-radius: 10px;
-    border-bottom: 4px solid #d6a928;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 22px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    border-top: 4px solid #e5b342;
 }
 
 .stat-card h3 {
-    color: #667085;
-    font-size: 14px;
-    margin-bottom: 12px;
+    color: #102b52;
+    font-size: 15px;
+    margin-bottom: 10px;
 }
 
-.stat-card h1 {
-    color: #071d3b;
+.stat-card .number {
     font-size: 30px;
+    font-weight: bold;
+    color: #071b3a;
 }
 
 .section {
     background: white;
     padding: 22px;
-    border-radius: 10px;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-}
-
-.section h2 {
-    color: #071d3b;
-    margin-bottom: 15px;
-    font-size: 20px;
-}
-
-.section p {
-    line-height: 1.7;
-    color: #667085;
-    font-size: 14px;
-}
-
-.action-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.action-card {
-    background: #f7f9fc;
-    padding: 20px;
     border-radius: 8px;
-    border: 1px solid #e3e8ef;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    margin-bottom: 25px;
 }
 
-.action-card h3 {
-    color: #071d3b;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-.action-card p {
-    font-size: 13px;
+.section h3 {
+    color: #071b3a;
     margin-bottom: 15px;
 }
 
-button {
-    background: #071d3b;
+.quick-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.quick-link {
+    display: block;
+    text-decoration: none;
+    background: #102b52;
     color: white;
-    padding: 11px 17px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 13px;
+    padding: 20px;
+    border-radius: 7px;
+    text-align: center;
+    font-weight: bold;
 }
 
-button:hover {
-    background: #123b70;
+.quick-link:hover {
+    background: #e5b342;
+    color: #071b3a;
 }
 
-.secondary-button {
-    background: #b88a15;
-}
-
-.secondary-button:hover {
-    background: #94700f;
-}
-
-.table-container {
+.table-wrapper {
+    width: 100%;
     overflow-x: auto;
-    margin-top: 15px;
 }
 
 table {
@@ -190,14 +168,13 @@ table {
 }
 
 th, td {
-    border-bottom: 1px solid #e5e7eb;
-    padding: 14px;
+    padding: 13px;
+    border-bottom: 1px solid #ddd;
     text-align: left;
-    font-size: 13px;
 }
 
 th {
-    background: #071d3b;
+    background: #102b52;
     color: white;
 }
 
@@ -209,342 +186,271 @@ th {
 
 .status {
     display: inline-block;
-    padding: 5px 9px;
-    background: #fff1cc;
+    background: #fff4d6;
     color: #805b00;
-    border-radius: 4px;
+    padding: 5px 10px;
+    border-radius: 20px;
     font-size: 12px;
 }
 
 footer {
-    background: #071d3b;
+    background: #071b3a;
     color: white;
     text-align: center;
-    padding: 22px;
-    margin-top: 40px;
-    font-size: 13px;
+    padding: 20px;
+    margin-top: 30px;
 }
 
-@media(max-width: 600px) {
-    .header-links a {
-        display: inline-block;
-        margin: 10px 10px 0 0;
+footer span {
+    color: #e5b342;
+}
+
+@media(max-width:850px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .welcome h1 {
-        font-size: 22px;
+    .quick-links {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
-</style>
-</head>
 
-<body>
+@media(max-width:550px) {
+    .container {
+        padding: 12px;
+    }
 
-<header>
-    <div class="header-content">
+    .stats {
+        grid-template-columns: 1fr;
+    }
 
-        <div>
-            <h2>NWACHUKWU ELECTION WATCH</h2>
-            <p>ADMINISTRATION CONTROL CENTRE</p>
-        </div>
+    .quick-links {
+        grid-template-columns: 1fr;
+    }
 
-        <nav class="header-links">
-            <a href="index.html">Home</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="observers.html">Observers</a>
-            <a href="results.html">Results</a>
-            <a href="incidents.html">Incidents</a>
-        </nav>
+    nav a {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+</style></head><body><header>
+    <h1>NWACHUKWU ELECTION WATCH</h1>
+    <p>Administration Control Centre</p>
+</header><nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="elections.html">Elections</a>
+    <a href="team.html">Our Team</a>
+    <a href="observers.html">Observers</a>
+    <a href="results.html">Results</a>
+    <a href="incidents.html">Incidents</a>
+    <a href="admin.html">Admin</a>
+    <a href="login.html">Login</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+</nav><div class="container"><div class="topbar">
+    <h2>Administration Dashboard</h2>
+    <a href="login.html" class="login-link">Administrator Login</a>
+</div>
 
-    </div>
-</header>
+<div class="warning">
+    <strong>Access notice:</strong> This page is currently a demonstration.
+    It does not have administrator authentication or access restrictions.
+    Do not publish confidential information here until secure login and
+    database permissions have been implemented.
+</div>
 
-<div class="container">
+<div class="notice">
+    The figures below are demonstration values, not live election data.
+    They will be connected to the website database during backend development.
+</div>
 
-    <div class="welcome">
-        <h1>Administrator Dashboard</h1>
+<div class="stats">
 
-        <p>
-            Welcome to the administrative control centre of
-            Nwachukwu Election Watch.
-        </p>
-
-        <div class="notice">
-            <strong>Security Notice:</strong>
-            This page is currently a frontend demonstration.
-            Do not publish it as a publicly accessible administrative
-            control panel. Administrator access must be protected
-            with Supabase Authentication and database access policies.
-        </div>
-    </div>
-
-
-    <!-- STATISTICS -->
-
-    <div class="stats">
-
-        <div class="stat-card">
-            <h3>Registered Observers</h3>
-            <h1>0</h1>
-        </div>
-
-        <div class="stat-card">
-            <h3>Results Submitted</h3>
-            <h1>0</h1>
-        </div>
-
-        <div class="stat-card">
-            <h3>Reported Incidents</h3>
-            <h1>0</h1>
-        </div>
-
-        <div class="stat-card">
-            <h3>Pending Reviews</h3>
-            <h1>0</h1>
-        </div>
-
+    <div class="stat-card">
+        <h3>Registered Observers</h3>
+        <div class="number">0</div>
+        <p>Applications received</p>
     </div>
 
-
-    <!-- ADMINISTRATIVE ACTIONS -->
-
-    <div class="section">
-
-        <h2>Administrative Management</h2>
-
-        <p>
-            Use these sections to access the different areas
-            of election monitoring and administrative review.
-        </p>
-
-        <div class="action-grid">
-
-            <div class="action-card">
-                <h3>Observer Management</h3>
-
-                <p>
-                    Review observer applications and monitor
-                    observer registration records.
-                </p>
-
-                <button onclick="openPage('observers.html')">
-                    View Observers
-                </button>
-            </div>
-
-
-            <div class="action-card">
-                <h3>Results Management</h3>
-
-                <p>
-                    Review submitted polling unit results and
-                    manage their verification status.
-                </p>
-
-                <button onclick="openPage('results.html')">
-                    View Results
-                </button>
-            </div>
-
-
-            <div class="action-card">
-                <h3>Incident Management</h3>
-
-                <p>
-                    Review reported election incidents and
-                    monitor their investigation status.
-                </p>
-
-                <button onclick="openPage('incidents.html')">
-                    View Incidents
-                </button>
-            </div>
-
-
-            <div class="action-card">
-                <h3>Monitoring Dashboard</h3>
-
-                <p>
-                    Access the general election monitoring
-                    dashboard and geographical search.
-                </p>
-
-                <button onclick="openPage('dashboard.html')">
-                    Open Dashboard
-                </button>
-            </div>
-
-        </div>
-
+    <div class="stat-card">
+        <h3>Election Reports</h3>
+        <div class="number">0</div>
+        <p>Observer result reports</p>
     </div>
 
-
-    <!-- OBSERVER APPLICATIONS -->
-
-    <div class="section">
-
-        <h2>Observer Applications</h2>
-
-        <p>
-            Observer applications will appear here after
-            the registration form is connected to the database.
-        </p>
-
-        <div class="table-container">
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Full Name</th>
-                        <th>State</th>
-                        <th>LGA</th>
-                        <th>Observer Category</th>
-                        <th>Application Status</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td colspan="5" class="empty">
-                            No observer applications loaded.
-                            Database connection pending.
-                        </td>
-                    </tr>
-                </tbody>
-
-            </table>
-
-        </div>
-
+    <div class="stat-card">
+        <h3>Incident Reports</h3>
+        <div class="number">0</div>
+        <p>Reported incidents</p>
     </div>
 
-
-    <!-- ELECTION RESULTS -->
-
-    <div class="section">
-
-        <h2>Election Results Review</h2>
-
-        <p>
-            Submitted results will be displayed here for
-            administrative review and verification.
-        </p>
-
-        <div class="table-container">
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Election Type</th>
-                        <th>State</th>
-                        <th>LGA</th>
-                        <th>Polling Unit</th>
-                        <th>Review Status</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td colspan="5" class="empty">
-                            No election results loaded.
-                            Database connection pending.
-                        </td>
-                    </tr>
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-
-    <!-- INCIDENT REPORTS -->
-
-    <div class="section">
-
-        <h2>Election Incident Reports</h2>
-
-        <p>
-            Incident reports will appear here for review,
-            documentation and follow-up.
-        </p>
-
-        <div class="table-container">
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Incident Category</th>
-                        <th>State</th>
-                        <th>LGA</th>
-                        <th>Severity</th>
-                        <th>Review Status</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td colspan="5" class="empty">
-                            No incident reports loaded.
-                            Database connection pending.
-                        </td>
-                    </tr>
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
-
-    <!-- PLATFORM INFORMATION -->
-
-    <div class="section">
-
-        <h2>Platform Information</h2>
-
-        <p><strong>Platform:</strong> Nwachukwu Election Watch (NEW)</p>
-
-        <p><strong>Coverage:</strong> Nigeria – 36 States and FCT</p>
-
-        <p><strong>Monitoring Areas:</strong> States, LGAs, Wards and Polling Units</p>
-
-        <p><strong>Mission:</strong>
-            Transparency, Accountability and Credible Election Monitoring.
-        </p>
-
-        <p><strong>Official Election Authority:</strong> INEC</p>
-
-        <div class="notice">
-            Observer reports are independent monitoring submissions.
-            They must not be presented as officially declared INEC
-            election results. All reported incidents and results
-            require appropriate verification.
-        </div>
-
+    <div class="stat-card">
+        <h3>States Covered</h3>
+        <div class="number">0</div>
+        <p>States with verified activity</p>
     </div>
 
 </div>
 
+<div class="section">
+    <h3>Administrative Management</h3>
 
-<footer>
+    <div class="quick-links">
+
+        <a href="observers.html" class="quick-link">
+            Manage Observers
+        </a>
+
+        <a href="results.html" class="quick-link">
+            Review Election Results
+        </a>
+
+        <a href="incidents.html" class="quick-link">
+            Review Incident Reports
+        </a>
+
+        <a href="dashboard.html" class="quick-link">
+            Monitoring Dashboard
+        </a>
+
+        <a href="elections.html" class="quick-link">
+            Election Coverage
+        </a>
+
+        <a href="contact.html" class="quick-link">
+            Contact Messages
+        </a>
+
+    </div>
+</div>
+
+<div class="section">
+    <h3>Recent Observer Applications</h3>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Observer Name</th>
+                    <th>State</th>
+                    <th>LGA</th>
+                    <th>Application Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td colspan="5" class="empty">
+                        No observer records available.
+                        Database connection is pending.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Recent Election Results Reports</h3>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Election Type</th>
+                    <th>State</th>
+                    <th>LGA</th>
+                    <th>Polling Unit</th>
+                    <th>Review Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td colspan="5" class="empty">
+                        No election reports available.
+                        Database connection is pending.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="section">
+    <h3>Recent Incident Reports</h3>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Incident Category</th>
+                    <th>State</th>
+                    <th>LGA</th>
+                    <th>Severity</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td colspan="5" class="empty">
+                        No incident reports available.
+                        Database connection is pending.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="section">
+    <h3>System Status</h3>
+
     <p>
-        &copy; 2026 Nwachukwu Election Watch (NEW).
+        Website frontend:
+        <span class="status">Demonstration available</span>
+    </p>
+
+    <p>
+        Database connection:
+        <span class="status">Not connected</span>
+    </p>
+
+    <p>
+        Administrator authentication:
+        <span class="status">Not configured</span>
+    </p>
+
+    <p>
+        Report verification:
+        <span class="status">Not configured</span>
+    </p>
+
+    <p>
+        Secure file storage:
+        <span class="status">Not configured</span>
+    </p>
+</div>
+
+<div class="notice">
+    <strong>Future development:</strong>
+    This dashboard will be connected to a secure database and
+    administrator authentication system. Access permissions,
+    audit logs and report verification workflows must be implemented
+    before it is used to manage real election information.
+</div>
+
+</div><footer>
+    <p>
+        &copy; 2026 <span>Nwachukwu Election Watch</span>.
         All Rights Reserved.
     </p>
     <p>Transparency | Accountability | Credible Election Monitoring</p>
-</footer>
-
-
-<script>
-
-function openPage(page) {
-    window.location.href = page;
-}
-
-</script>
-
-</body>
+</footer></body>
 </html>
