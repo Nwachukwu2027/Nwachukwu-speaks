@@ -16,90 +16,79 @@ body {
 }
 
 header {
-    background: #071b38;
+    background: #071d3b;
     color: white;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 12px;
 }
 
-header h2 { color: #e5b83e; }
-
-header p {
-    font-size: 13px;
-    margin-top: 5px;
+header h2 {
+    color: #f5c542;
 }
 
 button {
-    cursor: pointer;
     border: none;
+    padding: 10px 14px;
     border-radius: 5px;
-    padding: 10px 15px;
+    cursor: pointer;
     font-weight: bold;
 }
 
 .logout {
-    background: #d93636;
+    background: #d62828;
     color: white;
 }
 
 .container {
-    width: 95%;
-    max-width: 1300px;
-    margin: 25px auto;
+    padding: 20px;
+    max-width: 1400px;
+    margin: auto;
 }
 
-.welcome { margin-bottom: 25px; }
-
-.welcome h1 {
-    font-size: 25px;
-    margin-bottom: 8px;
+.welcome {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 5px solid #d6a928;
 }
 
-.cards {
+.stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
-.card {
+.stat {
     background: white;
     padding: 22px;
-    border-radius: 10px;
-    border-left: 5px solid #d6a72e;
-    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #00000010;
 }
 
-.card h3 {
-    font-size: 14px;
-    color: #65738a;
-    margin-bottom: 12px;
-}
-
-.card strong {
-    font-size: 30px;
-    color: #071b38;
+.stat h3 {
+    color: #071d3b;
+    font-size: 28px;
+    margin-top: 10px;
 }
 
 .section {
     background: white;
-    margin-bottom: 25px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    margin-bottom: 25px;
+    border-radius: 8px;
+    overflow-x: auto;
 }
 
 .section h2 {
+    color: #071d3b;
     margin-bottom: 15px;
-    color: #071b38;
-    font-size: 20px;
 }
-
-.table-wrap { overflow-x: auto; }
 
 table {
     width: 100%;
@@ -109,503 +98,580 @@ table {
 
 th, td {
     padding: 12px;
+    border-bottom: 1px solid #ddd;
     text-align: left;
-    border-bottom: 1px solid #e5e9ef;
     font-size: 13px;
 }
 
 th {
-    background: #071b38;
+    background: #071d3b;
     color: white;
-}
-
-td {
-    max-width: 280px;
-    overflow-wrap: anywhere;
-}
-
-.status {
-    display: inline-block;
-    padding: 5px 9px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: bold;
-    background: #fff0cc;
-    color: #8a5b00;
-}
-
-.status.approved {
-    background: #d9f7e5;
-    color: #126b38;
-}
-
-.status.rejected {
-    background: #ffe0e0;
-    color: #a21d1d;
-}
-
-.action {
-    padding: 7px 10px;
-    margin: 3px;
-    font-size: 11px;
 }
 
 .approve {
-    background: #168449;
+    background: #198754;
     color: white;
+    margin: 3px;
 }
 
 .reject {
-    background: #c73535;
+    background: #dc3545;
     color: white;
+    margin: 3px;
 }
 
-.evidence {
-    background: #d6a72e;
-    color: #071b38;
-    padding: 7px 10px;
-    font-size: 11px;
+.view {
+    background: #0d6efd;
+    color: white;
+    margin: 3px;
 }
 
 .refresh {
-    background: #d6a72e;
-    color: #071b38;
+    background: #d6a928;
+    color: #071d3b;
     margin-bottom: 15px;
+}
+
+.badge {
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+.pending {
+    background: #fff0c2;
+    color: #805b00;
+}
+
+.approved {
+    background: #d1f2df;
+    color: #126638;
+}
+
+.rejected {
+    background: #f8d7da;
+    color: #842029;
 }
 
 .message {
     padding: 12px;
-    background: #e9f1ff;
-    border-radius: 6px;
     margin-bottom: 15px;
+    border-radius: 5px;
     display: none;
 }
 
-.empty {
-    padding: 20px;
-    text-align: center;
-    color: #777;
+.error {
+    background: #f8d7da;
+    color: #842029;
+}
+
+.success {
+    background: #d1f2df;
+    color: #126638;
 }
 
 footer {
     text-align: center;
-    padding: 25px;
-    background: #071b38;
+    padding: 20px;
+    background: #071d3b;
     color: white;
-    margin-top: 40px;
-    font-size: 13px;
 }
 
 @media(max-width:600px) {
-    header h2 { font-size: 18px; }
-    .welcome h1 { font-size: 21px; }
-    .section { padding: 13px; }
+    header {
+        display: block;
+    }
+
+    header button {
+        margin-top: 12px;
+    }
+
+    .container {
+        padding: 12px;
+    }
 }
 </style></head><body><header>
     <div>
         <h2>NWACHUKWU ELECTION WATCH</h2>
         <p>Administrator Control Panel</p>
-    </div><button class="logout" id="logoutButton">Logout</button>
+    </div><button class="logout" id="logoutBtn">Logout</button>
 
 </header><div class="container"><div class="welcome">
-    <h1>Admin Dashboard</h1>
-    <p>Welcome to the election monitoring control panel.</p>
-    <p id="adminEmail" style="margin-top:8px;"></p>
+    <h2>Welcome, Administrator</h2>
+    <p>Manage observers, election reports and incident submissions.</p>
+    <p id="adminEmail"></p>
 </div>
 
 <div id="message" class="message"></div>
 
-<button class="refresh" id="refreshButton">
-    Refresh Dashboard
-</button>
+<div class="stats">
 
-<div class="cards">
-
-    <div class="card">
-        <h3>Total Observers</h3>
-        <strong id="observerCount">0</strong>
+    <div class="stat">
+        <p>Total Observers</p>
+        <h3 id="observerCount">0</h3>
     </div>
 
-    <div class="card">
-        <h3>Election Reports</h3>
-        <strong id="resultCount">0</strong>
+    <div class="stat">
+        <p>Pending Observers</p>
+        <h3 id="pendingObserverCount">0</h3>
     </div>
 
-    <div class="card">
-        <h3>Incident Reports</h3>
-        <strong id="incidentCount">0</strong>
+    <div class="stat">
+        <p>Approved Observers</p>
+        <h3 id="approvedObserverCount">0</h3>
     </div>
 
-    <div class="card">
-        <h3>Pending Submissions</h3>
-        <strong id="pendingCount">0</strong>
+    <div class="stat">
+        <p>Election Reports</p>
+        <h3 id="resultCount">0</h3>
+    </div>
+
+    <div class="stat">
+        <p>Incident Reports</p>
+        <h3 id="incidentCount">0</h3>
+    </div>
+
+    <div class="stat">
+        <p>Pending Reviews</p>
+        <h3 id="pendingCount">0</h3>
     </div>
 
 </div>
 
 <div class="section">
-    <h2>Observer Registrations</h2>
-    <div class="table-wrap">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>State</th>
-                    <th>LGA</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="observersTable"></tbody>
-        </table>
-    </div>
+    <h2>Observer Verification Management</h2>
+    <button class="refresh" onclick="loadDashboard()">Refresh Data</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>State</th>
+                <th>LGA</th>
+                <th>Status</th>
+                <th>Observer ID</th>
+                <th>Verified At</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="observerTable">
+            <tr><td colspan="9">Loading observers...</td></tr>
+        </tbody>
+    </table>
 </div>
 
 <div class="section">
     <h2>Election Results Submissions</h2>
-    <div class="table-wrap">
-        <table>
-            <thead>
-                <tr>
-                    <th>Election</th>
-                    <th>Year</th>
-                    <th>State</th>
-                    <th>LGA</th>
-                    <th>Polling Unit</th>
-                    <th>Candidate Votes</th>
-                    <th>Evidence</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="resultsTable"></tbody>
-        </table>
-    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Election</th>
+                <th>State</th>
+                <th>LGA</th>
+                <th>Ward</th>
+                <th>Polling Unit</th>
+                <th>Status</th>
+                <th>Evidence</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="resultsTable">
+            <tr><td colspan="8">Loading results...</td></tr>
+        </tbody>
+    </table>
 </div>
 
 <div class="section">
-    <h2>Reported Election Incidents</h2>
-    <div class="table-wrap">
-        <table>
-            <thead>
-                <tr>
-                    <th>Reporter</th>
-                    <th>Category</th>
-                    <th>Severity</th>
-                    <th>State</th>
-                    <th>LGA</th>
-                    <th>Description</th>
-                    <th>Evidence</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody id="incidentsTable"></tbody>
-        </table>
-    </div>
+    <h2>Election Incident Reports</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Severity</th>
+                <th>State</th>
+                <th>LGA</th>
+                <th>Polling Unit</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>Evidence</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="incidentTable">
+            <tr><td colspan="9">Loading incidents...</td></tr>
+        </tbody>
+    </table>
 </div>
 
 </div><footer>
-    Nwachukwu Election Watch © 2026<br>
-    Transparency | Accountability | Credible Election Monitoring
+    <p>© 2026 Nwachukwu Election Watch.</p>
+    <p>Transparency | Accountability | Credible Election Monitoring</p>
 </footer><script type="module">
 
 import { supabase } from './supabase.js';
 
 const messageBox = document.getElementById('message');
 
-function escapeHTML(value) {
-    return String(value ?? '')
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('"', '&quot;')
-        .replaceAll("'", '&#039;');
-}
-
-function showMessage(message) {
+function showMessage(message, type = 'success') {
     messageBox.textContent = message;
+    messageBox.className = 'message ' + type;
     messageBox.style.display = 'block';
+
+    window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-function statusHTML(status) {
-    const value = String(status || 'pending').toLowerCase();
-
-    const className = ['approved', 'rejected'].includes(value)
-        ? value : '';
-
-    return `<span class="status ${className}">
-        ${escapeHTML(value)}
-    </span>`;
+function escapeHTML(value) {
+    return String(value ?? '').replace(/[&<>"']/g, char => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+    })[char]);
 }
 
-function evidenceHTML(path) {
-    if (!path) {
-        return '<span>No evidence</span>';
-    }
+function statusBadge(status) {
+    const safeStatus = String(status || 'pending').toLowerCase();
 
-    return `
-        <button class="evidence"
-            data-evidence="${encodeURIComponent(path)}">
-            View Evidence
-        </button>
-    `;
+    const allowed = ['pending', 'approved', 'rejected'];
+    const label = allowed.includes(safeStatus) ? safeStatus : 'pending';
+
+    return `<span class="badge ${label}">${escapeHTML(label.toUpperCase())}</span>`;
 }
+
+function formatDate(value) {
+    if (!value) return 'Not verified';
+
+    const date = new Date(value);
+
+    return isNaN(date.getTime())
+        ? 'Not available'
+        : escapeHTML(date.toLocaleString());
+}
+
+let currentUser = null;
 
 async function checkAdmin() {
 
-    const { data: { user }, error } =
-        await supabase.auth.getUser();
+    const { data, error } = await supabase.auth.getUser();
 
-    if (error || !user) {
+    if (error || !data.user) {
         window.location.href = 'login.html';
         return false;
     }
 
-    if (user.app_metadata?.role !== 'admin') {
+    currentUser = data.user;
+
+    if (currentUser.app_metadata?.role !== 'admin') {
         await supabase.auth.signOut();
-        alert('Administrator access required.');
         window.location.href = 'login.html';
         return false;
     }
 
     document.getElementById('adminEmail').textContent =
-        'Administrator: ' + user.email;
+        'Administrator: ' + currentUser.email;
 
     return true;
 }
 
-async function loadObservers() {
+async function loadDashboard() {
 
-    const { data, error } = await supabase
-        .from('observers')
-        .select('*')
-        .order('created_at', { ascending: false });
+    const { data: observers, error: observerError } =
+        await supabase.from('observers').select('*')
+        .order('created_at', {ascending: false});
 
-    if (error) throw error;
+    const { data: results, error: resultError } =
+        await supabase.from('election_results').select('*')
+        .order('created_at', {ascending: false});
 
-    document.getElementById('observerCount').textContent =
-        data.length;
+    const { data: incidents, error: incidentError } =
+        await supabase.from('incident_reports').select('*')
+        .order('created_at', {ascending: false});
 
-    document.getElementById('observersTable').innerHTML =
-        data.length ? data.map(row => `
-        <tr>
-            <td>${escapeHTML(row.full_name)}</td>
-            <td>${escapeHTML(row.email)}</td>
-            <td>${escapeHTML(row.phone)}</td>
-            <td>${escapeHTML(row.state)}</td>
-            <td>${escapeHTML(row.lga)}</td>
-            <td>${statusHTML(row.status)}</td>
-            <td>
-                <button class="action approve"
-                data-table="observers"
-                data-id="${escapeHTML(row.id)}"
-                data-status="approved">Approve</button>
-
-                <button class="action reject"
-                data-table="observers"
-                data-id="${escapeHTML(row.id)}"
-                data-status="rejected">Reject</button>
-            </td>
-        </tr>
-        `).join('') :
-        '<tr><td colspan="7" class="empty">No observer registrations yet.</td></tr>';
-
-    return data;
-}
-
-async function loadResults() {
-
-    const { data, error } = await supabase
-        .from('election_results')
-        .select('*')
-        .order('created_at', { ascending: false });
-
-    if (error) throw error;
-
-    document.getElementById('resultCount').textContent =
-        data.length;
-
-    document.getElementById('resultsTable').innerHTML =
-        data.length ? data.map(row => `
-        <tr>
-            <td>${escapeHTML(row.election_type)}</td>
-            <td>${escapeHTML(row.election_year)}</td>
-            <td>${escapeHTML(row.state)}</td>
-            <td>${escapeHTML(row.lga)}</td>
-            <td>${escapeHTML(row.polling_unit)}</td>
-            <td>${escapeHTML(JSON.stringify(row.candidate_votes || {}))}</td>
-            <td>${evidenceHTML(row.evidence_path)}</td>
-            <td>${statusHTML(row.status)}</td>
-            <td>
-                <button class="action approve"
-                data-table="election_results"
-                data-id="${escapeHTML(row.id)}"
-                data-status="approved">Approve</button>
-
-                <button class="action reject"
-                data-table="election_results"
-                data-id="${escapeHTML(row.id)}"
-                data-status="rejected">Reject</button>
-            </td>
-        </tr>
-        `).join('') :
-        '<tr><td colspan="9" class="empty">No election reports yet.</td></tr>';
-
-    return data;
-}
-
-async function loadIncidents() {
-
-    const { data, error } = await supabase
-        .from('incident_reports')
-        .select('*')
-        .order('created_at', { ascending: false });
-
-    if (error) throw error;
-
-    document.getElementById('incidentCount').textContent =
-        data.length;
-
-    document.getElementById('incidentsTable').innerHTML =
-        data.length ? data.map(row => `
-        <tr>
-            <td>${escapeHTML(row.reporter_name || 'Anonymous')}</td>
-            <td>${escapeHTML(row.category)}</td>
-            <td>${escapeHTML(row.severity)}</td>
-            <td>${escapeHTML(row.state)}</td>
-            <td>${escapeHTML(row.lga)}</td>
-            <td>${escapeHTML(row.description)}</td>
-            <td>${evidenceHTML(row.evidence_path)}</td>
-            <td>${statusHTML(row.status)}</td>
-            <td>
-                <button class="action approve"
-                data-table="incident_reports"
-                data-id="${escapeHTML(row.id)}"
-                data-status="approved">Approve</button>
-
-                <button class="action reject"
-                data-table="incident_reports"
-                data-id="${escapeHTML(row.id)}"
-                data-status="rejected">Reject</button>
-            </td>
-        </tr>
-        `).join('') :
-        '<tr><td colspan="9" class="empty">No incident reports yet.</td></tr>';
-
-    return data;
-}
-
-async function viewEvidence(path) {
-
-    const { data, error } = await supabase.storage
-        .from('election-evidence')
-        .createSignedUrl(path, 600);
-
-    if (error) {
-        showMessage('Unable to open evidence: ' + error.message);
+    if (observerError || resultError || incidentError) {
+        showMessage(
+            'Unable to load all records. Check your Supabase policies and connection.',
+            'error'
+        );
+        console.error(observerError, resultError, incidentError);
         return;
     }
 
-    window.open(data.signedUrl, '_blank', 'noopener');
+    const obs = observers || [];
+    const res = results || [];
+    const inc = incidents || [];
+
+    const pendingObservers = obs.filter(x => x.status === 'pending');
+    const approvedObservers = obs.filter(x => x.status === 'approved');
+
+    const pendingResults = res.filter(x => x.status === 'pending');
+    const pendingIncidents = inc.filter(x => x.status === 'pending');
+
+    document.getElementById('observerCount').textContent = obs.length;
+    document.getElementById('pendingObserverCount').textContent =
+        pendingObservers.length;
+    document.getElementById('approvedObserverCount').textContent =
+        approvedObservers.length;
+    document.getElementById('resultCount').textContent = res.length;
+    document.getElementById('incidentCount').textContent = inc.length;
+
+    document.getElementById('pendingCount').textContent =
+        pendingObservers.length +
+        pendingResults.length +
+        pendingIncidents.length;
+
+    renderObservers(obs);
+    renderResults(res);
+    renderIncidents(inc);
 }
 
-async function updateStatus(table, id, status) {
+function renderObservers(records) {
 
-    if (!confirm(`Mark this submission as ${status}?`)) {
+    const table = document.getElementById('observerTable');
+
+    if (!records.length) {
+        table.innerHTML =
+            '<tr><td colspan="9">No observer applications found.</td></tr>';
         return;
     }
 
-    const allowedTables = [
-        'observers',
-        'election_results',
-        'incident_reports'
-    ];
+    table.innerHTML = records.map(observer => `
+        <tr>
+            <td>${escapeHTML(observer.full_name)}</td>
+            <td>${escapeHTML(observer.email)}</td>
+            <td>${escapeHTML(observer.phone)}</td>
+            <td>${escapeHTML(observer.state)}</td>
+            <td>${escapeHTML(observer.lga)}</td>
+            <td>${statusBadge(observer.status)}</td>
+            <td>${escapeHTML(observer.observer_code || 'Not assigned')}</td>
+            <td>${formatDate(observer.verified_at)}</td>
+            <td>
+                ${
+                    observer.status === 'pending'
+                    ? `
+                    <button class="approve"
+                        data-action="approve"
+                        data-table="observers"
+                        data-id="${escapeHTML(observer.id)}">
+                        Approve
+                    </button>
 
-    if (!allowedTables.includes(table)) return;
+                    <button class="reject"
+                        data-action="reject"
+                        data-table="observers"
+                        data-id="${escapeHTML(observer.id)}">
+                        Reject
+                    </button>
+                    `
+                    : 'Reviewed'
+                }
+            </td>
+        </tr>
+    `).join('');
+}
 
-    const { error } = await supabase
-        .from(table)
-        .update({ status })
-        .eq('id', id);
+function renderResults(records) {
 
-    if (error) {
-        showMessage('Update failed: ' + error.message);
+    const table = document.getElementById('resultsTable');
+
+    if (!records.length) {
+        table.innerHTML =
+            '<tr><td colspan="8">No election results submitted yet.</td></tr>';
         return;
     }
 
-    showMessage('Submission status updated successfully.');
-    await loadDashboard();
+    table.innerHTML = records.map(item => `
+        <tr>
+            <td>${escapeHTML(item.election_type)} ${escapeHTML(item.election_year)}</td>
+            <td>${escapeHTML(item.state)}</td>
+            <td>${escapeHTML(item.lga)}</td>
+            <td>${escapeHTML(item.ward)}</td>
+            <td>${escapeHTML(item.polling_unit)}</td>
+            <td>${statusBadge(item.status)}</td>
+            <td>
+                ${item.evidence_path
+                    ? `<button class="view"
+                        data-action="evidence"
+                        data-path="${escapeHTML(item.evidence_path)}">
+                        View Evidence
+                       </button>`
+                    : 'No evidence'}
+            </td>
+            <td>
+                ${
+                    item.status === 'pending'
+                    ? `
+                    <button class="approve"
+                        data-action="approve"
+                        data-table="election_results"
+                        data-id="${escapeHTML(item.id)}">
+                        Approve
+                    </button>
+
+                    <button class="reject"
+                        data-action="reject"
+                        data-table="election_results"
+                        data-id="${escapeHTML(item.id)}">
+                        Reject
+                    </button>
+                    `
+                    : 'Reviewed'
+                }
+            </td>
+        </tr>
+    `).join('');
+}
+
+function renderIncidents(records) {
+
+    const table = document.getElementById('incidentTable');
+
+    if (!records.length) {
+        table.innerHTML =
+            '<tr><td colspan="9">No incidents reported yet.</td></tr>';
+        return;
+    }
+
+    table.innerHTML = records.map(item => `
+        <tr>
+            <td>${escapeHTML(item.category)}</td>
+            <td>${escapeHTML(item.severity)}</td>
+            <td>${escapeHTML(item.state)}</td>
+            <td>${escapeHTML(item.lga)}</td>
+            <td>${escapeHTML(item.polling_unit)}</td>
+            <td>${escapeHTML(item.description)}</td>
+            <td>${statusBadge(item.status)}</td>
+            <td>
+                ${item.evidence_path
+                    ? `<button class="view"
+                        data-action="evidence"
+                        data-path="${escapeHTML(item.evidence_path)}">
+                        View Evidence
+                       </button>`
+                    : 'No evidence'}
+            </td>
+            <td>
+                ${
+                    item.status === 'pending'
+                    ? `
+                    <button class="approve"
+                        data-action="approve"
+                        data-table="incident_reports"
+                        data-id="${escapeHTML(item.id)}">
+                        Approve
+                    </button>
+
+                    <button class="reject"
+                        data-action="reject"
+                        data-table="incident_reports"
+                        data-id="${escapeHTML(item.id)}">
+                        Reject
+                    </button>
+                    `
+                    : 'Reviewed'
+                }
+            </td>
+        </tr>
+    `).join('');
 }
 
 document.addEventListener('click', async event => {
 
-    const evidenceButton = event.target.closest('[data-evidence]');
+    const button = event.target.closest('button[data-action]');
 
-    if (evidenceButton) {
-        const path = decodeURIComponent(
-            evidenceButton.dataset.evidence
-        );
+    if (!button) return;
 
-        await viewEvidence(path);
+    const action = button.dataset.action;
+
+    if (action === 'evidence') {
+
+        const path = button.dataset.path;
+
+        if (!path) return;
+
+        button.disabled = true;
+
+        const { data, error } = await supabase
+            .storage
+            .from('election-evidence')
+            .createSignedUrl(path, 600);
+
+        button.disabled = false;
+
+        if (error) {
+            showMessage('Unable to open evidence. Check storage permissions.', 'error');
+            console.error(error);
+            return;
+        }
+
+        window.open(data.signedUrl, '_blank', 'noopener');
+
         return;
     }
 
-    const statusButton = event.target.closest('[data-table]');
+    if (action === 'approve' || action === 'reject') {
 
-    if (statusButton) {
-        await updateStatus(
-            statusButton.dataset.table,
-            statusButton.dataset.id,
-            statusButton.dataset.status
+        const table = button.dataset.table;
+        const id = button.dataset.id;
+
+        const allowedTables = [
+            'observers',
+            'election_results',
+            'incident_reports'
+        ];
+
+        if (!allowedTables.includes(table) || !id) return;
+
+        const newStatus = action === 'approve' ? 'approved' : 'rejected';
+
+        const confirmed = confirm(
+            `Are you sure you want to ${action} this submission?`
         );
+
+        if (!confirmed) return;
+
+        button.disabled = true;
+
+        const { error } = await supabase
+            .from(table)
+            .update({status: newStatus})
+            .eq('id', id);
+
+        button.disabled = false;
+
+        if (error) {
+            showMessage('Update failed: ' + error.message, 'error');
+            console.error(error);
+            return;
+        }
+
+        showMessage(
+            action === 'approve'
+            ? 'Submission approved successfully.'
+            : 'Submission rejected successfully.'
+        );
+
+        await loadDashboard();
     }
 });
 
-async function loadDashboard() {
+document.getElementById('logoutBtn').addEventListener('click', async () => {
+    await supabase.auth.signOut();
+    window.location.href = 'login.html';
+});
 
-    messageBox.style.display = 'none';
+const isAdmin = await checkAdmin();
 
-    try {
-
-        const [observers, results, incidents] =
-            await Promise.all([
-                loadObservers(),
-                loadResults(),
-                loadIncidents()
-            ]);
-
-        const pending = [
-            ...observers,
-            ...results,
-            ...incidents
-        ].filter(row =>
-            String(row.status).toLowerCase() === 'pending'
-        ).length;
-
-        document.getElementById('pendingCount').textContent =
-            pending;
-
-    } catch (error) {
-        console.error(error);
-        showMessage('Dashboard error: ' + error.message);
-    }
-}
-
-document.getElementById('refreshButton')
-    .addEventListener('click', loadDashboard);
-
-document.getElementById('logoutButton')
-    .addEventListener('click', async () => {
-        await supabase.auth.signOut();
-        window.location.href = 'login.html';
-    });
-
-if (await checkAdmin()) {
+if (isAdmin) {
     await loadDashboard();
 }
+
+window.loadDashboard = loadDashboard;
 
 </script></body>
 </html>
