@@ -26,9 +26,7 @@ header {
     gap: 15px;
 }
 
-header h2 {
-    color: #e5b83e;
-}
+header h2 { color: #e5b83e; }
 
 header p {
     font-size: 13px;
@@ -54,9 +52,7 @@ button {
     margin: 25px auto;
 }
 
-.welcome {
-    margin-bottom: 25px;
-}
+.welcome { margin-bottom: 25px; }
 
 .welcome h1 {
     font-size: 25px;
@@ -103,14 +99,12 @@ button {
     font-size: 20px;
 }
 
-.table-wrap {
-    overflow-x: auto;
-}
+.table-wrap { overflow-x: auto; }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 700px;
+    min-width: 850px;
 }
 
 th, td {
@@ -166,6 +160,13 @@ td {
     color: white;
 }
 
+.evidence {
+    background: #d6a72e;
+    color: #071b38;
+    padding: 7px 10px;
+    font-size: 11px;
+}
+
 .refresh {
     background: #d6a72e;
     color: #071b38;
@@ -196,33 +197,25 @@ footer {
 }
 
 @media(max-width:600px) {
-    header h2 {
-        font-size: 18px;
-    }
-
-    .welcome h1 {
-        font-size: 21px;
-    }
-
-    .section {
-        padding: 13px;
-    }
+    header h2 { font-size: 18px; }
+    .welcome h1 { font-size: 21px; }
+    .section { padding: 13px; }
 }
 </style></head><body><header>
     <div>
         <h2>NWACHUKWU ELECTION WATCH</h2>
         <p>Administrator Control Panel</p>
-    </div><button class="logout" onclick="logout()">Logout</button>
+    </div><button class="logout" id="logoutButton">Logout</button>
 
 </header><div class="container"><div class="welcome">
     <h1>Admin Dashboard</h1>
-    <p>Welcome to the Nwachukwu Election Watch monitoring system.</p>
+    <p>Welcome to the election monitoring control panel.</p>
     <p id="adminEmail" style="margin-top:8px;"></p>
 </div>
 
 <div id="message" class="message"></div>
 
-<button class="refresh" onclick="loadDashboard()">
+<button class="refresh" id="refreshButton">
     Refresh Dashboard
 </button>
 
@@ -265,9 +258,7 @@ footer {
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody id="observersTable">
-                <tr><td colspan="7" class="empty">Loading...</td></tr>
-            </tbody>
+            <tbody id="observersTable"></tbody>
         </table>
     </div>
 </div>
@@ -284,13 +275,12 @@ footer {
                     <th>LGA</th>
                     <th>Polling Unit</th>
                     <th>Candidate Votes</th>
+                    <th>Evidence</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody id="resultsTable">
-                <tr><td colspan="8" class="empty">Loading...</td></tr>
-            </tbody>
+            <tbody id="resultsTable"></tbody>
         </table>
     </div>
 </div>
@@ -307,13 +297,12 @@ footer {
                     <th>State</th>
                     <th>LGA</th>
                     <th>Description</th>
+                    <th>Evidence</th>
                     <th>Status</th>
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody id="incidentsTable">
-                <tr><td colspan="8" class="empty">Loading...</td></tr>
-            </tbody>
+            <tbody id="incidentsTable"></tbody>
         </table>
     </div>
 </div>
@@ -344,13 +333,31 @@ function showMessage(message) {
 function statusHTML(status) {
     const value = String(status || 'pending').toLowerCase();
 
-    return `<span class="status ${['approved','rejected'].includes(value) ? value : ''}">
+    const className = ['approved', 'rejected'].includes(value)
+        ? value : '';
+
+    return `<span class="status ${className}">
         ${escapeHTML(value)}
     </span>`;
 }
 
+function evidenceHTML(path) {
+    if (!path) {
+        return '<span>No evidence</span>';
+    }
+
+    return `
+        <button class="evidence"
+            data-evidence="${encodeURIComponent(path)}">
+            View Evidence
+        </button>
+    `;
+}
+
 async function checkAdmin() {
-    const { data: { user }, error } = await supabase.auth.getUser();
+
+    const { data: { user }, error } =
+        await supabase.auth.getUser();
 
     if (error || !user) {
         window.location.href = 'login.html';
@@ -359,7 +366,7 @@ async function checkAdmin() {
 
     if (user.app_metadata?.role !== 'admin') {
         await supabase.auth.signOut();
-        alert('Access denied. Administrator privileges are required.');
+        alert('Administrator access required.');
         window.location.href = 'login.html';
         return false;
     }
@@ -371,6 +378,7 @@ async function checkAdmin() {
 }
 
 async function loadObservers() {
+
     const { data, error } = await supabase
         .from('observers')
         .select('*')
@@ -378,7 +386,8 @@ async function loadObservers() {
 
     if (error) throw error;
 
-    document.getElementById('observerCount').textContent = data.length;
+    document.getElementById('observerCount').textContent =
+        data.length;
 
     document.getElementById('observersTable').innerHTML =
         data.length ? data.map(row => `
@@ -391,12 +400,14 @@ async function loadObservers() {
             <td>${statusHTML(row.status)}</td>
             <td>
                 <button class="action approve"
-                onclick="updateStatus('observers','${row.id}','approved')">
-                Approve</button>
+                data-table="observers"
+                data-id="${escapeHTML(row.id)}"
+                data-status="approved">Approve</button>
 
                 <button class="action reject"
-                onclick="updateStatus('observers','${row.id}','rejected')">
-                Reject</button>
+                data-table="observers"
+                data-id="${escapeHTML(row.id)}"
+                data-status="rejected">Reject</button>
             </td>
         </tr>
         `).join('') :
@@ -406,6 +417,7 @@ async function loadObservers() {
 }
 
 async function loadResults() {
+
     const { data, error } = await supabase
         .from('election_results')
         .select('*')
@@ -413,7 +425,8 @@ async function loadResults() {
 
     if (error) throw error;
 
-    document.getElementById('resultCount').textContent = data.length;
+    document.getElementById('resultCount').textContent =
+        data.length;
 
     document.getElementById('resultsTable').innerHTML =
         data.length ? data.map(row => `
@@ -424,24 +437,28 @@ async function loadResults() {
             <td>${escapeHTML(row.lga)}</td>
             <td>${escapeHTML(row.polling_unit)}</td>
             <td>${escapeHTML(JSON.stringify(row.candidate_votes || {}))}</td>
+            <td>${evidenceHTML(row.evidence_path)}</td>
             <td>${statusHTML(row.status)}</td>
             <td>
                 <button class="action approve"
-                onclick="updateStatus('election_results','${row.id}','approved')">
-                Approve</button>
+                data-table="election_results"
+                data-id="${escapeHTML(row.id)}"
+                data-status="approved">Approve</button>
 
                 <button class="action reject"
-                onclick="updateStatus('election_results','${row.id}','rejected')">
-                Reject</button>
+                data-table="election_results"
+                data-id="${escapeHTML(row.id)}"
+                data-status="rejected">Reject</button>
             </td>
         </tr>
         `).join('') :
-        '<tr><td colspan="8" class="empty">No election reports yet.</td></tr>';
+        '<tr><td colspan="9" class="empty">No election reports yet.</td></tr>';
 
     return data;
 }
 
 async function loadIncidents() {
+
     const { data, error } = await supabase
         .from('incident_reports')
         .select('*')
@@ -449,7 +466,8 @@ async function loadIncidents() {
 
     if (error) throw error;
 
-    document.getElementById('incidentCount').textContent = data.length;
+    document.getElementById('incidentCount').textContent =
+        data.length;
 
     document.getElementById('incidentsTable').innerHTML =
         data.length ? data.map(row => `
@@ -460,26 +478,43 @@ async function loadIncidents() {
             <td>${escapeHTML(row.state)}</td>
             <td>${escapeHTML(row.lga)}</td>
             <td>${escapeHTML(row.description)}</td>
+            <td>${evidenceHTML(row.evidence_path)}</td>
             <td>${statusHTML(row.status)}</td>
             <td>
                 <button class="action approve"
-                onclick="updateStatus('incident_reports','${row.id}','approved')">
-                Approve</button>
+                data-table="incident_reports"
+                data-id="${escapeHTML(row.id)}"
+                data-status="approved">Approve</button>
 
                 <button class="action reject"
-                onclick="updateStatus('incident_reports','${row.id}','rejected')">
-                Reject</button>
+                data-table="incident_reports"
+                data-id="${escapeHTML(row.id)}"
+                data-status="rejected">Reject</button>
             </td>
         </tr>
         `).join('') :
-        '<tr><td colspan="8" class="empty">No incident reports yet.</td></tr>';
+        '<tr><td colspan="9" class="empty">No incident reports yet.</td></tr>';
 
     return data;
 }
 
-window.updateStatus = async function(table, id, status) {
+async function viewEvidence(path) {
 
-    if (!confirm(`Are you sure you want to mark this submission as ${status}?`)) {
+    const { data, error } = await supabase.storage
+        .from('election-evidence')
+        .createSignedUrl(path, 600);
+
+    if (error) {
+        showMessage('Unable to open evidence: ' + error.message);
+        return;
+    }
+
+    window.open(data.signedUrl, '_blank', 'noopener');
+}
+
+async function updateStatus(table, id, status) {
+
+    if (!confirm(`Mark this submission as ${status}?`)) {
         return;
     }
 
@@ -493,7 +528,7 @@ window.updateStatus = async function(table, id, status) {
 
     const { error } = await supabase
         .from(table)
-        .update({ status: status })
+        .update({ status })
         .eq('id', id);
 
     if (error) {
@@ -503,40 +538,72 @@ window.updateStatus = async function(table, id, status) {
 
     showMessage('Submission status updated successfully.');
     await loadDashboard();
-};
+}
 
-window.loadDashboard = async function() {
+document.addEventListener('click', async event => {
+
+    const evidenceButton = event.target.closest('[data-evidence]');
+
+    if (evidenceButton) {
+        const path = decodeURIComponent(
+            evidenceButton.dataset.evidence
+        );
+
+        await viewEvidence(path);
+        return;
+    }
+
+    const statusButton = event.target.closest('[data-table]');
+
+    if (statusButton) {
+        await updateStatus(
+            statusButton.dataset.table,
+            statusButton.dataset.id,
+            statusButton.dataset.status
+        );
+    }
+});
+
+async function loadDashboard() {
 
     messageBox.style.display = 'none';
 
     try {
-        const [observers, results, incidents] = await Promise.all([
-            loadObservers(),
-            loadResults(),
-            loadIncidents()
-        ]);
 
-        const pending =
-            [...observers, ...results, ...incidents]
-            .filter(row => String(row.status).toLowerCase() === 'pending')
-            .length;
+        const [observers, results, incidents] =
+            await Promise.all([
+                loadObservers(),
+                loadResults(),
+                loadIncidents()
+            ]);
 
-        document.getElementById('pendingCount').textContent = pending;
+        const pending = [
+            ...observers,
+            ...results,
+            ...incidents
+        ].filter(row =>
+            String(row.status).toLowerCase() === 'pending'
+        ).length;
+
+        document.getElementById('pendingCount').textContent =
+            pending;
 
     } catch (error) {
         console.error(error);
-        showMessage('Could not load dashboard data: ' + error.message);
+        showMessage('Dashboard error: ' + error.message);
     }
-};
+}
 
-window.logout = async function() {
-    await supabase.auth.signOut();
-    window.location.href = 'login.html';
-};
+document.getElementById('refreshButton')
+    .addEventListener('click', loadDashboard);
 
-const authorised = await checkAdmin();
+document.getElementById('logoutButton')
+    .addEventListener('click', async () => {
+        await supabase.auth.signOut();
+        window.location.href = 'login.html';
+    });
 
-if (authorised) {
+if (await checkAdmin()) {
     await loadDashboard();
 }
 
