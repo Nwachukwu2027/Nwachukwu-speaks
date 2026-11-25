@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Administrator Login | Nwachukwu Election Watch</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #071d3b, #164779);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 22px;
+    text-align: center;
+    color: white;
+}
+
+header h2 {
+    color: #f3c64e;
+    font-size: 23px;
+}
+
+header p {
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 430px;
+    margin: auto;
+    padding: 20px;
+}
+
+.login-box {
+    background: white;
+    padding: 35px 28px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+}
+
+.login-box h1 {
+    color: #071d3b;
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.login-box label {
+    display: block;
+    color: #071d3b;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d5dce5;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    font-size: 14px;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 65px;
+}
+
+.show-password {
+    position: absolute;
+    right: 12px;
+    top: 13px;
+    border: none;
+    background: none;
+    color: #164779;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 12px;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #555;
+}
+
+.remember input {
+    width: auto;
+    margin: 0;
+}
+
+.options a {
+    color: #164779;
+    text-decoration: none;
+}
+
+.login-button {
+    width: 100%;
+    background: #071d3b;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #164779;
+}
+
+.message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    display: none;
+    line-height: 1.6;
+}
+
+.security {
+    background: #fff4d5;
+    color: #795c12;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.back-home {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #164779;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+}
+
+@media(max-width: 480px) {
+    .login-box {
+        padding: 28px 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <h2>NWACHUKWU ELECTION WATCH</h2>
+
+    <p>
+        TRANSPARENCY | ACCOUNTABILITY | CREDIBLE ELECTIONS
+    </p>
+
+</header>
+
+
+<div class="login-container">
+
+    <div class="login-box">
+
+        <h1>Administrator Login</h1>
+
+        <p class="subtitle">
+            Authorised administrative access only
+        </p>
+
+
+        <form id="loginForm">
+
+            <label for="email">Administrator Email</label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter administrator email"
+                autocomplete="username"
+                required
+            >
+
+
+            <label for="password">Password</label>
+
+            <div class="password-wrapper">
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <button
+                    type="button"
+                    class="show-password"
+                    onclick="togglePassword()"
+                >
+                    Show
+                </button>
+
+            </div>
+
+
+            <div class="options">
+
+                <label class="remember">
+                    <input type="checkbox" id="remember">
+                    Remember me
+                </label>
+
+                <a href="#" onclick="forgotPassword(event)">
+                    Forgot Password?
+                </a>
+
+            </div>
+
+
+            <button type="submit" class="login-button">
+                Sign In
+            </button>
+
+        </form>
+
+
+        <div id="message" class="message"></div>
+
+
+        <div class="security">
+            <strong>Security Reminder:</strong>
+            This administrative login must be connected to
+            secure authentication before deployment.
+            Never share your administrator password.
+        </div>
+
+
+        <a href="index.html" class="back-home">
+            ← Back to Homepage
+        </a>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        &copy; 2026 Nwachukwu Election Watch (NEW).
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<script>
+
+function togglePassword() {
+
+    const password = document.getElementById("password");
+    const button = document.querySelector(".show-password");
+
+    if (password.type === "password") {
+
+        password.type = "text";
+        button.textContent = "Hide";
+
+    } else {
+
+        password.type = "password";
+        button.textContent = "Show";
+
+    }
+
+}
+
+
+function forgotPassword(event) {
+
+    event.preventDefault();
+
+    showMessage(
+        "Password recovery will be available after secure administrator authentication is connected.",
+        "warning"
+    );
+
+}
+
+
+function showMessage(text, type) {
+
+    const message = document.getElementById("message");
+
+    message.style.display = "block";
+    message.textContent = text;
+
+    message.style.background =
+        type === "error" ? "#ffe4e4" : "#fff4d5";
+
+    message.style.color =
+        type === "error" ? "#a00000" : "#795c12";
+
+}
+
+
+document.getElementById("loginForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    showMessage(
+        "Authentication is not connected yet. No login was performed. We will connect this page to Supabase Auth.",
+        "error"
+    );
+
+});
+
+</script>
+
+</body>
+</html>
