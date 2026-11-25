@@ -1,310 +1,442 @@
 <!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Incident Reporting | Nwachukwu Election Watch</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Report and document election-related incidents with Nwachukwu Election Watch.">
+<title>Incident Reporting | Nwachukwu Election Watch</title><style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background: #f2f5f9;
+    font-family: Arial, sans-serif;
+    background: #f4f6fa;
     color: #222;
+    line-height: 1.6;
 }
 
 header {
-    background: #071d3b;
+    background: #071b3a;
     color: white;
-    padding: 22px 7%;
+    text-align: center;
+    padding: 25px 15px;
 }
 
-header span {
-    color: #f5b400;
+header h1 {
+    color: #e5b342;
+    margin-bottom: 5px;
 }
 
 nav {
-    background: #10365e;
-    padding: 14px 7%;
+    background: #102b52;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin-right: 17px;
+    padding: 9px 12px;
     font-size: 14px;
 }
 
-.hero {
-    background: linear-gradient(120deg,#071d3b,#124d80);
-    color: white;
-    padding: 45px 7%;
-    text-align: center;
+nav a:hover {
+    background: #e5b342;
+    color: #071b3a;
+    border-radius: 4px;
 }
 
 .container {
-    max-width: 900px;
-    margin: 35px auto;
-    padding: 0 15px;
+    max-width: 950px;
+    margin: 30px auto;
+    padding: 20px;
 }
 
-.box {
+.card {
     background: white;
-    padding: 30px;
-    border-radius: 9px;
-    box-shadow: 0 3px 15px rgba(0,0,0,.06);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
 }
 
 h2 {
-    color: #071d3b;
+    color: #071b3a;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #102b52;
+    margin: 22px 0 10px;
+}
+
+.notice {
+    background: #fff4d6;
+    border-left: 5px solid #e5b342;
+    padding: 15px;
     margin-bottom: 20px;
+    font-size: 14px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-}
-
-.group {
-    margin-bottom: 18px;
-}
-
-.full {
-    grid-column: 1/-1;
+.warning {
+    background: #fff0f0;
+    border-left: 5px solid #c62828;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
 }
 
 label {
     display: block;
     font-weight: bold;
-    font-size: 14px;
-    margin-bottom: 8px;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 input, select, textarea {
     width: 100%;
-    padding: 13px;
-    border: 1px solid #ddd;
+    padding: 12px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    outline: none;
+    font-size: 15px;
+    background: white;
 }
 
-input:focus, select:focus, textarea:focus {
-    border-color: #124d80;
+textarea {
+    min-height: 130px;
+    resize: vertical;
 }
 
 button {
-    width: 100%;
-    padding: 15px;
-    background: #071d3b;
-    color: white;
+    background: #e5b342;
+    color: #071b3a;
     border: none;
+    padding: 15px;
+    width: 100%;
     border-radius: 5px;
-    cursor: pointer;
+    font-size: 16px;
     font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
 }
 
 button:hover {
-    background: #124d80;
+    background: #d5a12d;
 }
 
-.notice {
-    background: #fff1d6;
-    border-left: 4px solid #e3a400;
+.result-message {
+    display: none;
+    background: #fff4d6;
+    border-left: 5px solid #e5b342;
     padding: 15px;
-    margin-bottom: 22px;
-    font-size: 13px;
-    line-height: 1.7;
+    margin-top: 20px;
+    border-radius: 5px;
 }
 
-#message {
-    margin-top: 20px;
-    line-height: 1.6;
+small {
+    color: #666;
 }
 
 footer {
-    background: #071d3b;
+    background: #071b3a;
     color: white;
     text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-    line-height: 1.8;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+footer span {
+    color: #e5b342;
 }
 
 @media(max-width:600px) {
-    .grid {
-        grid-template-columns: 1fr;
+    .container {
+        padding: 12px;
     }
 
-    .box {
-        padding: 20px;
+    .card {
+        padding: 17px;
     }
 
     nav a {
-        display: inline-block;
-        margin-bottom: 10px;
+        font-size: 12px;
+        padding: 8px;
     }
 }
 </style></head><body><header>
-<h2>NWACHUKWU <span>ELECTION WATCH</span></h2>
-<p>Election Incident Reporting Portal</p>
+    <h1>NWACHUKWU ELECTION WATCH</h1>
+    <p>Transparency | Accountability | Credible Election Monitoring</p>
 </header><nav>
-<a href="index.html">Home</a>
-<a href="dashboard.html">Dashboard</a>
-<a href="observers.html">Observers</a>
-<a href="results.html">Results</a>
-<a href="incidents.html">Incidents</a>
-</nav><section class="hero">
-<h1>Election Incident Reporting</h1>
-<p>
-Document and report election-related incidents
-for independent review and verification.
-</p>
-</section><div class="container"><div class="box"><h2>Submit an Incident Report</h2><div class="notice">
-<strong>Important:</strong>
-Submit accurate information based on direct observation
-or clearly identify information received from another source.
-An allegation is not automatically a verified incident.
-For immediate danger, contact the appropriate emergency
-services or security authorities.
-</div><form id="incidentForm"><div class="grid"><div class="group">
-<label>Reporter Full Name *</label>
-<input type="text" id="name" required>
-</div><div class="group">
-<label>Observer ID *</label>
-<input type="text" id="observerID" required>
-</div><div class="group">
-<label>Phone Number *</label>
-<input type="tel" id="phone" required>
-</div><div class="group">
-<label>Election Type *</label>
-<select id="election" required>
-<option value="">Select Election</option>
-<option>Presidential</option>
-<option>Governorship</option>
-<option>Senatorial</option>
-<option>House of Representatives</option>
-<option>State Assembly</option>
-<option>Local Government</option>
-</select>
-</div><div class="group">
-<label>State *</label>
-<select id="state" required>
-<option value="">Select State</option>
-</select>
-</div><div class="group">
-<label>Local Government *</label>
-<input type="text" id="lga" required>
-</div><div class="group">
-<label>Ward *</label>
-<input type="text" id="ward" required>
-</div><div class="group">
-<label>Polling Unit *</label>
-<input type="text" id="unit" required>
-</div><div class="group">
-<label>Incident Category *</label>
-<select id="category" required>
-<option value="">Select Category</option>
-<option>Election Violence</option>
-<option>Suspected Vote Buying</option>
-<option>Voter Intimidation</option>
-<option>Ballot Box Snatching</option>
-<option>Missing Election Materials</option>
-<option>Late Arrival of Electoral Officials</option>
-<option>Polling Unit Disruption</option>
-<option>Suspected Result Manipulation</option>
-<option>Other</option>
-</select>
-</div><div class="group">
-<label>Incident Severity *</label>
-<select id="severity" required>
-<option value="">Select Severity</option>
-<option>Low</option>
-<option>Moderate</option>
-<option>High</option>
-<option>Critical</option>
-</select>
-</div><div class="group">
-<label>Incident Date *</label>
-<input type="date" id="date" required>
-</div><div class="group">
-<label>Incident Time *</label>
-<input type="time" id="time" required>
-</div><div class="group full">
-<label>Source of Information *</label>
-<select id="source" required>
-<option value="">Select Source</option>
-<option>Directly observed</option>
-<option>Reported by witness</option>
-<option>Information from another source</option>
-</select>
-</div><div class="group full">
-<label>Incident Description *</label>
-<textarea id="description" rows="6"
-placeholder="Describe what happened, including relevant facts..."
-required></textarea>
-</div><div class="group full">
-<label>Upload Supporting Evidence (Optional)</label>
-<input type="file" id="evidence"
-accept="image/*,video/*">
-<small>Maximum file size: 10MB.</small>
-</div><div class="group full">
-<label>
-<input type="checkbox" id="declaration"
-style="width:auto;" required>
-I confirm that this report is submitted honestly and accurately.
-</label>
-</div></div><button type="submit">Submit Incident Report</button>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="elections.html">Elections</a>
+    <a href="team.html">Our Team</a>
+    <a href="observers.html">Observers</a>
+    <a href="results.html">Results</a>
+    <a href="incidents.html">Incidents</a>
+    <a href="admin.html">Admin</a>
+    <a href="login.html">Login</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+</nav><div class="container"><div class="card">
 
-<p id="message"></p></form></div></div><footer>
-<h3>NWACHUKWU ELECTION WATCH</h3>
-<p>Transparency | Accountability | Credible Monitoring</p>
-<p>© 2026 All Rights Reserved.</p>
+    <h2>Election Incident Reporting Form</h2>
+
+    <div class="notice">
+        Use this form to document incidents observed during an election.
+        Provide accurate information and describe what happened clearly.
+    </div>
+
+    <div class="warning">
+        <strong>Safety first:</strong> Do not put yourself or others in
+        danger to collect evidence. If there is an immediate threat,
+        move to a safe location and contact the appropriate emergency
+        or security authorities.
+    </div>
+
+    <form id="incidentForm">
+
+        <h3>1. Reporter Information</h3>
+
+        <label>Full Name</label>
+        <input type="text" id="reporterName"
+               placeholder="Enter your full name" required>
+
+        <label>Observer ID (if available)</label>
+        <input type="text" id="observerId"
+               placeholder="Enter observer ID">
+
+        <label>Phone Number</label>
+        <input type="tel" id="phone"
+               placeholder="Enter your phone number" required>
+
+        <label>Email Address</label>
+        <input type="email" id="email"
+               placeholder="Enter your email address">
+
+        <h3>2. Election and Location Information</h3>
+
+        <label>Election Type</label>
+        <select id="electionType" required>
+            <option value="">Select election type</option>
+            <option>Presidential Election</option>
+            <option>Governorship Election</option>
+            <option>Senatorial Election</option>
+            <option>House of Representatives Election</option>
+            <option>State House of Assembly Election</option>
+            <option>Local Government Election</option>
+            <option>Other</option>
+        </select>
+
+        <label>State</label>
+        <select id="state" required>
+            <option value="">Select state</option>
+            <option>Abia</option>
+            <option>Adamawa</option>
+            <option>Akwa Ibom</option>
+            <option>Anambra</option>
+            <option>Bauchi</option>
+            <option>Bayelsa</option>
+            <option>Benue</option>
+            <option>Borno</option>
+            <option>Cross River</option>
+            <option>Delta</option>
+            <option>Ebonyi</option>
+            <option>Edo</option>
+            <option>Ekiti</option>
+            <option>Enugu</option>
+            <option>FCT</option>
+            <option>Gombe</option>
+            <option>Imo</option>
+            <option>Jigawa</option>
+            <option>Kaduna</option>
+            <option>Kano</option>
+            <option>Katsina</option>
+            <option>Kebbi</option>
+            <option>Kogi</option>
+            <option>Kwara</option>
+            <option>Lagos</option>
+            <option>Nasarawa</option>
+            <option>Niger</option>
+            <option>Ogun</option>
+            <option>Ondo</option>
+            <option>Osun</option>
+            <option>Oyo</option>
+            <option>Plateau</option>
+            <option>Rivers</option>
+            <option>Sokoto</option>
+            <option>Taraba</option>
+            <option>Yobe</option>
+            <option>Zamfara</option>
+        </select>
+
+        <label>Local Government Area (LGA)</label>
+        <input type="text" id="lga"
+               placeholder="Enter LGA" required>
+
+        <label>Ward</label>
+        <input type="text" id="ward"
+               placeholder="Enter ward" required>
+
+        <label>Polling Unit Name or Location</label>
+        <input type="text" id="pollingUnit"
+               placeholder="Enter polling unit or location" required>
+
+        <label>Polling Unit Code (if available)</label>
+        <input type="text" id="pollingCode"
+               placeholder="Enter polling unit code">
+
+        <h3>3. Incident Details</h3>
+
+        <label>Incident Category</label>
+        <select id="incidentCategory" required>
+            <option value="">Select incident category</option>
+            <option>Election Violence</option>
+            <option>Suspected Vote Buying</option>
+            <option>Voter Intimidation</option>
+            <option>Ballot Box Snatching</option>
+            <option>Missing Election Materials</option>
+            <option>Late Arrival of Electoral Officials</option>
+            <option>Polling Unit Disruption</option>
+            <option>Suspected Result Manipulation</option>
+            <option>Underage Voting Allegation</option>
+            <option>Other</option>
+        </select>
+
+        <label>Incident Severity</label>
+        <select id="severity" required>
+            <option value="">Select severity</option>
+            <option>Low</option>
+            <option>Moderate</option>
+            <option>High</option>
+            <option>Critical</option>
+        </select>
+
+        <label>Date of Incident</label>
+        <input type="date" id="incidentDate" required>
+
+        <label>Approximate Time of Incident</label>
+        <input type="time" id="incidentTime" required>
+
+        <label>How did you obtain this information?</label>
+        <select id="source" required>
+            <option value="">Select information source</option>
+            <option>Personally Observed</option>
+            <option>Reported by Witness</option>
+            <option>Other Source</option>
+        </select>
+
+        <label>Detailed Description of Incident</label>
+        <textarea id="description"
+                  placeholder="Explain what happened, where it happened, when it happened and what you personally observed..."
+                  required></textarea>
+
+        <h3>4. Supporting Evidence</h3>
+
+        <label>Upload Evidence (Optional)</label>
+        <input type="file" id="evidence"
+               accept="image/jpeg,image/png,image/webp,video/mp4,application/pdf">
+
+        <small>
+            Accepted formats: JPG, PNG, WEBP, MP4 and PDF.
+            Maximum file size: 10MB.
+        </small>
+
+        <h3>5. Declaration</h3>
+
+        <label>
+            <input type="checkbox" id="declaration"
+                   style="width:auto;" required>
+            I confirm that this report is accurate to the best of my
+            knowledge. I understand that unverified allegations must
+            not be presented as established facts.
+        </label>
+
+        <button type="submit">Review Incident Report</button>
+
+        <div id="resultMessage" class="result-message"></div>
+
+    </form>
+
+</div>
+
+</div><footer>
+    <p>
+        &copy; 2026 <span>Nwachukwu Election Watch</span>.
+        All Rights Reserved.
+    </p>
+    <p>Transparency | Accountability | Credible Election Monitoring</p>
 </footer><script>
 
-const states = [
-"Abia","Adamawa","Akwa Ibom","Anambra","Bauchi",
-"Bayelsa","Benue","Borno","Cross River","Delta",
-"Ebonyi","Edo","Ekiti","Enugu","FCT","Gombe",
-"Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi",
-"Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun",
-"Ondo","Osun","Oyo","Plateau","Rivers","Sokoto",
-"Taraba","Yobe","Zamfara"
-];
+document.getElementById("incidentForm").addEventListener("submit",
+function(event) {
 
-const stateSelect = document.getElementById("state");
+    event.preventDefault();
 
-states.forEach(state => {
-    const option = document.createElement("option");
-    option.value = state;
-    option.textContent = state;
-    stateSelect.appendChild(option);
-});
+    const evidence = document.getElementById("evidence").files[0];
+    const message = document.getElementById("resultMessage");
 
-document.getElementById("incidentForm")
-.addEventListener("submit", function(e) {
+    const maxSize = 10 * 1024 * 1024;
 
-    e.preventDefault();
+    const allowedTypes = [
+        "image/jpeg",
+        "image/png",
+        "image/webp",
+        "video/mp4",
+        "application/pdf"
+    ];
 
-    const file = document.getElementById("evidence").files[0];
+    if (evidence) {
+        if (!allowedTypes.includes(evidence.type)) {
+            alert("Unsupported evidence format. Please upload JPG, PNG, WEBP, MP4 or PDF.");
+            return;
+        }
 
-    const message = document.getElementById("message");
-
-    if (file && file.size > 10 * 1024 * 1024) {
-        message.style.color = "red";
-        message.textContent =
-        "Evidence file must not exceed 10MB.";
-        return;
+        if (evidence.size > maxSize) {
+            alert("Evidence file must not exceed 10MB.");
+            return;
+        }
     }
 
-    message.style.color = "#a56b00";
+    message.style.display = "block";
 
-    message.textContent =
-    "Basic validation completed. Database integration is pending. " +
-    "Your report has NOT yet been saved or submitted.";
+    message.innerHTML = `
+        <strong>Incident report review completed.</strong><br><br>
+
+        Reporter: ${escapeHTML(document.getElementById("reporterName").value)}<br>
+        Election: ${escapeHTML(document.getElementById("electionType").value)}<br>
+        State: ${escapeHTML(document.getElementById("state").value)}<br>
+        LGA: ${escapeHTML(document.getElementById("lga").value)}<br>
+        Ward: ${escapeHTML(document.getElementById("ward").value)}<br>
+        Category: ${escapeHTML(document.getElementById("incidentCategory").value)}<br>
+        Severity: ${escapeHTML(document.getElementById("severity").value)}<br><br>
+
+        <strong>Important:</strong> Your report has NOT been sent or saved.
+        The database and secure reporting system have not yet been connected.
+        This report must not be treated as a verified finding.
+    `;
+
+    message.scrollIntoView({behavior: "smooth"});
 
 });
+
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, function(character) {
+        return {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#039;"
+        }[character];
+    });
+}
 
 </script></body>
 </html>
