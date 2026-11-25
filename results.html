@@ -1,0 +1,380 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Election Results | Nwachukwu Election Watch</title><style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f2f5f9;
+    color: #222;
+}
+
+header {
+    background: #071d3b;
+    color: white;
+    padding: 22px 7%;
+}
+
+header span {
+    color: #f5b400;
+}
+
+nav {
+    background: #10365e;
+    padding: 14px 7%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 18px;
+    font-size: 14px;
+}
+
+.hero {
+    background: linear-gradient(120deg,#071d3b,#124d80);
+    padding: 45px 7%;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    max-width: 950px;
+    margin: 35px auto;
+    padding: 0 15px;
+}
+
+.box {
+    background: white;
+    padding: 28px;
+    border-radius: 9px;
+    box-shadow: 0 3px 15px rgba(0,0,0,.06);
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #071d3b;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.group {
+    margin-bottom: 18px;
+}
+
+.full {
+    grid-column: 1/-1;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #124d80;
+}
+
+.candidate {
+    display: grid;
+    grid-template-columns: 1fr 1fr 120px;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.candidate-header {
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #124d80;
+}
+
+button {
+    padding: 14px 20px;
+    background: #071d3b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #124d80;
+}
+
+.add {
+    background: #198754;
+    margin-bottom: 20px;
+}
+
+.submit {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.notice {
+    background: #fff5d9;
+    padding: 15px;
+    border-left: 4px solid #e3a400;
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+#total {
+    font-size: 20px;
+    color: #124d80;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+#message {
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+footer {
+    background: #071d3b;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    line-height: 1.8;
+}
+
+@media(max-width:600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .candidate {
+        grid-template-columns: 1fr;
+    }
+
+    .box {
+        padding: 20px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+}
+</style></head><body><header>
+<h2>NWACHUKWU <span>ELECTION WATCH</span></h2>
+<p>Election Results Reporting Portal</p>
+</header><nav>
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="observers.html">Observers</a>
+<a href="results.html">Results</a>
+<a href="incidents.html">Incidents</a>
+</nav><section class="hero">
+<h1>Election Results Management</h1>
+<p>Submit polling unit election observations and result figures.</p>
+</section><div class="container"><form id="resultForm"><div class="box"><h2>1. Election Information</h2><div class="grid"><div class="group">
+<label>Election Type *</label>
+<select id="election" required>
+<option value="">Select Election</option>
+<option>Presidential Election</option>
+<option>Governorship Election</option>
+<option>Senatorial Election</option>
+<option>House of Representatives Election</option>
+<option>State Assembly Election</option>
+<option>Local Government Election</option>
+</select>
+</div><div class="group">
+<label>Election Year *</label>
+<input type="number" id="year" value="2026" required>
+</div><div class="group">
+<label>State *</label>
+<select id="state" required>
+<option value="">Select State</option>
+</select>
+</div><div class="group">
+<label>Local Government *</label>
+<input type="text" id="lga" required>
+</div><div class="group">
+<label>Ward *</label>
+<input type="text" id="ward" required>
+</div><div class="group">
+<label>Polling Unit Name *</label>
+<input type="text" id="unit" required>
+</div><div class="group">
+<label>Polling Unit Code *</label>
+<input type="text" id="code" required>
+</div><div class="group">
+<label>Observer Identification Number *</label>
+<input type="text" id="observer" required>
+</div></div>
+</div><div class="box"><h2>2. Voter Information</h2><div class="grid"><div class="group">
+<label>Registered Voters</label>
+<input type="number" id="registered" min="0" value="0">
+</div><div class="group">
+<label>Accredited Voters</label>
+<input type="number" id="accredited" min="0" value="0">
+</div><div class="group">
+<label>Rejected Ballots</label>
+<input type="number" id="rejected" min="0" value="0">
+</div></div></div><div class="box"><h2>3. Candidate Results</h2><div class="notice">
+Enter candidate names, political parties and the votes recorded
+on the result sheet. Do not estimate or invent figures.
+</div><div class="candidate candidate-header">
+<div>Candidate Name</div>
+<div>Political Party</div>
+<div>Votes</div>
+</div><div id="candidates"><div class="candidate">
+<input type="text" placeholder="Candidate name" required>
+<input type="text" placeholder="Party" required>
+<input type="number" class="votes" min="0" value="0" required>
+</div><div class="candidate">
+<input type="text" placeholder="Candidate name" required>
+<input type="text" placeholder="Party" required>
+<input type="number" class="votes" min="0" value="0" required>
+</div></div><button type="button" class="add" onclick="addCandidate()">
++ Add Candidate
+</button><p id="total">Total Candidate Votes: 0</p></div><div class="box"><h2>4. Result Sheet Evidence</h2><div class="group">
+<label>Upload Result Sheet Photograph *</label>
+<input type="file" id="resultPhoto"
+accept="image/*" required>
+</div><div class="group">
+<label>Additional Evidence (Optional)</label>
+<input type="file" id="evidence"
+accept="image/*">
+</div><div class="notice">
+Uploaded results will be classified as observer-submitted
+until reviewed. A photograph alone does not establish official
+verification or certification.
+</div><label>
+<input type="checkbox" id="declaration"
+style="width:auto" required>
+I confirm that these figures accurately reflect my observation
+and the evidence available to me.
+</label><button type="submit" class="submit">
+Submit Results for Verification
+</button><p id="message"></p></div></form></div><footer>
+<h3>NWACHUKWU ELECTION WATCH</h3>
+<p>Transparency | Accountability | Credible Monitoring</p>
+<p>© 2026 All Rights Reserved.</p>
+</footer><script>
+
+const states = [
+"Abia","Adamawa","Akwa Ibom","Anambra","Bauchi",
+"Bayelsa","Benue","Borno","Cross River","Delta",
+"Ebonyi","Edo","Ekiti","Enugu","FCT","Gombe",
+"Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi",
+"Kogi","Kwara","Lagos","Nasarawa","Niger","Ogun",
+"Ondo","Osun","Oyo","Plateau","Rivers","Sokoto",
+"Taraba","Yobe","Zamfara"
+];
+
+const stateSelect = document.getElementById("state");
+
+states.forEach(state => {
+    let option = document.createElement("option");
+    option.value = state;
+    option.textContent = state;
+    stateSelect.appendChild(option);
+});
+
+function addCandidate() {
+
+    const container = document.getElementById("candidates");
+
+    const row = document.createElement("div");
+    row.className = "candidate";
+
+    row.innerHTML = `
+        <input type="text" placeholder="Candidate name" required>
+        <input type="text" placeholder="Party" required>
+        <input type="number" class="votes" min="0" value="0" required>
+    `;
+
+    container.appendChild(row);
+
+    row.querySelector(".votes").addEventListener("input", calculateTotal);
+}
+
+function calculateTotal() {
+
+    let total = 0;
+
+    document.querySelectorAll(".votes").forEach(input => {
+        total += Number(input.value) || 0;
+    });
+
+    document.getElementById("total").textContent =
+    "Total Candidate Votes: " + total.toLocaleString();
+
+}
+
+document.querySelectorAll(".votes").forEach(input => {
+    input.addEventListener("input", calculateTotal);
+});
+
+document.getElementById("resultForm")
+.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const registered = Number(document.getElementById("registered").value);
+    const accredited = Number(document.getElementById("accredited").value);
+    const rejected = Number(document.getElementById("rejected").value);
+
+    const total = Array.from(document.querySelectorAll(".votes"))
+    .reduce((sum, input) => sum + Number(input.value || 0), 0);
+
+    const photo = document.getElementById("resultPhoto").files[0];
+
+    const message = document.getElementById("message");
+
+    if (accredited > registered) {
+        message.style.color = "red";
+        message.textContent =
+        "Accredited voters cannot exceed registered voters.";
+        return;
+    }
+
+    if (!photo || photo.size > 5 * 1024 * 1024) {
+        message.style.color = "red";
+        message.textContent =
+        "Please upload a result sheet photograph not exceeding 5MB.";
+        return;
+    }
+
+    if (total + rejected > accredited) {
+        message.style.color = "red";
+        message.textContent =
+        "Candidate votes plus rejected ballots exceed accredited voters. Please check the figures.";
+        return;
+    }
+
+    message.style.color = "#b07800";
+
+    message.textContent =
+    "Basic validation completed. Database integration is pending. " +
+    "No results have been saved or submitted yet.";
+
+});
+
+</script></body>
+</html>
