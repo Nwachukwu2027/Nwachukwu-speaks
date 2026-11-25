@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Meet the team behind Nwachukwu Election Watch.">
+<meta name="description" content="Meet the leadership and proposed operational structure of Nwachukwu Election Watch.">
 <title>Our Team | Nwachukwu Election Watch</title><style>
 * {
     margin: 0;
@@ -13,337 +13,375 @@
 body {
     font-family: Arial, sans-serif;
     background: #f4f6f9;
-    color: #222;
+    color: #263445;
     line-height: 1.6;
 }
 
 header {
-    background: #071d3b;
+    background: #071b35;
     color: white;
-    padding: 18px 6%;
+    text-align: center;
+    padding: 25px 12px;
 }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #f4c542;
+header h1 {
+    color: #e6b83f;
+    font-size: 25px;
+    margin-bottom: 7px;
 }
 
-.logo span {
-    color: white;
+header p {
+    font-size: 13px;
 }
 
 nav {
+    background: #102c4d;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 15px;
+    justify-content: center;
+    padding: 10px;
+    gap: 5px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 14px;
+    padding: 9px 11px;
+    font-size: 13px;
+    border-radius: 4px;
 }
 
 nav a:hover {
-    color: #f4c542;
+    background: #d6a52e;
+    color: #071b35;
 }
 
 .hero {
-    background: linear-gradient(120deg, #071d3b, #174777);
+    background: linear-gradient(120deg, #071b35, #174875);
     color: white;
     text-align: center;
-    padding: 65px 20px;
+    padding: 55px 20px;
 }
 
-.hero h1 {
-    font-size: 36px;
+.hero h2 {
+    color: #e6b83f;
+    font-size: 30px;
     margin-bottom: 12px;
 }
 
 .hero p {
-    max-width: 700px;
+    max-width: 750px;
     margin: auto;
-    color: #e5edf7;
 }
 
 .container {
-    max-width: 1150px;
-    margin: 35px auto;
-    padding: 0 20px;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 15px;
+}
+
+.section-title {
+    color: #071b35;
+    font-size: 23px;
+    margin-bottom: 18px;
 }
 
 .intro {
     background: white;
     padding: 25px;
-    border-radius: 10px;
-    margin-bottom: 35px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
-}
-
-.section-title {
-    color: #102f57;
-    margin-bottom: 20px;
-    font-size: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
 
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 22px;
+    gap: 20px;
+    margin-bottom: 35px;
 }
 
 .team-card {
     background: white;
-    text-align: center;
+    border-radius: 8px;
     padding: 25px 20px;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-    border-bottom: 4px solid #d9aa22;
+    text-align: center;
+    border-bottom: 4px solid #d6a52e;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
 }
 
-.photo-placeholder {
-    width: 120px;
-    height: 120px;
+.avatar {
+    width: 85px;
+    height: 85px;
     border-radius: 50%;
-    background: #e6ebf2;
-    border: 3px solid #d9aa22;
-    margin: 0 auto 18px;
+    background: #102c4d;
+    color: #e6b83f;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #102f57;
-    font-size: 13px;
+    font-size: 35px;
     font-weight: bold;
+    margin: 0 auto 15px;
 }
 
 .team-card h3 {
-    color: #102f57;
-    margin-bottom: 6px;
+    color: #071b35;
+    margin-bottom: 5px;
+    font-size: 18px;
 }
 
-.role {
-    color: #b1840b;
+.position {
+    color: #b1841d;
     font-weight: bold;
     font-size: 14px;
     margin-bottom: 12px;
 }
 
 .team-card p {
-    color: #555;
+    color: #666;
+    font-size: 13px;
+}
+
+.structure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.structure-card {
+    background: white;
+    padding: 20px;
+    border-left: 4px solid #d6a52e;
+    border-radius: 6px;
+}
+
+.structure-card h3 {
+    color: #12395f;
+    margin-bottom: 8px;
+}
+
+.structure-card p {
     font-size: 14px;
-}
-
-.values {
-    background: #102f57;
-    color: white;
-    padding: 30px;
-    margin-top: 40px;
-    border-radius: 10px;
-}
-
-.values h2 {
-    color: #f4c542;
-    margin-bottom: 15px;
-}
-
-.values ul {
-    padding-left: 22px;
-}
-
-.values li {
-    margin-bottom: 9px;
 }
 
 .notice {
     background: #fff4d6;
-    border-left: 5px solid #d9a514;
-    padding: 18px;
+    border-left: 5px solid #d6a52e;
+    padding: 16px;
+    margin: 25px 0;
+    font-size: 14px;
+}
+
+.cta {
+    background: #102c4d;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 8px;
     margin-top: 30px;
+}
+
+.cta h2 {
+    color: #e6b83f;
+    margin-bottom: 10px;
+}
+
+.cta a {
+    display: inline-block;
+    background: #d6a52e;
+    color: #071b35;
+    padding: 12px 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    font-weight: bold;
     border-radius: 5px;
 }
 
 footer {
-    background: #071d3b;
+    background: #071b35;
     color: white;
     text-align: center;
-    padding: 25px 15px;
-    margin-top: 50px;
+    padding: 22px 10px;
+    margin-top: 35px;
+    font-size: 13px;
 }
 
-footer a {
-    color: #f4c542;
-    text-decoration: none;
-    margin: 0 8px;
-}
+@media(max-width: 600px) {
+    nav a {
+        font-size: 12px;
+        padding: 8px;
+    }
 
-@media(max-width:600px) {
-    .hero h1 {
-        font-size: 27px;
+    .hero h2 {
+        font-size: 24px;
     }
 }
 </style></head><body><header>
-    <div class="logo">NWACHUKWU <span>ELECTION WATCH</span></div><nav>
+    <h1>NWACHUKWU ELECTION WATCH</h1>
+    <p>Transparency | Accountability | Credible Election Monitoring</p>
+</header><nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="about.html">About Us</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="elections.html">Elections</a>
     <a href="team.html">Our Team</a>
     <a href="observers.html">Observers</a>
+    <a href="results.html">Results</a>
     <a href="incidents.html">Incidents</a>
+    <a href="admin.html">Admin</a>
+    <a href="login.html">Login</a>
+    <a href="faq.html">FAQ</a>
     <a href="contact.html">Contact</a>
-</nav>
-
-</header><div class="hero">
-    <h1>Meet Our Team</h1>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+</nav><section class="hero">
+    <h2>Meet Our Team</h2>
     <p>
-        A team structure designed to support transparency,
-        accountability and responsible election monitoring
-        across Nigeria.
+        Building a credible network of responsible citizens,
+        election observers and professionals committed to
+        transparency and electoral accountability in Nigeria.
     </p>
-</div><div class="container"><div class="intro">
-    <h2 class="section-title">The People Behind NEW</h2>
+</section><div class="container"><section class="intro">
+    <h2 class="section-title">Who We Are</h2>
+
     <p>
-        Nwachukwu Election Watch is built around the participation
-        of responsible individuals committed to credible elections
-        and democratic accountability.
+        Nwachukwu Election Watch is being developed as an
+        independent civic election monitoring platform.
+        Our proposed structure brings together individuals
+        committed to responsible observation, accurate
+        documentation and peaceful democratic participation.
     </p>
 
-    <p style="margin-top:12px;">
-        Our proposed structure includes national leadership,
-        administrative management, state coordinators, local
-        government coordinators and election observers.
+    <p>
+        We aim to build a team that values neutrality,
+        professionalism, integrity and accountability.
     </p>
-</div>
+</section>
 
-<h2 class="section-title">Leadership and Management</h2>
+<h2 class="section-title">Leadership</h2>
 
 <div class="team-grid">
 
     <div class="team-card">
-        <div class="photo-placeholder">PHOTO</div>
-        <h3>Name to be announced</h3>
-        <div class="role">Founder / National Director</div>
+        <div class="avatar">L</div>
+        <h3>To Be Announced</h3>
+        <div class="position">Founder / Executive Director</div>
         <p>
-            Provides overall leadership, strategic direction
-            and organisational oversight.
+            Responsible for the organisation's overall
+            direction, leadership and strategic development.
         </p>
     </div>
 
     <div class="team-card">
-        <div class="photo-placeholder">PHOTO</div>
-        <h3>Name to be announced</h3>
-        <div class="role">National Coordinator</div>
+        <div class="avatar">N</div>
+        <h3>To Be Announced</h3>
+        <div class="position">National Coordinator</div>
         <p>
-            Coordinates monitoring activities and communication
-            across participating states.
+            Responsible for coordinating proposed election
+            monitoring activities across Nigeria.
         </p>
     </div>
 
     <div class="team-card">
-        <div class="photo-placeholder">PHOTO</div>
-        <h3>Name to be announced</h3>
-        <div class="role">Administrative Secretary</div>
+        <div class="avatar">O</div>
+        <h3>To Be Announced</h3>
+        <div class="position">Director of Operations</div>
         <p>
-            Supports administration, documentation and
-            organisational coordination.
+            Responsible for operational planning,
+            coordination and field support.
         </p>
     </div>
 
     <div class="team-card">
-        <div class="photo-placeholder">PHOTO</div>
-        <h3>Name to be announced</h3>
-        <div class="role">Technology / Data Manager</div>
+        <div class="avatar">M</div>
+        <h3>To Be Announced</h3>
+        <div class="position">Media and Communications Director</div>
         <p>
-            Supports platform operations, data management
-            and technical administration.
+            Responsible for public communication,
+            media relations and information updates.
         </p>
     </div>
 
 </div>
 
-<div style="margin-top:40px;">
-    <h2 class="section-title">Our Field Structure</h2>
+<h2 class="section-title">Our Proposed Operational Structure</h2>
 
-    <div class="team-grid">
+<div class="structure-grid">
 
-        <div class="team-card">
-            <div class="photo-placeholder">STATE</div>
-            <h3>State Coordinators</h3>
-            <div class="role">State Level</div>
-            <p>
-                Coordinate observer activities and reporting
-                within assigned states.
-            </p>
-        </div>
-
-        <div class="team-card">
-            <div class="photo-placeholder">LGA</div>
-            <h3>LGA Coordinators</h3>
-            <div class="role">Local Government Level</div>
-            <p>
-                Support field operations and communication
-                across assigned local government areas.
-            </p>
-        </div>
-
-        <div class="team-card">
-            <div class="photo-placeholder">WARD</div>
-            <h3>Ward Coordinators</h3>
-            <div class="role">Ward Level</div>
-            <p>
-                Coordinate observation activities within
-                designated electoral wards.
-            </p>
-        </div>
-
-        <div class="team-card">
-            <div class="photo-placeholder">PU</div>
-            <h3>Polling Unit Observers</h3>
-            <div class="role">Polling Unit Level</div>
-            <p>
-                Document electoral activities and submit
-                factual observations from assigned locations.
-            </p>
-        </div>
-
+    <div class="structure-card">
+        <h3>State Coordinators</h3>
+        <p>
+            Coordinate proposed activities and observer
+            networks within their respective states.
+        </p>
     </div>
-</div>
 
-<div class="values">
-    <h2>Our Commitment</h2>
+    <div class="structure-card">
+        <h3>LGA Coordinators</h3>
+        <p>
+            Support local monitoring coordination and
+            communication with ward-level teams.
+        </p>
+    </div>
 
-    <ul>
-        <li>Political neutrality and impartial reporting.</li>
-        <li>Transparency and accountability.</li>
-        <li>Respect for voters and electoral officials.</li>
-        <li>Responsible handling of information and evidence.</li>
-        <li>Peaceful and lawful election observation.</li>
-        <li>Protection of personal information.</li>
-    </ul>
+    <div class="structure-card">
+        <h3>Ward Coordinators</h3>
+        <p>
+            Coordinate information and activities
+            across assigned wards.
+        </p>
+    </div>
+
+    <div class="structure-card">
+        <h3>Polling Unit Observers</h3>
+        <p>
+            Document lawful observations and report
+            relevant electoral activities.
+        </p>
+    </div>
+
+    <div class="structure-card">
+        <h3>Research and Verification Team</h3>
+        <p>
+            Review submitted information, check evidence
+            and identify inconsistencies before publication.
+        </p>
+    </div>
+
+    <div class="structure-card">
+        <h3>Technology and Data Team</h3>
+        <p>
+            Support website development, data management,
+            technical operations and information security.
+        </p>
+    </div>
+
 </div>
 
 <div class="notice">
-    <strong>Public Notice:</strong>
-    Names, photographs and official appointments will be published
-    only after confirmation and authorisation. The positions shown
-    above describe the proposed organisational structure; they do
-    not confirm that appointments have been made.
+    <strong>Organisational Notice:</strong>
+    The positions and responsibilities displayed above describe
+    a proposed structure. They do not confirm that these positions
+    have been filled or that the named individuals have been
+    appointed. Official appointments will be published after
+    confirmation.
 </div>
 
+<section class="cta">
+    <h2>Become Part of the Mission</h2>
+
+    <p>
+        Are you interested in responsible election observation
+        and promoting electoral transparency in Nigeria?
+        Apply to join our proposed observer network.
+    </p>
+
+    <a href="observers.html">Apply as an Observer</a>
+</section>
+
 </div><footer>
-    <p>&copy; 2026 Nwachukwu Election Watch (NEW). All Rights Reserved.</p><p style="margin-top:10px;">
-    <a href="about.html">About</a>
-    <a href="elections.html">Elections</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms</a>
-    <a href="contact.html">Contact</a>
-</p>
-
-<p style="margin-top:10px;">
-    Transparency | Accountability | Credible Election Monitoring
-</p>
-
+    <p>&copy; 2026 Nwachukwu Election Watch. All Rights Reserved.</p>
+    <p>Transparency | Accountability | Credible Election Monitoring</p>
 </footer></body>
 </html>
