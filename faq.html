@@ -1,76 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Frequently Asked Questions | Nwachukwu Election Watch</title>
-
-<style>
+<meta name="description" content="Frequently asked questions about Nwachukwu Election Watch and its election monitoring activities.">
+<title>Frequently Asked Questions | Nwachukwu Election Watch</title><style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
+    font-family: Arial, sans-serif;
     background: #f4f6fa;
-    color: #263449;
+    color: #222;
     line-height: 1.7;
 }
 
 header {
-    background: #071d3b;
+    background: #071b3a;
     color: white;
-    padding: 20px;
+    text-align: center;
+    padding: 28px 15px;
 }
 
-.header-content {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.logo h2 {
-    color: #f3c64e;
-    font-size: 21px;
-}
-
-.logo p {
-    font-size: 11px;
+header h1 {
+    color: #e5b342;
+    margin-bottom: 5px;
 }
 
 nav {
+    background: #102b52;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    justify-content: center;
+    padding: 10px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
+    padding: 9px 12px;
     font-size: 14px;
 }
 
 nav a:hover {
-    color: #f3c64e;
+    background: #e5b342;
+    color: #071b3a;
+    border-radius: 4px;
 }
 
 .hero {
-    background: linear-gradient(120deg, #071d3b, #164779);
+    background: #071b3a;
     color: white;
     text-align: center;
-    padding: 65px 20px;
+    padding: 60px 20px;
 }
 
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 12px;
+.hero h2 {
+    color: #e5b342;
+    font-size: 34px;
+    margin-bottom: 10px;
 }
 
 .hero p {
@@ -79,471 +69,439 @@ nav a:hover {
 }
 
 .container {
-    max-width: 950px;
-    margin: 40px auto;
-    padding: 0 18px;
+    max-width: 1000px;
+    margin: 35px auto;
+    padding: 20px;
 }
 
 .faq-section {
     background: white;
-    padding: 28px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 9px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
     margin-bottom: 25px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
 }
 
-.faq-section h2 {
-    color: #071d3b;
-    margin-bottom: 20px;
-    border-left: 5px solid #d6a928;
-    padding-left: 12px;
+.faq-section h3 {
+    color: #071b3a;
+    border-bottom: 2px solid #e5b342;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .faq-item {
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #ddd;
     padding: 15px 0;
 }
 
 .faq-question {
     width: 100%;
-    background: none;
+    background: #f4f6fa;
+    color: #102b52;
     border: none;
+    padding: 15px;
     text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    color: #071d3b;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    padding: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 }
 
-.faq-question:hover {
-    color: #b88a15;
+.faq-question:hover,
+.faq-question.active {
+    background: #e5b342;
+    color: #071b3a;
 }
 
 .faq-answer {
     display: none;
-    padding: 12px 0 5px;
-    color: #667085;
-    font-size: 14px;
+    padding: 15px;
+    background: #fff;
+    color: #444;
 }
 
-.faq-item.active .faq-answer {
+.faq-answer p {
+    margin-bottom: 8px;
+}
+
+.faq-answer.show {
     display: block;
 }
 
-.faq-item.active .icon {
-    transform: rotate(45deg);
-}
-
-.icon {
-    font-size: 22px;
-    color: #b88a15;
-    transition: 0.3s;
+.notice {
+    background: #fff4d6;
+    border-left: 5px solid #e5b342;
+    padding: 17px;
+    margin-bottom: 25px;
+    border-radius: 4px;
 }
 
 .contact-box {
-    background: #071d3b;
+    background: #071b3a;
     color: white;
     text-align: center;
-    padding: 35px 20px;
-    border-radius: 10px;
-    margin-bottom: 30px;
+    padding: 30px 20px;
+    border-radius: 8px;
+    margin-top: 25px;
 }
 
-.contact-box h2 {
+.contact-box h3 {
+    color: #e5b342;
     margin-bottom: 10px;
-}
-
-.contact-box p {
-    margin-bottom: 18px;
 }
 
 .contact-box a {
     display: inline-block;
-    background: #d6a928;
-    color: #071d3b;
+    background: #e5b342;
+    color: #071b3a;
     text-decoration: none;
     padding: 12px 22px;
     border-radius: 5px;
+    margin-top: 15px;
     font-weight: bold;
 }
 
 footer {
-    background: #071d3b;
+    background: #071b3a;
     color: white;
     text-align: center;
-    padding: 25px;
-    font-size: 13px;
+    padding: 22px;
+    margin-top: 35px;
 }
 
-@media(max-width: 600px) {
-    .hero h1 {
-        font-size: 27px;
+footer span {
+    color: #e5b342;
+}
+
+@media(max-width:600px) {
+    .container {
+        padding: 12px;
     }
 
     .faq-section {
-        padding: 20px;
+        padding: 18px;
+    }
+
+    .hero h2 {
+        font-size: 27px;
     }
 
     .faq-question {
         font-size: 14px;
     }
+
+    nav a {
+        font-size: 12px;
+        padding: 8px;
+    }
 }
-</style>
-</head>
-
-<body>
-
-<header>
-    <div class="header-content">
-
-        <div class="logo">
-            <h2>NWACHUKWU ELECTION WATCH</h2>
-            <p>TRANSPARENCY | ACCOUNTABILITY | CREDIBLE ELECTIONS</p>
-        </div>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="observers.html">Observers</a>
-            <a href="results.html">Results</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-
-    </div>
-</header>
-
-
-<section class="hero">
-
-    <h1>Frequently Asked Questions</h1>
-
+</style></head><body><header>
+    <h1>NWACHUKWU ELECTION WATCH</h1>
+    <p>Transparency | Accountability | Credible Election Monitoring</p>
+</header><nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="elections.html">Elections</a>
+    <a href="team.html">Our Team</a>
+    <a href="observers.html">Observers</a>
+    <a href="results.html">Results</a>
+    <a href="incidents.html">Incidents</a>
+    <a href="admin.html">Admin</a>
+    <a href="login.html">Login</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+</nav><section class="hero">
+    <h2>Frequently Asked Questions</h2>
     <p>
-        Find answers to common questions about our election
-        monitoring platform and its services.
+        Find answers to common questions about our election monitoring
+        platform, observer registration and reporting procedures.
     </p>
+</section><div class="container"><div class="notice">
+    <strong>Important information:</strong>
+    Nwachukwu Election Watch is an independent civic monitoring
+    platform. It is not INEC and does not replace official electoral
+    institutions or their legal responsibilities.
+</div>
+
+<section class="faq-section">
+
+    <h3>General Questions</h3>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            What is Nwachukwu Election Watch (NEW)?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                Nwachukwu Election Watch is an independent civic
+                election-monitoring platform designed to support
+                transparency, accountability, public awareness and
+                responsible election reporting in Nigeria.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Is Nwachukwu Election Watch part of INEC?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                No. Nwachukwu Election Watch is not the Independent
+                National Electoral Commission (INEC). It is an
+                independent platform and has no authority to replace
+                INEC or declare official election results.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            What is the purpose of the platform?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                The platform is intended to help document election
+                activities, receive observer reports, record
+                election-related incidents and promote responsible
+                access to verified election-monitoring information.
+            </p>
+        </div>
+    </div>
 
 </section>
 
+<section class="faq-section">
 
-<main class="container">
+    <h3>Observer Registration</h3>
 
-
-    <!-- GENERAL QUESTIONS -->
-
-    <section class="faq-section">
-
-        <h2>General Questions</h2>
-
-        <div class="faq-item">
-
-            <button class="faq-question">
-                What is Nwachukwu Election Watch?
-                <span class="icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-                Nwachukwu Election Watch (NEW) is an independent
-                civic election monitoring platform designed to
-                document election-related observations and
-                encourage transparency and accountability.
-            </div>
-
+    <div class="faq-item">
+        <button class="faq-question">
+            How can I register as an election observer?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                Visit the Observers page, complete the registration
+                form and provide the requested information.
+                The registration process will require a secure
+                backend before applications can be received.
+            </p>
         </div>
+    </div>
 
-
-        <div class="faq-item">
-
-            <button class="faq-question">
-                What is the main purpose of the platform?
-                <span class="icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-                The platform aims to support responsible election
-                observation, document polling unit activities,
-                receive incident reports and promote credible
-                democratic participation.
-            </div>
-
+    <div class="faq-item">
+        <button class="faq-question">
+            Does registration mean I am officially accredited?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                No. Registering on this platform does not automatically
+                make anyone an officially accredited election observer.
+                Any required accreditation must be obtained through
+                the appropriate legally authorised process.
+            </p>
         </div>
+    </div>
 
-
-        <div class="faq-item">
-
-            <button class="faq-question">
-                Does NEW cover all states in Nigeria?
-                <span class="icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-                The platform is designed to support monitoring
-                across all 36 states and the Federal Capital
-                Territory, including LGAs, wards and polling units.
-                Actual coverage depends on available observers
-                and verified monitoring activities.
-            </div>
-
+    <div class="faq-item">
+        <button class="faq-question">
+            Can I register from any Nigerian state?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                The platform is being designed for coverage across
+                Nigeria's 36 states and the Federal Capital Territory.
+                Actual observer deployment will depend on operational
+                capacity and applicable legal requirements.
+            </p>
         </div>
+    </div>
 
-    </section>
+</section>
 
+<section class="faq-section">
 
-    <!-- OBSERVER QUESTIONS -->
+    <h3>Election Results Reporting</h3>
 
-    <section class="faq-section">
-
-        <h2>Observer Registration</h2>
-
-        <div class="faq-item">
-
-            <button class="faq-question">
-                How can I register as an election observer?
-                <span class="icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-                Visit the Observer Registration page, complete
-                the application form and submit your details
-                when the registration system becomes operational.
-            </div>
-
+    <div class="faq-item">
+        <button class="faq-question">
+            Can observers submit polling-unit results?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                The platform is designed to allow observers to document
+                polling-unit figures and attach supporting result-sheet
+                evidence. Reports will require review and verification.
+            </p>
         </div>
+    </div>
 
-
-        <div class="faq-item">
-
-            <button class="faq-question">
-                Does registration automatically make me an accredited observer?
-                <span class="icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-                No. Registration on NEW does not automatically
-                grant official accreditation or authorization.
-                Any required accreditation must be obtained
-                through the appropriate legally authorized process.
-            </div>
-
+    <div class="faq-item">
+        <button class="faq-question">
+            Are observer-submitted results official INEC results?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                No. Figures submitted by observers are not official
+                INEC results. Only the legally authorised electoral
+                authorities can make official declarations.
+            </p>
         </div>
+    </div>
 
-
-        <div class="faq-item">
-
-            <button class="faq-question">
-                Can I register from any state?
-                <span class="icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-                The platform is designed to accept applications
-                from across Nigeria, subject to its registration
-                requirements and review process.
-            </div>
-
+    <div class="faq-item">
+        <button class="faq-question">
+            How will submitted results be verified?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                The planned verification process will examine the
+                information submitted, supporting documents,
+                consistency of figures and other available evidence.
+                Reports should not be labelled verified until
+                appropriate checks have been completed.
+            </p>
         </div>
+    </div>
 
-    </section>
+</section>
 
+<section class="faq-section">
 
-    <!-- RESULTS QUESTIONS -->
+    <h3>Incident Reporting</h3>
 
-    <section class="faq-section">
-
-        <h2>Election Results</h2>
-
-        <div class="faq-item">
-
-            <button class="faq-question">
-                Can observers submit polling unit results?
-                <span class="icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-                Yes. The platform is designed to receive observer
-                submissions containing candidate figures,
-                polling unit information and supporting evidence.
-            </div>
-
+    <div class="faq-item">
+        <button class="faq-question">
+            What types of incidents can be reported?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                Examples include election violence, suspected vote
+                buying, voter intimidation, ballot box snatching,
+                missing election materials, polling-unit disruption
+                and suspected result manipulation.
+            </p>
         </div>
+    </div>
 
-
-        <div class="faq-item">
-
-            <button class="faq-question">
-                Are submitted results official INEC results?
-                <span class="icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-                No. Observer-submitted figures are independent
-                monitoring reports. They must not be represented
-                as officially declared election results.
-                Official declarations remain the responsibility
-                of INEC and other legally authorized electoral
-                authorities.
-            </div>
-
+    <div class="faq-item">
+        <button class="faq-question">
+            Can I upload evidence with an incident report?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                The incident reporting form is designed to accept
+                supporting files. Evidence should only be collected
+                safely and lawfully. Never put yourself or another
+                person in danger to obtain photographs or videos.
+            </p>
         </div>
+    </div>
 
-
-        <div class="faq-item">
-
-            <button class="faq-question">
-                How are submitted results verified?
-                <span class="icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-                Submitted information may be reviewed against
-                available supporting documents and other
-                independent evidence. A submission should only
-                be marked verified after an appropriate review.
-            </div>
-
+    <div class="faq-item">
+        <button class="faq-question">
+            Will every reported incident be treated as confirmed?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                No. Reports are allegations or observations until
+                reviewed. Information must be checked before it is
+                presented publicly as a verified finding.
+            </p>
         </div>
+    </div>
 
-    </section>
+</section>
 
+<section class="faq-section">
 
-    <!-- INCIDENT QUESTIONS -->
+    <h3>Accounts and Privacy</h3>
 
-    <section class="faq-section">
-
-        <h2>Incident Reporting</h2>
-
-        <div class="faq-item">
-
-            <button class="faq-question">
-                Can I report election-related incidents?
-                <span class="icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-                Yes. The incident reporting section is designed
-                to receive reports concerning suspected vote
-                buying, intimidation, violence, missing materials
-                and other election-related incidents.
-            </div>
-
+    <div class="faq-item">
+        <button class="faq-question">
+            Do I need an account to use the platform?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                Some features may eventually require an account,
+                particularly observer reporting and administrative
+                functions. Secure account registration is still
+                being developed.
+            </p>
         </div>
+    </div>
 
-
-        <div class="faq-item">
-
-            <button class="faq-question">
-                Will every reported incident be treated as confirmed?
-                <span class="icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-                No. A report is an allegation or observation
-                until appropriately reviewed and verified.
-                Reports must be handled responsibly and
-                must not be used to spread unverified claims.
-            </div>
-
+    <div class="faq-item">
+        <button class="faq-question">
+            Is my personal information protected?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                The platform is intended to handle personal
+                information responsibly and in accordance with
+                applicable data protection laws. The privacy policy
+                explains the planned approach. Secure data handling
+                must be implemented before real personal information
+                is collected.
+            </p>
         </div>
+    </div>
 
-
-        <div class="faq-item">
-
-            <button class="faq-question">
-                What should I do if there is immediate danger?
-                <span class="icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-                Prioritise your safety. Move away from danger
-                and contact the appropriate emergency or
-                security authorities. Do not put yourself
-                at risk to collect evidence.
-            </div>
-
+    <div class="faq-item">
+        <button class="faq-question">
+            Are the forms currently saving information?
+            <span>+</span>
+        </button>
+        <div class="faq-answer">
+            <p>
+                No. The current website forms are frontend
+                demonstrations. Database and secure submission
+                integration are still pending. Information entered
+                into these forms is not being saved or submitted.
+            </p>
         </div>
+    </div>
 
-    </section>
+</section>
 
-
-    <!-- ACCOUNT QUESTIONS -->
-
-    <section class="faq-section">
-
-        <h2>Accounts and Privacy</h2>
-
-        <div class="faq-item">
-
-            <button class="faq-question">
-                Will my personal information be protected?
-                <span class="icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-                The platform is being designed with privacy
-                and data protection in mind. Personal information
-                should only be collected and handled for
-                legitimate purposes under the applicable
-                data protection requirements.
-            </div>
-
-        </div>
-
-
-        <div class="faq-item">
-
-            <button class="faq-question">
-                Can I access my submitted reports?
-                <span class="icon">+</span>
-            </button>
-
-            <div class="faq-answer">
-                Observer account access and report tracking
-                are planned features. They will become
-                available after the database and account
-                management systems are implemented.
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section class="contact-box">
-
-        <h2>Still Have Questions?</h2>
-
-        <p>
-            Our contact page is available for further enquiries
-            and feedback.
-        </p>
-
-        <a href="contact.html">Contact Us</a>
-
-    </section>
-
-</main>
-
-
-<footer>
+<div class="contact-box">
+    <h3>Still Have Questions?</h3>
 
     <p>
-        &copy; 2026 Nwachukwu Election Watch (NEW).
+        Contact our team for further information about
+        Nwachukwu Election Watch.
+    </p>
+
+    <a href="contact.html">Contact Us</a>
+</div>
+
+</div><footer>
+    <p>
+        &copy; 2026 <span>Nwachukwu Election Watch</span>.
         All Rights Reserved.
-    </p>
+    </p><p>Transparency | Accountability | Credible Election Monitoring</p>
 
-    <p>
-        Transparency | Accountability | Credible Election Monitoring
-    </p>
-
-</footer>
-
-
-<script>
+</footer><script>
 
 const questions = document.querySelectorAll(".faq-question");
 
@@ -551,23 +509,27 @@ questions.forEach(function(question) {
 
     question.addEventListener("click", function() {
 
-        const currentItem = this.parentElement;
+        const answer = this.nextElementSibling;
+        const isOpen = answer.classList.contains("show");
 
-        document.querySelectorAll(".faq-item").forEach(function(item) {
-
-            if (item !== currentItem) {
-                item.classList.remove("active");
-            }
-
+        document.querySelectorAll(".faq-answer").forEach(function(item) {
+            item.classList.remove("show");
         });
 
-        currentItem.classList.toggle("active");
+        document.querySelectorAll(".faq-question").forEach(function(item) {
+            item.classList.remove("active");
+            item.querySelector("span").textContent = "+";
+        });
+
+        if (!isOpen) {
+            answer.classList.add("show");
+            this.classList.add("active");
+            this.querySelector("span").textContent = "−";
+        }
 
     });
 
 });
 
-</script>
-
-</body>
+</script></body>
 </html>
