@@ -1,76 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Contact Us | Nwachukwu Election Watch</title>
-
-<style>
+<meta name="description" content="Contact Nwachukwu Election Watch for enquiries, partnerships and election-monitoring information.">
+<title>Contact Us | Nwachukwu Election Watch</title><style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
+    font-family: Arial, sans-serif;
     background: #f4f6fa;
-    color: #263449;
-    line-height: 1.6;
+    color: #222;
+    line-height: 1.7;
 }
 
 header {
-    background: #071d3b;
+    background: #071b3a;
     color: white;
-    padding: 20px;
+    text-align: center;
+    padding: 28px 15px;
 }
 
-.header-content {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.logo h2 {
-    color: #f3c64e;
-    font-size: 21px;
-}
-
-.logo p {
-    font-size: 11px;
+header h1 {
+    color: #e5b342;
 }
 
 nav {
+    background: #102b52;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    justify-content: center;
+    padding: 10px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
+    padding: 9px 12px;
     font-size: 14px;
 }
 
 nav a:hover {
-    color: #f3c64e;
+    background: #e5b342;
+    color: #071b3a;
+    border-radius: 4px;
 }
 
 .hero {
-    background: linear-gradient(120deg, #071d3b, #164779);
+    background: #071b3a;
     color: white;
     text-align: center;
-    padding: 65px 20px;
+    padding: 60px 20px;
 }
 
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 12px;
+.hero h2 {
+    color: #e5b342;
+    font-size: 34px;
+    margin-bottom: 10px;
 }
 
 .hero p {
@@ -80,8 +69,8 @@ nav a:hover {
 
 .container {
     max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 18px;
+    margin: 35px auto;
+    padding: 20px;
 }
 
 .contact-grid {
@@ -90,284 +79,306 @@ nav a:hover {
     gap: 25px;
 }
 
-.contact-info,
-.contact-form {
+.card {
     background: white;
-    padding: 28px;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+    padding: 25px;
+    border-radius: 9px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
 }
 
-h2 {
-    color: #071d3b;
+.card h3 {
+    color: #071b3a;
     margin-bottom: 18px;
 }
 
-.info-card {
+.contact-item {
+    background: #f4f6fa;
     padding: 15px;
-    background: #f5f7fa;
-    border-left: 4px solid #d6a928;
+    border-left: 4px solid #e5b342;
     margin-bottom: 15px;
     border-radius: 5px;
 }
 
-.info-card h3 {
-    color: #071d3b;
-    font-size: 16px;
+.contact-item h4 {
+    color: #102b52;
     margin-bottom: 5px;
 }
 
-.info-card p {
-    font-size: 14px;
-    color: #667085;
-}
-
-form label {
+label {
     display: block;
-    margin-top: 14px;
     font-weight: bold;
-    font-size: 14px;
-    color: #071d3b;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 input, select, textarea {
     width: 100%;
     padding: 12px;
-    margin-top: 7px;
-    border: 1px solid #d5dce5;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 15px;
+    background: white;
 }
 
 textarea {
-    min-height: 130px;
+    min-height: 140px;
     resize: vertical;
 }
 
 button {
-    margin-top: 18px;
-    background: #071d3b;
-    color: white;
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+    background: #e5b342;
+    color: #071b3a;
     border: none;
-    padding: 13px 22px;
     border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 14px;
 }
 
 button:hover {
-    background: #164779;
+    background: #d5a12d;
 }
 
-.note {
-    background: #fff4d5;
-    padding: 13px;
+.notice {
+    background: #fff4d6;
+    border-left: 5px solid #e5b342;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.result-message {
+    display: none;
+    background: #fff4d6;
+    border-left: 5px solid #e5b342;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.social {
+    margin-top: 25px;
+}
+
+.social a {
+    display: inline-block;
+    background: #102b52;
+    color: white;
+    text-decoration: none;
+    padding: 9px 14px;
     border-radius: 5px;
-    margin-top: 15px;
-    font-size: 13px;
-    color: #705414;
+    margin: 5px 5px 0 0;
+}
+
+.social a:hover {
+    background: #e5b342;
+    color: #071b3a;
 }
 
 footer {
-    background: #071d3b;
+    background: #071b3a;
     color: white;
     text-align: center;
-    padding: 25px;
-    font-size: 13px;
-    margin-top: 45px;
+    padding: 22px;
+    margin-top: 35px;
 }
 
-@media(max-width: 750px) {
+footer span {
+    color: #e5b342;
+}
+
+@media(max-width:750px) {
     .contact-grid {
         grid-template-columns: 1fr;
     }
 
-    .hero h1 {
-        font-size: 28px;
+    .hero h2 {
+        font-size: 27px;
     }
 }
-</style>
-</head>
 
-<body>
+@media(max-width:550px) {
+    .container {
+        padding: 12px;
+    }
 
-<header>
-    <div class="header-content">
+    .card {
+        padding: 18px;
+    }
 
-        <div class="logo">
-            <h2>NWACHUKWU ELECTION WATCH</h2>
-            <p>TRANSPARENCY | ACCOUNTABILITY | CREDIBLE ELECTIONS</p>
+    nav a {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+</style></head><body><header>
+    <h1>NWACHUKWU ELECTION WATCH</h1>
+    <p>Transparency | Accountability | Credible Election Monitoring</p>
+</header><nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="elections.html">Elections</a>
+    <a href="team.html">Our Team</a>
+    <a href="observers.html">Observers</a>
+    <a href="results.html">Results</a>
+    <a href="incidents.html">Incidents</a>
+    <a href="admin.html">Admin</a>
+    <a href="login.html">Login</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+</nav><section class="hero">
+    <h2>Contact Us</h2>
+    <p>
+        We welcome enquiries, partnership proposals, observer questions
+        and suggestions from members of the public.
+    </p>
+</section><div class="container"><div class="contact-grid">
+
+    <div class="card">
+
+        <h3>Get in Touch</h3>
+
+        <div class="contact-item">
+            <h4>Organisation</h4>
+            <p>Nwachukwu Election Watch (NEW)</p>
         </div>
 
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="observers.html">Observers</a>
-            <a href="results.html">Results</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <div class="contact-item">
+            <h4>Email Address</h4>
+            <p>Official email address to be announced.</p>
+        </div>
 
-    </div>
-</header>
+        <div class="contact-item">
+            <h4>Telephone</h4>
+            <p>Official telephone number to be announced.</p>
+        </div>
 
+        <div class="contact-item">
+            <h4>Office Address</h4>
+            <p>Official office address to be announced.</p>
+        </div>
 
-<section class="hero">
+        <div class="contact-item">
+            <h4>Coverage</h4>
+            <p>Nigeria – 36 States and the Federal Capital Territory.</p>
+        </div>
 
-    <h1>Contact Us</h1>
+        <div class="social">
+            <h3>Follow Our Updates</h3>
 
-    <p>
-        We welcome enquiries, partnership proposals,
-        feedback and questions about our election-monitoring
-        activities.
-    </p>
-
-</section>
-
-
-<main class="container">
-
-    <div class="contact-grid">
-
-        <!-- CONTACT INFORMATION -->
-
-        <section class="contact-info">
-
-            <h2>Get in Touch</h2>
-
-            <div class="info-card">
-                <h3>Organisation</h3>
-                <p>Nwachukwu Election Watch (NEW)</p>
-            </div>
-
-            <div class="info-card">
-                <h3>Coverage</h3>
-                <p>Nigeria – 36 States and the Federal Capital Territory.</p>
-            </div>
-
-            <div class="info-card">
-                <h3>Email Address</h3>
-                <p>Official contact email to be published.</p>
-            </div>
-
-            <div class="info-card">
-                <h3>Telephone</h3>
-                <p>Official contact telephone to be published.</p>
-            </div>
-
-            <div class="info-card">
-                <h3>Office Address</h3>
-                <p>Official office address to be published.</p>
-            </div>
-
-            <div class="note">
-                Please use the contact form for enquiries.
-                Do not send passwords, sensitive personal
-                information or confidential security details.
-            </div>
-
-        </section>
-
-
-        <!-- CONTACT FORM -->
-
-        <section class="contact-form">
-
-            <h2>Send Us a Message</h2>
-
-            <form id="contactForm">
-
-                <label for="name">Full Name</label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Enter your full name"
-                    required
-                >
-
-                <label for="email">Email Address</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    required
-                >
-
-                <label for="phone">Phone Number</label>
-                <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="Enter your phone number"
-                >
-
-                <label for="subject">Enquiry Category</label>
-
-                <select id="subject" name="subject" required>
-                    <option value="">Select enquiry category</option>
-                    <option>General Enquiry</option>
-                    <option>Observer Registration</option>
-                    <option>Election Monitoring</option>
-                    <option>Partnership</option>
-                    <option>Media Enquiry</option>
-                    <option>Technical Support</option>
-                    <option>Other</option>
-                </select>
-
-                <label for="message">Your Message</label>
-
-                <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Write your message here..."
-                    required
-                ></textarea>
-
-                <button type="submit">Send Message</button>
-
-            </form>
-
-            <div id="response" class="note" style="display:none;"></div>
-
-        </section>
+            <a href="#" aria-label="Facebook">Facebook</a>
+            <a href="#" aria-label="X">X</a>
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="YouTube">YouTube</a>
+        </div>
 
     </div>
 
-</main>
+    <div class="card">
 
+        <h3>Send Us a Message</h3>
 
-<footer>
+        <div class="notice">
+            Please complete the form below. The contact form is
+            currently a demonstration and does not send messages
+            to an email address or database.
+        </div>
 
+        <form id="contactForm">
+
+            <label>Full Name</label>
+            <input type="text" id="name"
+                   placeholder="Enter your full name" required>
+
+            <label>Email Address</label>
+            <input type="email" id="email"
+                   placeholder="Enter your email address" required>
+
+            <label>Phone Number</label>
+            <input type="tel" id="phone"
+                   placeholder="Enter your phone number">
+
+            <label>Subject</label>
+            <select id="subject" required>
+                <option value="">Select subject</option>
+                <option>General Enquiry</option>
+                <option>Observer Registration</option>
+                <option>Election Monitoring</option>
+                <option>Incident Report Enquiry</option>
+                <option>Partnership Proposal</option>
+                <option>Media Enquiry</option>
+                <option>Technical Support</option>
+                <option>Other</option>
+            </select>
+
+            <label>Your Message</label>
+            <textarea id="message"
+                      placeholder="Write your message here..."
+                      required></textarea>
+
+            <button type="submit">Review Message</button>
+
+            <div id="resultMessage" class="result-message"></div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</div><footer>
     <p>
-        &copy; 2026 Nwachukwu Election Watch (NEW).
+        &copy; 2026 <span>Nwachukwu Election Watch</span>.
         All Rights Reserved.
-    </p>
+    </p><p>Transparency | Accountability | Credible Election Monitoring</p>
 
-    <p>
-        Transparency | Accountability | Credible Election Monitoring
-    </p>
+</footer><script>
 
-</footer>
-
-
-<script>
-
-document.getElementById("contactForm").addEventListener("submit", function(event) {
+document.getElementById("contactForm").addEventListener("submit",
+function(event) {
 
     event.preventDefault();
 
-    const response = document.getElementById("response");
+    const name = document.getElementById("name").value.trim();
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("resultMessage");
 
-    response.style.display = "block";
+    if (!name) {
+        alert("Please enter your name.");
+        return;
+    }
 
-    response.textContent =
-        "The contact form is awaiting database integration. Your message has NOT been sent or saved.";
+    message.style.display = "block";
+
+    message.innerHTML = `
+        <strong>Message review completed.</strong><br><br>
+
+        Thank you, ${escapeHTML(name)}.<br>
+        Subject: ${escapeHTML(subject)}<br><br>
+
+        Your message has NOT been sent or saved.
+        Email and database integration are still pending.
+    `;
+
+    message.scrollIntoView({behavior: "smooth"});
 
 });
 
-</script>
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, function(character) {
+        return {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#039;"
+        }[character];
+    });
+}
 
-</body>
+</script></body>
 </html>
