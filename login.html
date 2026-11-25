@@ -1,85 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Administrator Login | Nwachukwu Election Watch</title>
-
-<style>
+<meta name="description" content="Administrator login for Nwachukwu Election Watch.">
+<title>Administrator Login | Nwachukwu Election Watch</title><style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    min-height: 100vh;
-    background: linear-gradient(135deg, #071d3b, #164779);
-    display: flex;
-    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background: #f2f5f9;
+    color: #222;
 }
 
 header {
-    padding: 22px;
-    text-align: center;
+    background: #071b35;
     color: white;
+    padding: 22px 15px;
+    text-align: center;
 }
 
-header h2 {
-    color: #f3c64e;
-    font-size: 23px;
+header h1 {
+    color: #e6b83f;
+    font-size: 25px;
+    margin-bottom: 7px;
 }
 
 header p {
-    font-size: 12px;
-    margin-top: 5px;
+    font-size: 13px;
 }
 
-.login-container {
-    width: 100%;
-    max-width: 430px;
-    margin: auto;
-    padding: 20px;
+nav {
+    background: #102c4d;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+    gap: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 11px;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    background: #d6a52e;
+    color: #071b35;
+}
+
+.container {
+    max-width: 500px;
+    margin: 45px auto;
+    padding: 15px;
 }
 
 .login-box {
     background: white;
-    padding: 35px 28px;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    padding: 30px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
 }
 
-.login-box h1 {
-    color: #071d3b;
+.login-box h2 {
     text-align: center;
-    font-size: 25px;
-    margin-bottom: 8px;
+    color: #071b35;
+    margin-bottom: 10px;
 }
 
 .subtitle {
     text-align: center;
-    color: #777;
-    font-size: 13px;
-    margin-bottom: 25px;
-}
-
-.login-box label {
-    display: block;
-    color: #071d3b;
-    font-weight: bold;
+    color: #666;
     font-size: 14px;
-    margin-bottom: 7px;
+    margin-bottom: 25px;
+    line-height: 1.5;
 }
 
-.login-box input {
+label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 7px;
+    color: #24364b;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
     width: 100%;
     padding: 13px;
-    border: 1px solid #d5dce5;
-    border-radius: 6px;
-    margin-bottom: 18px;
-    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
 }
 
 .password-wrapper {
@@ -87,278 +104,233 @@ header p {
 }
 
 .password-wrapper input {
-    padding-right: 65px;
+    padding-right: 75px;
 }
 
-.show-password {
+.toggle-password {
     position: absolute;
-    right: 12px;
-    top: 13px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     border: none;
     background: none;
-    color: #164779;
+    color: #12395f;
     cursor: pointer;
-    font-size: 12px;
+    font-weight: bold;
 }
 
 .options {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 20px;
-    font-size: 12px;
+    margin: 17px 0;
+    font-size: 13px;
 }
 
 .remember {
     display: flex;
     align-items: center;
     gap: 6px;
-    color: #555;
-}
-
-.remember input {
-    width: auto;
-    margin: 0;
 }
 
 .options a {
-    color: #164779;
+    color: #12395f;
     text-decoration: none;
 }
 
 .login-button {
     width: 100%;
-    background: #071d3b;
-    color: white;
     padding: 14px;
+    background: #d6a52e;
+    color: #071b35;
     border: none;
-    border-radius: 6px;
-    font-size: 15px;
+    border-radius: 5px;
+    font-size: 16px;
     font-weight: bold;
     cursor: pointer;
 }
 
 .login-button:hover {
-    background: #164779;
+    background: #bd8d1c;
+}
+
+.notice {
+    background: #fff3cd;
+    border-left: 5px solid #d6a52e;
+    padding: 13px;
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #594510;
 }
 
 .message {
-    margin-top: 15px;
+    display: none;
+    background: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
     padding: 12px;
     border-radius: 5px;
-    font-size: 13px;
-    display: none;
-    line-height: 1.6;
-}
-
-.security {
-    background: #fff4d5;
-    color: #795c12;
-    padding: 12px;
-    border-radius: 6px;
-    margin-top: 20px;
-    font-size: 12px;
-    line-height: 1.6;
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.5;
 }
 
 .back-home {
     display: block;
     text-align: center;
     margin-top: 20px;
-    color: #164779;
+    color: #12395f;
     text-decoration: none;
-    font-size: 13px;
+    font-weight: bold;
 }
 
 footer {
+    background: #071b35;
     color: white;
     text-align: center;
-    padding: 20px;
-    font-size: 12px;
+    padding: 22px 10px;
+    margin-top: 40px;
+    font-size: 13px;
 }
 
-@media(max-width: 480px) {
+@media(max-width: 600px) {
+    nav a {
+        font-size: 12px;
+        padding: 8px;
+    }
+
     .login-box {
-        padding: 28px 20px;
+        padding: 25px 18px;
     }
 }
-</style>
-</head>
+</style></head><body><header>
+    <h1>NWACHUKWU ELECTION WATCH</h1>
+    <p>Transparency | Accountability | Credible Election Monitoring</p>
+</header><nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="elections.html">Elections</a>
+    <a href="team.html">Our Team</a>
+    <a href="observers.html">Observers</a>
+    <a href="results.html">Results</a>
+    <a href="incidents.html">Incidents</a>
+    <a href="admin.html">Admin</a>
+    <a href="login.html">Login</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+</nav><div class="container"><div class="login-box">
 
-<body>
+    <h2>Administrator Login</h2>
 
-<header>
-
-    <h2>NWACHUKWU ELECTION WATCH</h2>
-
-    <p>
-        TRANSPARENCY | ACCOUNTABILITY | CREDIBLE ELECTIONS
+    <p class="subtitle">
+        Sign-in access for authorised Nwachukwu Election Watch administrators.
     </p>
 
-</header>
+    <form id="loginForm">
 
+        <label for="email">Administrator Email</label>
+        <input
+            type="email"
+            id="email"
+            placeholder="Enter your email address"
+            required
+        >
 
-<div class="login-container">
+        <label for="password">Password</label>
 
-    <div class="login-box">
-
-        <h1>Administrator Login</h1>
-
-        <p class="subtitle">
-            Authorised administrative access only
-        </p>
-
-
-        <form id="loginForm">
-
-            <label for="email">Administrator Email</label>
-
+        <div class="password-wrapper">
             <input
-                type="email"
-                id="email"
-                placeholder="Enter administrator email"
-                autocomplete="username"
+                type="password"
+                id="password"
+                placeholder="Enter your password"
                 required
             >
 
-
-            <label for="password">Password</label>
-
-            <div class="password-wrapper">
-
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Enter your password"
-                    autocomplete="current-password"
-                    required
-                >
-
-                <button
-                    type="button"
-                    class="show-password"
-                    onclick="togglePassword()"
-                >
-                    Show
-                </button>
-
-            </div>
-
-
-            <div class="options">
-
-                <label class="remember">
-                    <input type="checkbox" id="remember">
-                    Remember me
-                </label>
-
-                <a href="#" onclick="forgotPassword(event)">
-                    Forgot Password?
-                </a>
-
-            </div>
-
-
-            <button type="submit" class="login-button">
-                Sign In
-            </button>
-
-        </form>
-
-
-        <div id="message" class="message"></div>
-
-
-        <div class="security">
-            <strong>Security Reminder:</strong>
-            This administrative login must be connected to
-            secure authentication before deployment.
-            Never share your administrator password.
+            <button
+                type="button"
+                class="toggle-password"
+                id="togglePassword"
+            >Show</button>
         </div>
 
+        <div class="options">
 
-        <a href="index.html" class="back-home">
-            ← Back to Homepage
-        </a>
+            <label class="remember">
+                <input type="checkbox" id="remember">
+                Remember me
+            </label>
 
+            <a href="#" id="forgotPassword">
+                Forgot password?
+            </a>
+
+        </div>
+
+        <button type="submit" class="login-button">
+            Sign In
+        </button>
+
+        <div class="message" id="message" role="alert"></div>
+
+    </form>
+
+    <div class="notice">
+        <strong>Security Notice:</strong><br>
+        Administrator authentication has not yet been connected.
+        This page is currently a frontend demonstration. No login
+        will be performed and no credentials will be verified or saved.
     </div>
+
+    <a href="index.html" class="back-home">
+        ← Back to Homepage
+    </a>
 
 </div>
 
+</div><footer>
+    <p>&copy; 2026 Nwachukwu Election Watch. All Rights Reserved.</p>
+    <p>Promoting transparency and accountability in Nigeria's electoral process.</p>
+</footer><script>
+const passwordInput = document.getElementById("password");
+const togglePassword = document.getElementById("togglePassword");
+const message = document.getElementById("message");
 
-<footer>
+togglePassword.addEventListener("click", function() {
 
-    <p>
-        &copy; 2026 Nwachukwu Election Watch (NEW).
-        All Rights Reserved.
-    </p>
-
-</footer>
-
-
-<script>
-
-function togglePassword() {
-
-    const password = document.getElementById("password");
-    const button = document.querySelector(".show-password");
-
-    if (password.type === "password") {
-
-        password.type = "text";
-        button.textContent = "Hide";
-
+    if (passwordInput.type === "password") {
+        passwordInput.type = "text";
+        togglePassword.textContent = "Hide";
     } else {
-
-        password.type = "password";
-        button.textContent = "Show";
-
+        passwordInput.type = "password";
+        togglePassword.textContent = "Show";
     }
 
-}
-
-
-function forgotPassword(event) {
-
-    event.preventDefault();
-
-    showMessage(
-        "Password recovery will be available after secure administrator authentication is connected.",
-        "warning"
-    );
-
-}
-
-
-function showMessage(text, type) {
-
-    const message = document.getElementById("message");
-
-    message.style.display = "block";
-    message.textContent = text;
-
-    message.style.background =
-        type === "error" ? "#ffe4e4" : "#fff4d5";
-
-    message.style.color =
-        type === "error" ? "#a00000" : "#795c12";
-
-}
-
+});
 
 document.getElementById("loginForm").addEventListener("submit", function(event) {
 
     event.preventDefault();
 
-    showMessage(
-        "Authentication is not connected yet. No login was performed. We will connect this page to Supabase Auth.",
-        "error"
-    );
+    message.style.display = "block";
+    message.textContent =
+        "Login is not active yet. Secure authentication, administrator roles and database permissions must be connected before anyone can sign in. No login was performed.";
 
 });
 
-</script>
+document.getElementById("forgotPassword").addEventListener("click", function(event) {
 
-</body>
+    event.preventDefault();
+
+    message.style.display = "block";
+    message.textContent =
+        "Password recovery is not available yet. The secure authentication and email recovery service have not been connected.";
+
+});
+</script></body>
 </html>
