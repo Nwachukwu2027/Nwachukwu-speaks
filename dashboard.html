@@ -1,0 +1,375 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Election Dashboard | Nwachukwu Election Watch</title><style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f1f4f8;
+    color: #222;
+}
+
+header {
+    background: #071d3b;
+    color: white;
+    padding: 20px;
+}
+
+header h2 {
+    font-size: 21px;
+}
+
+header span {
+    color: #f5b400;
+}
+
+nav {
+    background: #10365e;
+    padding: 13px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-size: 14px;
+}
+
+.container {
+    padding: 25px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.welcome {
+    margin-bottom: 25px;
+}
+
+.welcome h1 {
+    color: #071d3b;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: #666;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: white;
+    padding: 23px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
+}
+
+.card h3 {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-size: 30px;
+    color: #124d80;
+}
+
+.card p {
+    color: #777;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.panel {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.05);
+}
+
+.panel h2 {
+    color: #071d3b;
+    margin-bottom: 20px;
+    font-size: 19px;
+}
+
+.filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+select, input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+}
+
+button {
+    background: #124d80;
+    color: white;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #071d3b;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+th {
+    background: #f1f4f8;
+    color: #071d3b;
+}
+
+.empty {
+    text-align: center;
+    color: #888;
+    padding: 30px;
+}
+
+.status {
+    background: #fff3cd;
+    color: #856404;
+    padding: 6px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+footer {
+    background: #071d3b;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+@media(max-width:600px) {
+    .container {
+        padding: 15px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+}
+</style></head><body><header>
+    <h2>NWACHUKWU <span>ELECTION WATCH</span></h2>
+    <p>Election Monitoring Control Centre</p>
+</header><nav>
+    <a href="index.html">Home</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="observers.html">Observers</a>
+    <a href="results.html">Results</a>
+    <a href="incidents.html">Incidents</a>
+    <a href="admin.html">Admin</a>
+</nav><div class="container"><div class="welcome">
+    <h1>Election Monitoring Dashboard</h1>
+    <p>Monitor election activities across Nigeria.</p>
+</div>
+
+<div class="cards">
+
+    <div class="card">
+        <h3>Registered Observers</h3>
+        <h2 id="observers">0</h2>
+        <p>Approved observer accounts</p>
+    </div>
+
+    <div class="card">
+        <h3>Polling Units Monitored</h3>
+        <h2 id="polling">0</h2>
+        <p>Units with submitted reports</p>
+    </div>
+
+    <div class="card">
+        <h3>Reports Submitted</h3>
+        <h2 id="reports">0</h2>
+        <p>All observer submissions</p>
+    </div>
+
+    <div class="card">
+        <h3>Reported Incidents</h3>
+        <h2 id="incidents">0</h2>
+        <p>Incidents awaiting review or resolved</p>
+    </div>
+
+</div>
+
+<div class="panel">
+
+    <h2>Locate Election Monitoring Area</h2>
+
+    <div class="filters">
+
+        <select id="state">
+            <option value="">Select State</option>
+            <option>Abia</option>
+            <option>Adamawa</option>
+            <option>Akwa Ibom</option>
+            <option>Anambra</option>
+            <option>Bauchi</option>
+            <option>Bayelsa</option>
+            <option>Benue</option>
+            <option>Borno</option>
+            <option>Cross River</option>
+            <option>Delta</option>
+            <option>Ebonyi</option>
+            <option>Edo</option>
+            <option>Ekiti</option>
+            <option>Enugu</option>
+            <option>FCT</option>
+            <option>Gombe</option>
+            <option>Imo</option>
+            <option>Jigawa</option>
+            <option>Kaduna</option>
+            <option>Kano</option>
+            <option>Katsina</option>
+            <option>Kebbi</option>
+            <option>Kogi</option>
+            <option>Kwara</option>
+            <option>Lagos</option>
+            <option>Nasarawa</option>
+            <option>Niger</option>
+            <option>Ogun</option>
+            <option>Ondo</option>
+            <option>Osun</option>
+            <option>Oyo</option>
+            <option>Plateau</option>
+            <option>Rivers</option>
+            <option>Sokoto</option>
+            <option>Taraba</option>
+            <option>Yobe</option>
+            <option>Zamfara</option>
+        </select>
+
+        <input type="text" id="lga"
+        placeholder="Enter Local Government">
+
+        <input type="text" id="ward"
+        placeholder="Enter Ward">
+
+        <input type="text" id="unit"
+        placeholder="Enter Polling Unit">
+
+        <button onclick="searchArea()">Search Area</button>
+
+    </div>
+
+    <p id="searchMessage" style="margin-top:15px;color:#124d80;"></p>
+
+</div>
+
+<div class="panel">
+
+    <h2>Election Monitoring Activities</h2>
+
+    <div class="table-wrapper">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>State</th>
+                    <th>LGA</th>
+                    <th>Ward</th>
+                    <th>Polling Unit</th>
+                    <th>Report Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="activityTable">
+
+                <tr>
+                    <td colspan="5" class="empty">
+                        No monitoring reports submitted yet.
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<div class="panel">
+
+    <h2>Platform Information</h2>
+
+    <p>
+        Platform: Nwachukwu Election Watch
+    </p>
+
+    <p style="margin-top:10px;">
+        Monitoring Coverage: Nigeria
+    </p>
+
+    <p style="margin-top:10px;">
+        Report Verification: Pending database integration
+    </p>
+
+</div>
+
+</div><footer>
+    <h3>NWACHUKWU ELECTION WATCH</h3>
+    <p>Transparency | Accountability | Credible Monitoring</p>
+    <p>© 2026 All Rights Reserved.</p>
+</footer><script>
+
+function searchArea() {
+
+    const state = document.getElementById("state").value;
+    const lga = document.getElementById("lga").value;
+    const ward = document.getElementById("ward").value;
+    const unit = document.getElementById("unit").value;
+
+    if (!state) {
+        alert("Please select a state.");
+        return;
+    }
+
+    document.getElementById("searchMessage").innerText =
+        "Selected Area: " + state +
+        " | LGA: " + (lga || "Not specified") +
+        " | Ward: " + (ward || "Not specified") +
+        " | Polling Unit: " + (unit || "Not specified") +
+        ". Connect an official polling-unit dataset to retrieve verified records.";
+
+}
+
+</script></body>
+</html>
