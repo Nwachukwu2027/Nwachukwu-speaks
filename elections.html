@@ -2,7 +2,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Explore election coverage across Nigeria with Nwachukwu Election Watch.">
+<meta name="description" content="Explore elections monitored by Nwachukwu Election Watch across Nigeria.">
 <title>Election Coverage | Nwachukwu Election Watch</title><style>
 * {
     margin: 0;
@@ -13,318 +13,478 @@
 body {
     font-family: Arial, sans-serif;
     background: #f4f6f9;
-    color: #222;
+    color: #263445;
     line-height: 1.6;
 }
 
 header {
-    background: #071d3b;
+    background: #071b35;
     color: white;
-    padding: 18px 6%;
+    text-align: center;
+    padding: 25px 12px;
 }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #f4c542;
-}
-
-.logo span {
-    color: white;
+header h1 {
+    color: #e6b83f;
+    font-size: 25px;
+    margin-bottom: 7px;
 }
 
 nav {
+    background: #102c4d;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 15px;
+    justify-content: center;
+    padding: 10px;
+    gap: 5px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 14px;
+    padding: 9px 11px;
+    font-size: 13px;
+    border-radius: 4px;
 }
 
 nav a:hover {
-    color: #f4c542;
+    background: #d6a52e;
+    color: #071b35;
 }
 
 .hero {
-    background: linear-gradient(120deg, #071d3b, #174777);
+    background: linear-gradient(120deg, #071b35, #174875);
     color: white;
-    padding: 65px 20px;
     text-align: center;
+    padding: 55px 20px;
 }
 
-.hero h1 {
-    font-size: 36px;
+.hero h2 {
+    color: #e6b83f;
+    font-size: 30px;
     margin-bottom: 12px;
 }
 
 .hero p {
-    max-width: 700px;
+    max-width: 750px;
     margin: auto;
-    color: #e5edf7;
 }
 
 .container {
-    max-width: 1150px;
-    margin: 35px auto;
-    padding: 0 20px;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 15px;
 }
 
 .section-title {
-    color: #102f57;
-    margin-bottom: 20px;
-    font-size: 25px;
+    color: #071b35;
+    margin-bottom: 18px;
+    font-size: 23px;
 }
 
-.intro {
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.stat-card {
     background: white;
-    padding: 25px;
-    border-radius: 10px;
-    margin-bottom: 30px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    padding: 22px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    border-bottom: 4px solid #d6a52e;
+}
+
+.stat-card h3 {
+    color: #12395f;
+    font-size: 27px;
+}
+
+.stat-card p {
+    font-size: 13px;
+    color: #666;
 }
 
 .election-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+    margin-bottom: 35px;
 }
 
 .election-card {
     background: white;
-    padding: 25px;
-    border-radius: 10px;
-    border-top: 4px solid #d9aa22;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    padding: 22px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    border-top: 4px solid #d6a52e;
 }
 
 .election-card h3 {
-    color: #102f57;
-    margin-bottom: 12px;
+    color: #071b35;
+    margin-bottom: 10px;
 }
 
 .election-card p {
-    color: #555;
-    margin-bottom: 15px;
     font-size: 14px;
+    margin-bottom: 12px;
 }
 
-.status {
+.badge {
     display: inline-block;
     background: #fff1c9;
-    color: #795800;
-    padding: 6px 12px;
+    color: #765500;
+    padding: 5px 10px;
     border-radius: 20px;
     font-size: 12px;
     font-weight: bold;
 }
 
-.coverage-box {
-    background: #102f57;
-    color: white;
-    padding: 30px;
-    margin-top: 35px;
-    border-radius: 10px;
+.search-box {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    margin-bottom: 30px;
 }
 
-.coverage-box h2 {
-    color: #f4c542;
-    margin-bottom: 15px;
+label {
+    display: block;
+    font-weight: bold;
+    margin: 12px 0 6px;
 }
 
-.coverage-box ul {
-    padding-left: 22px;
-}
-
-.coverage-box li {
-    margin-bottom: 8px;
-}
-
-.disclaimer {
-    background: #fff4d6;
-    border-left: 5px solid #d9a514;
-    padding: 18px;
-    margin-top: 30px;
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    font-size: 15px;
+}
+
+button {
+    background: #d6a52e;
+    color: #071b35;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #bd8d1c;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th, td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+th {
+    background: #102c4d;
+    color: white;
+}
+
+.notice {
+    background: #fff4d6;
+    border-left: 5px solid #d6a52e;
+    padding: 15px;
+    margin: 25px 0;
+    font-size: 14px;
+}
+
+.message {
+    display: none;
+    background: #eef4fa;
+    padding: 15px;
+    margin-top: 15px;
+    border-left: 4px solid #12395f;
 }
 
 footer {
-    background: #071d3b;
+    background: #071b35;
     color: white;
     text-align: center;
-    padding: 25px 15px;
-    margin-top: 50px;
+    padding: 22px 10px;
+    margin-top: 35px;
+    font-size: 13px;
 }
 
-footer a {
-    color: #f4c542;
-    text-decoration: none;
-    margin: 0 8px;
-}
+@media(max-width: 600px) {
+    nav a {
+        font-size: 12px;
+        padding: 8px;
+    }
 
-@media(max-width:600px) {
-    .hero h1 {
-        font-size: 27px;
+    .hero h2 {
+        font-size: 24px;
     }
 }
 </style></head><body><header>
-    <div class="logo">NWACHUKWU <span>ELECTION WATCH</span></div><nav>
+    <h1>NWACHUKWU ELECTION WATCH</h1>
+    <p>Transparency | Accountability | Credible Election Monitoring</p>
+</header><nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
+    <a href="about.html">About Us</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="elections.html">Elections</a>
+    <a href="team.html">Our Team</a>
     <a href="observers.html">Observers</a>
     <a href="results.html">Results</a>
     <a href="incidents.html">Incidents</a>
+    <a href="admin.html">Admin</a>
+    <a href="login.html">Login</a>
+    <a href="faq.html">FAQ</a>
     <a href="contact.html">Contact</a>
-</nav>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+</nav><section class="hero">
+    <h2>Nigeria Election Coverage</h2>
+    <p>
+        Monitoring electoral activities, documenting observations
+        and promoting transparency across Nigeria's 36 states
+        and the Federal Capital Territory.
+    </p>
+</section><div class="container"><h2 class="section-title">Our Coverage Overview</h2>
 
-</header><div class="hero">
-    <h1>Election Coverage Across Nigeria</h1>
-    <p>
-        Supporting transparent election observation, responsible reporting
-        and public accountability across the 36 states and the Federal
-        Capital Territory.
-    </p>
-</div><div class="container"><div class="intro">
-    <h2 class="section-title">Our Election Monitoring Scope</h2>
-    <p>
-        Nwachukwu Election Watch is designed to support independent
-        civic monitoring of electoral activities across Nigeria.
-        The platform provides a central place for authorised and
-        registered users to submit observations, document incidents
-        and report polling-unit information.
-    </p>
-    <p style="margin-top:12px;">
-        Election coverage will depend on available observers,
-        verified information, operational capacity and applicable
-        legal requirements.
-    </p>
+<div class="stats">
+
+    <div class="stat-card">
+        <h3>36</h3>
+        <p>States in Nigeria</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>1</h3>
+        <p>Federal Capital Territory</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>0</h3>
+        <p>Verified Election Reports</p>
+    </div>
+
+    <div class="stat-card">
+        <h3>0</h3>
+        <p>Active Monitoring Exercises</p>
+    </div>
+
 </div>
 
-<h2 class="section-title">Types of Elections We Cover</h2>
+<h2 class="section-title">Types of Elections We Monitor</h2>
 
 <div class="election-grid">
 
     <div class="election-card">
         <h3>Presidential Election</h3>
-        <p>
-            Monitoring and documentation of presidential election
-            activities across Nigeria.
-        </p>
-        <span class="status">Coverage planned</span>
+        <p>Observation and documentation of presidential election activities across Nigeria.</p>
+        <span class="badge">National Coverage</span>
     </div>
 
     <div class="election-card">
         <h3>Governorship Election</h3>
-        <p>
-            Observation of governorship election activities and
-            polling-unit reports across participating states.
-        </p>
-        <span class="status">Coverage planned</span>
+        <p>Monitoring of governorship elections and related electoral activities in states.</p>
+        <span class="badge">State Coverage</span>
     </div>
 
     <div class="election-card">
         <h3>Senatorial Election</h3>
-        <p>
-            Documentation of senatorial district election activities
-            and observer reports.
-        </p>
-        <span class="status">Coverage planned</span>
+        <p>Documentation of electoral activities for Senate constituencies.</p>
+        <span class="badge">National Assembly</span>
     </div>
 
     <div class="election-card">
         <h3>House of Representatives</h3>
-        <p>
-            Monitoring of elections into Nigeria's Federal House of
-            Representatives.
-        </p>
-        <span class="status">Coverage planned</span>
+        <p>Monitoring of elections across federal constituencies.</p>
+        <span class="badge">Federal Constituencies</span>
     </div>
 
     <div class="election-card">
         <h3>State House of Assembly</h3>
-        <p>
-            Reporting and documentation of state constituency
-            election activities.
-        </p>
-        <span class="status">Coverage planned</span>
+        <p>Observation of elections across state assembly constituencies.</p>
+        <span class="badge">State Constituencies</span>
     </div>
 
     <div class="election-card">
         <h3>Local Government Election</h3>
-        <p>
-            Monitoring local government electoral activities,
-            subject to applicable laws and operational capacity.
-        </p>
-        <span class="status">Coverage planned</span>
+        <p>Documentation of local government and councillorship electoral activities.</p>
+        <span class="badge">Grassroots Coverage</span>
     </div>
 
 </div>
 
-<div class="coverage-box">
-    <h2>Our Geographic Coverage</h2>
-    <p>
-        The platform is designed to organise monitoring information
-        according to Nigeria's administrative structure:
-    </p>
+<h2 class="section-title">Find Election Coverage</h2>
 
-    <ul>
-        <li>36 States and the Federal Capital Territory.</li>
-        <li>Local Government Areas.</li>
-        <li>Electoral wards.</li>
-        <li>Polling units.</li>
-    </ul>
+<div class="search-box">
 
-    <p style="margin-top:15px;">
-        Actual coverage will be displayed as locations are verified
-        and monitoring operations become active.
-    </p>
+    <p>Select a state and election category to view the coverage information currently available on this platform.</p>
+
+    <form id="searchForm">
+
+        <label for="state">Select State / FCT</label>
+
+        <select id="state" required>
+            <option value="">Choose State</option>
+            <option>Abia</option>
+            <option>Adamawa</option>
+            <option>Akwa Ibom</option>
+            <option>Anambra</option>
+            <option>Bauchi</option>
+            <option>Bayelsa</option>
+            <option>Benue</option>
+            <option>Borno</option>
+            <option>Cross River</option>
+            <option>Delta</option>
+            <option>Ebonyi</option>
+            <option>Edo</option>
+            <option>Ekiti</option>
+            <option>Enugu</option>
+            <option>Gombe</option>
+            <option>Imo</option>
+            <option>Jigawa</option>
+            <option>Kaduna</option>
+            <option>Kano</option>
+            <option>Katsina</option>
+            <option>Kebbi</option>
+            <option>Kogi</option>
+            <option>Kwara</option>
+            <option>Lagos</option>
+            <option>Nasarawa</option>
+            <option>Niger</option>
+            <option>Ogun</option>
+            <option>Ondo</option>
+            <option>Osun</option>
+            <option>Oyo</option>
+            <option>Plateau</option>
+            <option>Rivers</option>
+            <option>Sokoto</option>
+            <option>Taraba</option>
+            <option>Yobe</option>
+            <option>Zamfara</option>
+            <option>Federal Capital Territory</option>
+        </select>
+
+        <label for="electionType">Election Category</label>
+
+        <select id="electionType" required>
+            <option value="">Choose Election Type</option>
+            <option>Presidential</option>
+            <option>Governorship</option>
+            <option>Senatorial</option>
+            <option>House of Representatives</option>
+            <option>State House of Assembly</option>
+            <option>Local Government</option>
+        </select>
+
+        <label for="year">Election Year</label>
+
+        <select id="year" required>
+            <option value="">Choose Year</option>
+            <option>2026</option>
+            <option>2027</option>
+            <option>2028</option>
+            <option>2029</option>
+            <option>2030</option>
+        </select>
+
+        <button type="submit">Search Coverage</button>
+
+    </form>
+
+    <div class="message" id="message" role="status"></div>
+
 </div>
 
-<div class="coverage-box">
-    <h2>How to Participate</h2>
-    <ul>
-        <li>Apply through the observer registration page.</li>
-        <li>Provide accurate information for review.</li>
-        <li>Obtain any required official accreditation.</li>
-        <li>Submit truthful observations and incident reports.</li>
-        <li>Follow the platform's Terms of Service.</li>
-    </ul>
+<h2 class="section-title">Election Monitoring Records</h2>
 
-    <p style="margin-top:20px;">
-        <a href="observers.html"
-           style="display:inline-block;background:#f4c542;color:#071d3b;padding:12px 20px;border-radius:5px;text-decoration:none;font-weight:bold;">
-            Apply as an Observer
-        </a>
-    </p>
+<div class="table-wrapper">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Election</th>
+                <th>State</th>
+                <th>Year</th>
+                <th>Monitoring Status</th>
+                <th>Verified Reports</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td colspan="5" style="text-align:center;">
+                    No election monitoring records have been published yet.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
 </div>
 
-<div class="disclaimer">
-    <strong>Important Election Notice:</strong>
-    Nwachukwu Election Watch is an independent monitoring platform.
-    Information submitted by observers is not an official declaration
-    of election results. All reports remain subject to verification.
-    INEC and other legally authorised electoral bodies retain their
-    statutory responsibilities.
+<div class="notice">
+    <strong>Important Electoral Disclaimer:</strong>
+    Nwachukwu Election Watch is an independent civic monitoring
+    platform and is not INEC. Information submitted by observers
+    is not automatically verified or official election results.
+    Official election results and declarations remain the
+    responsibility of legally authorised electoral authorities.
 </div>
+
+<h2 class="section-title">Participate in Election Monitoring</h2>
+
+<p>
+    Interested individuals can apply to participate in our
+    planned election observation activities.
+</p>
+
+<br>
+
+<a href="observers.html">
+    <button type="button">Register as an Observer</button>
+</a>
 
 </div><footer>
-    <p>&copy; 2026 Nwachukwu Election Watch (NEW). All Rights Reserved.</p><p style="margin-top:10px;">
-    <a href="about.html">About</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-</p>
+    <p>&copy; 2026 Nwachukwu Election Watch. All Rights Reserved.</p>
+    <p>Transparency | Accountability | Credible Election Monitoring</p>
+</footer><script>
+document.getElementById("searchForm").addEventListener("submit", function(event) {
 
-<p style="margin-top:10px;">
-    Transparency | Accountability | Credible Election Monitoring
-</p>
+    event.preventDefault();
 
-</footer></body>
+    const state = document.getElementById("state").value;
+    const type = document.getElementById("electionType").value;
+    const year = document.getElementById("year").value;
+
+    const message = document.getElementById("message");
+
+    message.style.display = "block";
+
+    message.textContent =
+        "Your search selection: " + type + " Election in " +
+        state + " for " + year +
+        ". No matching monitoring records are currently available. " +
+        "Live election records will appear after the database is connected and records are published.";
+
+});
+</script></body>
 </html>
