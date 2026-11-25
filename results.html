@@ -1,100 +1,90 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Submit and document polling unit election observations for Nwachukwu Election Watch.">
-<title>Election Results Reporting | Nwachukwu Election Watch</title><style>
+
+<title>Election Results Reporting | NEW</title>
+
+<style>
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background: #f4f6fa;
+    background: #f3f5f8;
     color: #222;
     line-height: 1.6;
 }
 
 header {
-    background: #071b3a;
+    background: #071d3b;
     color: white;
-    padding: 25px 15px;
     text-align: center;
+    padding: 25px 15px;
 }
 
 header h1 {
-    color: #e5b342;
-    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+header p {
+    color: #e5bd54;
 }
 
 nav {
-    background: #102b52;
+    background: #102d52;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    padding: 10px;
+    flex-wrap: wrap;
+    padding: 12px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 9px 12px;
-    font-size: 14px;
+    padding: 8px 10px;
+    font-size: 13px;
 }
 
 nav a:hover {
-    background: #e5b342;
-    color: #071b3a;
-    border-radius: 4px;
+    background: #d6a832;
+    color: #071d3b;
 }
 
 .container {
-    max-width: 950px;
-    margin: 30px auto;
-    padding: 20px;
-}
-
-.card {
+    max-width: 900px;
+    margin: 35px auto;
     background: white;
-    padding: 25px;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    margin-bottom: 25px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
 }
 
 h2 {
-    color: #071b3a;
-    margin-bottom: 15px;
+    color: #071d3b;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
-h3 {
-    color: #102b52;
-    margin: 20px 0 10px;
+.intro {
+    text-align: center;
+    color: #555;
+    margin-bottom: 25px;
 }
 
-.notice {
-    background: #fff4d6;
-    border-left: 5px solid #e5b342;
-    padding: 15px;
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.warning {
-    background: #fff0f0;
-    border-left: 5px solid #c62828;
-    padding: 15px;
-    margin-bottom: 20px;
-    font-size: 14px;
+.form-group {
+    margin-bottom: 17px;
 }
 
 label {
     display: block;
     font-weight: bold;
-    margin-top: 15px;
-    margin-bottom: 5px;
+    color: #071d3b;
+    margin-bottom: 6px;
 }
 
 input, select {
@@ -103,99 +93,130 @@ input, select {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 15px;
-    background: white;
 }
 
-button {
-    border: none;
-    padding: 12px 18px;
+.candidate-row {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.candidate-row input {
+    min-width: 0;
+}
+
+.candidate-heading {
+    color: #071d3b;
+    margin: 25px 0 12px;
+}
+
+.secondary-button {
+    background: #e7edf5;
+    color: #071d3b;
+    border: 1px solid #c5d0df;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 15px;
-    margin-top: 15px;
-}
-
-.add-btn {
-    background: #102b52;
-    color: white;
-}
-
-.remove-btn {
-    background: #b3261e;
-    color: white;
-    margin-top: 5px;
-}
-
-.submit-btn {
-    background: #e5b342;
-    color: #071b3a;
     font-weight: bold;
-    width: 100%;
-    padding: 15px;
 }
 
-.candidate {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 7px;
-    margin-top: 15px;
-    background: #fafafa;
-}
-
-.total-box {
-    background: #eaf1fb;
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 6px;
-    font-weight: bold;
-    color: #071b3a;
-}
-
-.result-message {
-    display: none;
-    padding: 15px;
-    margin-top: 20px;
+.remove-button {
+    background: #fce5e5;
+    color: #a21d1d;
+    border: none;
     border-radius: 5px;
-    background: #fff4d6;
-    border-left: 5px solid #e5b342;
+    padding: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
 }
 
-small {
-    color: #666;
+.submit-button {
+    width: 100%;
+    padding: 14px;
+    background: #071d3b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit-button:hover {
+    background: #d6a832;
+    color: #071d3b;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#message {
+    display: none;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.success {
+    display: block !important;
+    background: #d8f5df;
+    color: #155724;
+}
+
+.error {
+    display: block !important;
+    background: #ffe0e0;
+    color: #9b1c1c;
+}
+
+.notice {
+    background: #fff7df;
+    border-left: 4px solid #d6a832;
+    padding: 15px;
+    margin-top: 25px;
+    font-size: 13px;
 }
 
 footer {
-    background: #071b3a;
+    background: #06162c;
     color: white;
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-}
-
-footer span {
-    color: #e5b342;
+    padding: 25px 10px;
+    margin-top: 40px;
 }
 
 @media(max-width:600px) {
     .container {
-        padding: 12px;
+        margin: 15px;
+        padding: 20px;
     }
 
-    .card {
-        padding: 17px;
+    .candidate-row {
+        grid-template-columns: 1fr 100px;
     }
 
-    nav a {
-        font-size: 12px;
-        padding: 8px;
+    header h1 {
+        font-size: 21px;
     }
 }
-</style></head><body><header>
+</style>
+</head>
+
+<body>
+
+<header>
     <h1>NWACHUKWU ELECTION WATCH</h1>
-    <p>Transparency | Accountability | Credible Election Monitoring</p>
-</header><nav>
+    <p>Independent Election Monitoring Platform</p>
+</header>
+
+<nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
+    <a href="about.html">About</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="elections.html">Elections</a>
     <a href="team.html">Our Team</a>
@@ -204,338 +225,397 @@ footer span {
     <a href="incidents.html">Incidents</a>
     <a href="admin.html">Admin</a>
     <a href="login.html">Login</a>
-    <a href="faq.html">FAQ</a>
     <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-</nav><div class="container"><div class="card">
+</nav>
+
+<div class="container">
+
     <h2>Election Results Reporting</h2>
 
-    <div class="notice">
-        This page is for documenting figures observed at polling units.
-        Please enter information accurately and attach the appropriate
-        result sheet as supporting evidence.
-    </div>
+    <p class="intro">
+        Submit polling-unit observations and election figures
+        for documentation and review.
+    </p>
 
-    <div class="warning">
-        <strong>Important:</strong> Figures submitted by observers are
-        not official INEC results and do not constitute an official
-        declaration of election winners. All reports require verification.
-    </div>
+    <div id="message" role="status" aria-live="polite"></div>
 
     <form id="resultsForm">
 
-        <h3>1. Election Information</h3>
+        <div class="form-group">
+            <label for="election_type">Election Type *</label>
+            <select id="election_type" required>
+                <option value="">Select Election</option>
+                <option>Presidential Election</option>
+                <option>Governorship Election</option>
+                <option>Senatorial Election</option>
+                <option>House of Representatives Election</option>
+                <option>State House of Assembly Election</option>
+                <option>Local Government Election</option>
+                <option>Other Election</option>
+            </select>
+        </div>
 
-        <label>Election Type</label>
-        <select id="electionType" required>
-            <option value="">Select election type</option>
-            <option>Presidential Election</option>
-            <option>Governorship Election</option>
-            <option>Senatorial Election</option>
-            <option>House of Representatives Election</option>
-            <option>State House of Assembly Election</option>
-            <option>Local Government Election</option>
-        </select>
+        <div class="form-group">
+            <label for="election_year">Election Year</label>
+            <input type="number"
+                id="election_year"
+                min="2000"
+                max="2100"
+                placeholder="Enter election year">
+        </div>
 
-        <label>Election Year</label>
-        <input type="number" id="electionYear" min="2000" max="2100"
-               placeholder="e.g. 2027" required>
+        <div class="form-group">
+            <label for="state">State *</label>
+            <select id="state" required>
+                <option value="">Select State</option>
+                <option>Abia</option>
+                <option>Adamawa</option>
+                <option>Akwa Ibom</option>
+                <option>Anambra</option>
+                <option>Bauchi</option>
+                <option>Bayelsa</option>
+                <option>Benue</option>
+                <option>Borno</option>
+                <option>Cross River</option>
+                <option>Delta</option>
+                <option>Ebonyi</option>
+                <option>Edo</option>
+                <option>Ekiti</option>
+                <option>Enugu</option>
+                <option>FCT</option>
+                <option>Gombe</option>
+                <option>Imo</option>
+                <option>Jigawa</option>
+                <option>Kaduna</option>
+                <option>Kano</option>
+                <option>Katsina</option>
+                <option>Kebbi</option>
+                <option>Kogi</option>
+                <option>Kwara</option>
+                <option>Lagos</option>
+                <option>Nasarawa</option>
+                <option>Niger</option>
+                <option>Ogun</option>
+                <option>Ondo</option>
+                <option>Osun</option>
+                <option>Oyo</option>
+                <option>Plateau</option>
+                <option>Rivers</option>
+                <option>Sokoto</option>
+                <option>Taraba</option>
+                <option>Yobe</option>
+                <option>Zamfara</option>
+            </select>
+        </div>
 
-        <label>State</label>
-        <select id="state" required>
-            <option value="">Select state</option>
-            <option>Abia</option>
-            <option>Adamawa</option>
-            <option>Akwa Ibom</option>
-            <option>Anambra</option>
-            <option>Bauchi</option>
-            <option>Bayelsa</option>
-            <option>Benue</option>
-            <option>Borno</option>
-            <option>Cross River</option>
-            <option>Delta</option>
-            <option>Ebonyi</option>
-            <option>Edo</option>
-            <option>Ekiti</option>
-            <option>Enugu</option>
-            <option>FCT</option>
-            <option>Gombe</option>
-            <option>Imo</option>
-            <option>Jigawa</option>
-            <option>Kaduna</option>
-            <option>Kano</option>
-            <option>Katsina</option>
-            <option>Kebbi</option>
-            <option>Kogi</option>
-            <option>Kwara</option>
-            <option>Lagos</option>
-            <option>Nasarawa</option>
-            <option>Niger</option>
-            <option>Ogun</option>
-            <option>Ondo</option>
-            <option>Osun</option>
-            <option>Oyo</option>
-            <option>Plateau</option>
-            <option>Rivers</option>
-            <option>Sokoto</option>
-            <option>Taraba</option>
-            <option>Yobe</option>
-            <option>Zamfara</option>
-        </select>
+        <div class="form-group">
+            <label for="lga">Local Government Area</label>
+            <input type="text" id="lga"
+                maxlength="100"
+                placeholder="Enter LGA">
+        </div>
 
-        <label>Local Government Area (LGA)</label>
-        <input type="text" id="lga" placeholder="Enter LGA" required>
+        <div class="form-group">
+            <label for="ward">Ward</label>
+            <input type="text" id="ward"
+                maxlength="100"
+                placeholder="Enter ward">
+        </div>
 
-        <label>Ward</label>
-        <input type="text" id="ward" placeholder="Enter ward" required>
+        <div class="form-group">
+            <label for="polling_unit">Polling Unit</label>
+            <input type="text" id="polling_unit"
+                maxlength="150"
+                placeholder="Enter polling unit">
+        </div>
 
-        <label>Polling Unit Name</label>
-        <input type="text" id="pollingUnit"
-               placeholder="Enter polling unit name" required>
+        <div class="form-group">
+            <label for="observer_id">Observer ID (if available)</label>
+            <input type="text" id="observer_id"
+                maxlength="100"
+                placeholder="Enter your observer ID">
+        </div>
 
-        <label>Polling Unit Code</label>
-        <input type="text" id="pollingCode"
-               placeholder="Enter polling unit code" required>
+        <h3 class="candidate-heading">Voter Information</h3>
 
-        <label>Observer ID</label>
-        <input type="text" id="observerId"
-               placeholder="Enter your observer ID" required>
+        <div class="form-group">
+            <label for="registered_voters">Registered Voters</label>
+            <input type="number" id="registered_voters"
+                min="0" step="1" value="0">
+        </div>
 
-        <h3>2. Voter Information</h3>
+        <div class="form-group">
+            <label for="accredited_voters">Accredited Voters</label>
+            <input type="number" id="accredited_voters"
+                min="0" step="1" value="0">
+        </div>
 
-        <label>Number of Registered Voters</label>
-        <input type="number" id="registered" min="0"
-               placeholder="Enter registered voters" required>
+        <h3 class="candidate-heading">Candidate Results</h3>
 
-        <label>Number of Accredited Voters</label>
-        <input type="number" id="accredited" min="0"
-               placeholder="Enter accredited voters" required>
-
-        <label>Number of Rejected Ballots</label>
-        <input type="number" id="rejected" min="0"
-               placeholder="Enter rejected ballots" required>
-
-        <h3>3. Candidate Results</h3>
-
-        <p>
-            Enter each candidate's name, political party and votes
-            recorded on the result sheet.
+        <p style="font-size:13px; margin-bottom:15px;">
+            Enter each candidate's name and the number of votes
+            recorded for that candidate.
         </p>
 
         <div id="candidateContainer">
 
-            <div class="candidate">
-                <label>Candidate Name</label>
-                <input type="text" class="candidateName"
-                       placeholder="Candidate name" required>
+            <div class="candidate-row">
+                <input type="text"
+                    class="candidate-name"
+                    maxlength="150"
+                    placeholder="Candidate name"
+                    required>
 
-                <label>Political Party</label>
-                <input type="text" class="candidateParty"
-                       placeholder="Political party" required>
-
-                <label>Number of Votes</label>
-                <input type="number" class="candidateVotes"
-                       min="0" value="0" required>
+                <input type="number"
+                    class="candidate-votes"
+                    min="0"
+                    step="1"
+                    value="0"
+                    required>
             </div>
 
         </div>
 
-        <button type="button" class="add-btn" onclick="addCandidate()">
+        <button type="button"
+            class="secondary-button"
+            id="addCandidate">
             + Add Another Candidate
         </button>
 
-        <div class="total-box">
-            Total Candidate Votes:
-            <span id="candidateTotal">0</span>
+        <div class="form-group" style="margin-top:25px;">
+            <label for="rejected_ballots">Rejected Ballots</label>
+            <input type="number"
+                id="rejected_ballots"
+                min="0"
+                step="1"
+                value="0">
         </div>
 
-        <h3>4. Result Sheet Evidence</h3>
-
-        <label>Upload Result Sheet (Required)</label>
-        <input type="file" id="resultSheet"
-               accept="image/jpeg,image/png,image/webp" required>
-
-        <small>Accepted formats: JPG, PNG and WEBP. Maximum size: 5MB.</small>
-
-        <label>Additional Evidence (Optional)</label>
-        <input type="file" id="extraEvidence"
-               accept="image/jpeg,image/png,image/webp,application/pdf">
-
-        <small>Optional supporting image or PDF. Maximum size: 5MB.</small>
-
-        <h3>5. Observer Declaration</h3>
-
-        <label>
-            <input type="checkbox" id="declaration"
-                   style="width:auto;" required>
-            I confirm that the information entered is accurate to the
-            best of my knowledge and based on my observation or the
-            evidence available to me.
-        </label>
-
-        <button type="submit" class="submit-btn">
-            Review Results Report
+        <button type="submit"
+            class="submit-button"
+            id="submitButton">
+            Submit Election Report
         </button>
 
-        <div id="resultMessage" class="result-message"></div>
-
     </form>
+
+    <div class="notice">
+        <strong>Important Notice:</strong>
+        Submitted figures are observer-provided information.
+        They are not official election results and do not declare
+        any candidate a winner. All submissions remain pending
+        until reviewed by authorised platform administrators.
+    </div>
+
 </div>
 
-</div><footer>
-    <p>
-        &copy; 2026 <span>Nwachukwu Election Watch</span>.
-        All Rights Reserved.
-    </p>
+<footer>
+    <h3>NWACHUKWU ELECTION WATCH (NEW)</h3>
     <p>Transparency | Accountability | Credible Election Monitoring</p>
-</footer><script>
+    <p>&copy; 2026 Nwachukwu Election Watch. All Rights Reserved.</p>
+</footer>
 
-const candidateContainer = document.getElementById("candidateContainer");
+<script type="module">
 
-function addCandidate() {
-    const candidate = document.createElement("div");
+import { supabase } from './supabase.js';
 
-    candidate.className = "candidate";
+const form = document.getElementById('resultsForm');
+const message = document.getElementById('message');
+const submitButton = document.getElementById('submitButton');
+const candidateContainer = document.getElementById('candidateContainer');
 
-    candidate.innerHTML = `
-        <label>Candidate Name</label>
-        <input type="text" class="candidateName"
-               placeholder="Candidate name" required>
+function showMessage(text, type) {
+    message.textContent = text;
+    message.className = type;
+    message.style.display = 'block';
+}
 
-        <label>Political Party</label>
-        <input type="text" class="candidateParty"
-               placeholder="Political party" required>
+function getNumber(id) {
+    return Number(document.getElementById(id).value || 0);
+}
 
-        <label>Number of Votes</label>
-        <input type="number" class="candidateVotes"
-               min="0" value="0" required>
+// ADD ANOTHER CANDIDATE
+document.getElementById('addCandidate').addEventListener('click', () => {
 
-        <button type="button" class="remove-btn"
-                onclick="removeCandidate(this)">
+    const row = document.createElement('div');
+    row.className = 'candidate-entry';
+
+    row.innerHTML = `
+        <div class="candidate-row">
+            <input type="text"
+                class="candidate-name"
+                maxlength="150"
+                placeholder="Candidate name"
+                required>
+
+            <input type="number"
+                class="candidate-votes"
+                min="0"
+                step="1"
+                value="0"
+                required>
+        </div>
+
+        <button type="button" class="remove-button">
             Remove Candidate
         </button>
     `;
 
-    candidateContainer.appendChild(candidate);
-
-    updateTotal();
-}
-
-function removeCandidate(button) {
-    button.parentElement.remove();
-    updateTotal();
-}
-
-function updateTotal() {
-    let total = 0;
-
-    document.querySelectorAll(".candidateVotes").forEach(input => {
-        total += Number(input.value) || 0;
+    row.querySelector('.remove-button').addEventListener('click', () => {
+        row.remove();
     });
 
-    document.getElementById("candidateTotal").textContent =
-        total.toLocaleString();
-}
-
-document.addEventListener("input", function(event) {
-    if (event.target.classList.contains("candidateVotes")) {
-        updateTotal();
-    }
+    candidateContainer.appendChild(row);
 });
 
-function validFile(file, maxSize) {
-    return file && file.size <= maxSize;
-}
-
-document.getElementById("resultsForm").addEventListener("submit",
-function(event) {
+// SUBMIT REPORT
+form.addEventListener('submit', async (event) => {
 
     event.preventDefault();
 
-    const message = document.getElementById("resultMessage");
+    submitButton.disabled = true;
+    submitButton.textContent = 'Submitting Report...';
 
-    const registered = Number(document.getElementById("registered").value);
-    const accredited = Number(document.getElementById("accredited").value);
-    const rejected = Number(document.getElementById("rejected").value);
+    message.style.display = 'none';
 
-    const votesInputs = document.querySelectorAll(".candidateVotes");
+    try {
 
-    let candidateVotes = 0;
+        const registered = getNumber('registered_voters');
+        const accredited = getNumber('accredited_voters');
+        const rejected = getNumber('rejected_ballots');
 
-    votesInputs.forEach(input => {
-        candidateVotes += Number(input.value) || 0;
-    });
+        if (
+            !Number.isSafeInteger(registered) ||
+            !Number.isSafeInteger(accredited) ||
+            !Number.isSafeInteger(rejected) ||
+            registered < 0 ||
+            accredited < 0 ||
+            rejected < 0
+        ) {
+            throw new Error('Enter valid non-negative whole numbers.');
+        }
 
-    const resultSheet = document.getElementById("resultSheet").files[0];
-    const extraEvidence = document.getElementById("extraEvidence").files[0];
+        if (accredited > registered) {
+            throw new Error(
+                'Accredited voters cannot exceed registered voters.'
+            );
+        }
 
-    const maxSize = 5 * 1024 * 1024;
-
-    if (accredited > registered) {
-        alert("Accredited voters cannot exceed registered voters.");
-        return;
-    }
-
-    if (candidateVotes + rejected > accredited) {
-        alert("Candidate votes plus rejected ballots cannot exceed accredited voters.");
-        return;
-    }
-
-    if (votesInputs.length === 0) {
-        alert("Please enter at least one candidate.");
-        return;
-    }
-
-    if (!resultSheet || !validFile(resultSheet, maxSize)) {
-        alert("Please upload a result sheet not exceeding 5MB.");
-        return;
-    }
-
-    if (!["image/jpeg", "image/png", "image/webp"].includes(resultSheet.type)) {
-        alert("The result sheet must be JPG, PNG or WEBP.");
-        return;
-    }
-
-    if (extraEvidence) {
-        const allowedTypes = [
-            "image/jpeg",
-            "image/png",
-            "image/webp",
-            "application/pdf"
+        const candidateNames = [
+            ...document.querySelectorAll('.candidate-name')
         ];
 
-        if (!allowedTypes.includes(extraEvidence.type) ||
-            !validFile(extraEvidence, maxSize)) {
-            alert("Additional evidence must be JPG, PNG, WEBP or PDF and not exceed 5MB.");
-            return;
+        const candidateVotes = [
+            ...document.querySelectorAll('.candidate-votes')
+        ];
+
+        const candidates = {};
+
+        for (let i = 0; i < candidateNames.length; i++) {
+
+            const name = candidateNames[i].value.trim();
+            const votes = Number(candidateVotes[i].value);
+
+            if (!name) {
+                throw new Error('Enter every candidate name.');
+            }
+
+            if (
+                !Number.isSafeInteger(votes) ||
+                votes < 0
+            ) {
+                throw new Error('Enter valid candidate vote figures.');
+            }
+
+            if (Object.prototype.hasOwnProperty.call(candidates, name)) {
+                throw new Error('Candidate names must be unique.');
+            }
+
+            candidates[name] = votes;
         }
+
+        const yearValue = document.getElementById('election_year').value;
+
+        const report = {
+
+            election_type: document.getElementById('election_type').value,
+
+            election_year: yearValue ? Number(yearValue) : null,
+
+            state: document.getElementById('state').value,
+
+            lga: document.getElementById('lga').value.trim() || null,
+
+            ward: document.getElementById('ward').value.trim() || null,
+
+            polling_unit:
+                document.getElementById('polling_unit').value.trim() || null,
+
+            observer_id:
+                document.getElementById('observer_id').value.trim() || null,
+
+            registered_voters: registered,
+
+            accredited_voters: accredited,
+
+            candidate_votes: candidates,
+
+            rejected_ballots: rejected,
+
+            status: 'pending'
+        };
+
+        const { error } = await supabase
+            .from('election_results')
+            .insert([report]);
+
+        if (error) {
+            throw error;
+        }
+
+        showMessage(
+            'Election report submitted successfully. It is now pending review.',
+            'success'
+        );
+
+        form.reset();
+
+        candidateContainer.innerHTML = `
+            <div class="candidate-row">
+                <input type="text"
+                    class="candidate-name"
+                    maxlength="150"
+                    placeholder="Candidate name"
+                    required>
+
+                <input type="number"
+                    class="candidate-votes"
+                    min="0"
+                    step="1"
+                    value="0"
+                    required>
+            </div>
+        `;
+
+    } catch (error) {
+
+        console.error('Election report error:', error);
+
+        showMessage(
+            error.message || 'Unable to submit your report. Please try again.',
+            'error'
+        );
+
+    } finally {
+
+        submitButton.disabled = false;
+        submitButton.textContent = 'Submit Election Report';
+
     }
-
-    message.style.display = "block";
-
-    message.innerHTML = `
-        <strong>Review completed successfully.</strong><br><br>
-
-        Your entries passed the basic checks on this page.<br><br>
-
-        Election: ${document.getElementById("electionType").value}<br>
-        State: ${document.getElementById("state").value}<br>
-        LGA: ${document.getElementById("lga").value}<br>
-        Polling Unit: ${document.getElementById("pollingUnit").value}<br>
-        Registered Voters: ${registered.toLocaleString()}<br>
-        Accredited Voters: ${accredited.toLocaleString()}<br>
-        Candidate Votes: ${candidateVotes.toLocaleString()}<br>
-        Rejected Ballots: ${rejected.toLocaleString()}<br><br>
-
-        <strong>Important:</strong> This report has NOT been sent or saved.
-        The database and secure submission system have not yet been connected.
-        Do not treat this review as an official election result.
-    `;
-
-    message.scrollIntoView({behavior: "smooth"});
 
 });
 
-</script></body>
+</script>
+
+</body>
 </html>
