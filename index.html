@@ -1,91 +1,125 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="description" content="Nwachukwu Election Watch - Independent election monitoring, transparency and accountability across Nigeria.">
-<title>Nwachukwu Election Watch | Official Website</title><style>
+
+<title>Nwachukwu Election Watch | Official Website</title>
+
+<style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
     color: #222;
     line-height: 1.6;
 }
 
+/* HEADER */
 header {
     background: #071d3b;
     color: white;
-    padding: 18px 5%;
+    padding: 22px 5%;
+    text-align: center;
 }
 
-.header-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
+header h1 {
+    font-size: 28px;
+    letter-spacing: 1px;
 }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #f4c542;
+header p {
+    color: #e5bd54;
+    font-size: 14px;
+    margin-top: 5px;
 }
 
-.logo span {
-    color: white;
-}
-
-.tagline {
-    font-size: 12px;
-    color: #ddd;
-}
-
+/* NAVIGATION */
 nav {
+    background: #102d52;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 18px;
+    padding: 12px 5%;
+    gap: 5px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
+    padding: 9px 12px;
     font-size: 13px;
-    padding: 8px 10px;
     border-radius: 4px;
-    transition: 0.3s;
 }
 
-nav a:hover,
-nav a.active {
-    background: #f4c542;
+nav a:hover {
+    background: #d6a832;
     color: #071d3b;
 }
 
-.hero {
-    background: linear-gradient(120deg, #071d3b, #174777);
-    color: white;
-    padding: 85px 20px;
-    text-align: center;
+/* MOVING WELCOME MESSAGE */
+.welcome-marquee {
+    width: 100%;
+    overflow: hidden;
+    background: #d6a832;
+    color: #071d3b;
+    padding: 13px 0;
+    white-space: nowrap;
 }
 
-.hero h1 {
-    font-size: 40px;
-    max-width: 850px;
-    margin: auto auto 15px;
+.welcome-marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    animation: moveWelcome 20s linear infinite;
+}
+
+@keyframes moveWelcome {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* HERO SECTION */
+.hero {
+    background: linear-gradient(
+        rgba(7, 29, 59, 0.92),
+        rgba(7, 29, 59, 0.92)
+    ),
+    url("https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1500&q=80");
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 85px 20px;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
 }
 
 .hero p {
     max-width: 750px;
     margin: auto;
     font-size: 17px;
-    color: #e4eaf2;
 }
 
 .hero-buttons {
@@ -94,161 +128,110 @@ nav a.active {
 
 .btn {
     display: inline-block;
-    padding: 13px 22px;
-    margin: 6px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.btn-gold {
-    background: #f4c542;
+    background: #d6a832;
     color: #071d3b;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 5px;
 }
 
-.btn-outline {
-    border: 2px solid white;
-    color: white;
-}
-
-/* FEATURED PORTRAIT SECTION */
-
-.portrait-section {
+.btn:hover {
     background: white;
-    padding: 40px 20px;
+}
+
+/* PORTRAIT SECTION */
+.portrait-section {
     text-align: center;
-    border-bottom: 4px solid #d9aa22;
+    padding: 45px 20px;
+    background: white;
 }
 
 .portrait-section img {
     width: 100%;
-    max-width: 350px;
-    height: 390px;
-    object-fit: cover;
-    object-position: center 25%;
-    border-radius: 12px;
-    border: 5px solid #f4c542;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    max-width: 450px;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.15);
 }
 
-.portrait-caption {
+.portrait-section h2 {
+    color: #071d3b;
     margin-top: 18px;
+    font-size: 25px;
 }
 
-.portrait-caption h2 {
-    color: #102f57;
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-.portrait-caption p {
-    color: #777;
-    font-size: 14px;
-    letter-spacing: 1px;
+.portrait-section p {
+    color: #b48a20;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
-.container {
-    max-width: 1150px;
-    margin: 40px auto;
-    padding: 0 20px;
+/* GENERAL SECTIONS */
+section {
+    padding: 55px 7%;
 }
 
 .section-title {
-    color: #102f57;
     text-align: center;
+    color: #071d3b;
+    font-size: 28px;
     margin-bottom: 25px;
-    font-size: 27px;
 }
 
-.intro {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
+.welcome-section {
+    background: #ffffff;
     text-align: center;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
 }
 
-.intro p {
+.welcome-section p {
     max-width: 900px;
-    margin: 10px auto;
-    color: #555;
+    margin: 12px auto;
+    font-size: 16px;
 }
 
-.stats {
+/* SERVICE CARDS */
+.services {
+    background: #eef2f7;
+}
+
+.service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 18px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
 }
 
-.stat-card {
-    background: white;
-    padding: 25px 15px;
-    border-radius: 8px;
-    text-align: center;
-    border-bottom: 4px solid #d9aa22;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
-}
-
-.stat-card h2 {
-    color: #102f57;
-    font-size: 30px;
-}
-
-.stat-card p {
-    color: #666;
-    font-size: 14px;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-}
-
-.card {
+.service-card {
     background: white;
     padding: 25px;
-    border-radius: 9px;
-    border-top: 4px solid #d9aa22;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    text-align: center;
+    border-bottom: 4px solid #d6a832;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
 }
 
-.card h3 {
-    color: #102f57;
-    margin-bottom: 12px;
+.service-card h3 {
+    color: #071d3b;
+    margin-bottom: 10px;
 }
 
-.card p {
-    color: #555;
+.service-card p {
     font-size: 14px;
-    margin-bottom: 15px;
 }
 
-.card a {
-    display: inline-block;
-    color: #102f57;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.card a:hover {
-    color: #bd8b00;
-}
-
+/* COVERAGE */
 .coverage {
-    background: #102f57;
+    background: #071d3b;
     color: white;
-    padding: 35px;
-    border-radius: 10px;
-    margin-top: 35px;
     text-align: center;
 }
 
 .coverage h2 {
-    color: #f4c542;
-    margin-bottom: 12px;
+    color: #e5bd54;
+    margin-bottom: 15px;
 }
 
 .coverage p {
@@ -256,94 +239,102 @@ nav a.active {
     margin: auto;
 }
 
-.notice {
-    background: #fff4d6;
-    border-left: 5px solid #d9a514;
-    padding: 20px;
-    margin-top: 30px;
-    border-radius: 5px;
+/* DISCLAIMER */
+.disclaimer {
+    background: #fff7df;
+    border-left: 5px solid #d6a832;
+    padding: 22px;
+    margin: 35px auto;
+    max-width: 1050px;
 }
 
+.disclaimer h3 {
+    color: #071d3b;
+    margin-bottom: 8px;
+}
+
+/* CALL TO ACTION */
 .cta {
+    background: #102d52;
+    color: white;
     text-align: center;
-    background: white;
-    padding: 40px 20px;
-    margin-top: 35px;
-    border-radius: 10px;
 }
 
 .cta h2 {
-    color: #102f57;
     margin-bottom: 12px;
 }
 
+.cta p {
+    margin-bottom: 20px;
+}
+
+/* FOOTER */
 footer {
-    background: #071d3b;
+    background: #06162c;
     color: white;
     text-align: center;
     padding: 30px 15px;
-    margin-top: 50px;
-}
-
-.footer-links {
-    margin: 15px 0;
-}
-
-.footer-links a {
-    display: inline-block;
-    color: #f4c542;
-    text-decoration: none;
-    margin: 5px 9px;
-    font-size: 13px;
 }
 
 footer p {
     font-size: 13px;
+    margin: 5px;
 }
 
-@media(max-width:600px) {
-    .hero h1 {
-        font-size: 29px;
+footer a {
+    color: #e5bd54;
+    text-decoration: none;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 22px;
+    }
+
+    nav {
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 7px 8px;
+    }
+
+    .hero {
+        padding: 65px 18px;
+    }
+
+    .hero h2 {
+        font-size: 27px;
     }
 
     .hero p {
         font-size: 15px;
     }
 
-    .header-top {
-        display: block;
+    .section-title {
+        font-size: 24px;
     }
 
-    .tagline {
-        margin-top: 5px;
-    }
-
-    nav a {
-        font-size: 12px;
-    }
-
-    .portrait-section img {
-        max-width: 290px;
-        height: 340px;
-    }
-
-    .portrait-caption h2 {
-        font-size: 21px;
+    .welcome-marquee span {
+        font-size: 14px;
     }
 }
-</style></head><body><header>
-    <div class="header-top">
-        <div>
-            <div class="logo">
-                NWACHUKWU <span>ELECTION WATCH</span>
-            </div>        <div class="tagline">
-            Transparency | Accountability | Credible Election Monitoring
-        </div>
-    </div>
-</div>
+</style>
+</head>
 
+<body>
+
+<!-- WEBSITE HEADER -->
+<header>
+    <h1>NWACHUKWU ELECTION WATCH</h1>
+    <p>NEW | INDEPENDENT ELECTION MONITORING PLATFORM</p>
+</header>
+
+<!-- NAVIGATION -->
 <nav>
-    <a href="index.html" class="active">Home</a>
+    <a href="index.html">Home</a>
     <a href="about.html">About Us</a>
     <a href="dashboard.html">Dashboard</a>
     <a href="elections.html">Elections</a>
@@ -359,215 +350,191 @@ footer p {
     <a href="terms.html">Terms</a>
 </nav>
 
-</header><section class="hero"><h1>Promoting Transparency in Nigeria's Electoral Process</h1>
-
-<p>
-    Nwachukwu Election Watch is an independent civic monitoring
-    platform designed to support responsible election observation,
-    transparent reporting and democratic accountability across Nigeria.
-</p>
-
-<div class="hero-buttons">
-
-    <a href="observers.html" class="btn btn-gold">
-        Register as Observer
-    </a>
-
-    <a href="dashboard.html" class="btn btn-outline">
-        Monitoring Dashboard
-    </a>
-
+<!-- MOVING WELCOME NOTE -->
+<div class="welcome-marquee">
+    <span>
+        WELCOME TO NWACHUKWU ELECTION WATCH (NEW) —
+        Promoting Transparency, Accountability and Credible Election Monitoring Across Nigeria.
+    </span>
 </div>
 
-</section><!-- FEATURED PORTRAIT --><section class="portrait-section"><img
-    src="leadership-portrait.jpg"
-    alt="Featured leadership portrait for Nwachukwu Election Watch"
->
+<!-- HERO SECTION -->
+<div class="hero">
+    <h2>Promoting Electoral Transparency in Nigeria</h2>
 
-<div class="portrait-caption">
+    <p>
+        Welcome to Nwachukwu Election Watch, an independent civic
+        initiative committed to election observation, responsible
+        reporting, transparency and accountability across Nigeria.
+    </p>
+
+    <div class="hero-buttons">
+        <a href="about.html" class="btn">Learn More</a>
+        <a href="observers.html" class="btn">Register as Observer</a>
+    </div>
+</div>
+
+<!-- FEATURED PORTRAIT -->
+<section class="portrait-section">
+
+    <img
+        src="https://i.ibb.co/3bzdfVm/file-0000000026408210a46835fae0727b7a.png"
+        alt="Featured portrait for Nwachukwu Election Watch"
+    >
+
     <h2>Nwachukwu Election Watch (NEW)</h2>
-    <p>LEADERSHIP | TRANSPARENCY | ACCOUNTABILITY</p>
-</div>
 
-</section><div class="container"><div class="intro">
+    <p>LEADERSHIP | TRANSPARENCY | ACCOUNTABILITY</p>
+
+</section>
+
+<!-- WELCOME SECTION -->
+<section class="welcome-section">
 
     <h2 class="section-title">Welcome to Nwachukwu Election Watch</h2>
 
     <p>
-        Our mission is to encourage credible elections through
-        independent observation, accurate documentation,
-        responsible reporting and public accountability.
+        Nwachukwu Election Watch (NEW) is an independent election
+        monitoring initiative established to promote credible
+        elections, transparency and accountability in Nigeria.
     </p>
 
     <p>
-        We aim to provide a platform where authorised observers
-        can document electoral activities, report incidents
-        and submit polling-unit observations.
+        Our mission is to encourage responsible citizen participation,
+        support independent election observation, document electoral
+        developments and promote public confidence in the democratic
+        process.
     </p>
-
-</div>
-
-<h2 class="section-title" style="margin-top:40px;">
-    Our Monitoring Overview
-</h2>
-
-<div class="stats">
-
-    <div class="stat-card">
-        <h2>0</h2>
-        <p>Registered Observers</p>
-    </div>
-
-    <div class="stat-card">
-        <h2>0</h2>
-        <p>Polling Units Monitored</p>
-    </div>
-
-    <div class="stat-card">
-        <h2>0</h2>
-        <p>Reports Submitted</p>
-    </div>
-
-    <div class="stat-card">
-        <h2>0</h2>
-        <p>Incidents Reported</p>
-    </div>
-
-</div>
-
-</div><div class="container"><h2 class="section-title">Our Monitoring Services</h2>
-
-<div class="cards">
-
-    <div class="card">
-        <h3>Election Observation</h3>
-        <p>
-            Support structured documentation of electoral activities
-            through observer registration and field reporting.
-        </p>
-        <a href="observers.html">Register an Observer →</a>
-    </div>
-
-    <div class="card">
-        <h3>Polling Unit Reports</h3>
-        <p>
-            Organise reports according to state, local government,
-            ward and polling unit.
-        </p>
-        <a href="dashboard.html">View Dashboard →</a>
-    </div>
-
-    <div class="card">
-        <h3>Election Results Monitoring</h3>
-        <p>
-            Receive observer-submitted polling-unit information
-            for documentation and verification.
-        </p>
-        <a href="results.html">Submit Result Report →</a>
-    </div>
-
-    <div class="card">
-        <h3>Incident Reporting</h3>
-        <p>
-            Provide a reporting channel for documenting suspected
-            electoral incidents and irregularities.
-        </p>
-        <a href="incidents.html">Report an Incident →</a>
-    </div>
-
-    <div class="card">
-        <h3>Election Coverage</h3>
-        <p>
-            Explore our planned monitoring coverage for different
-            elections across Nigeria.
-        </p>
-        <a href="elections.html">Explore Elections →</a>
-    </div>
-
-    <div class="card">
-        <h3>Public Information</h3>
-        <p>
-            Learn about our organisation, objectives, principles
-            and monitoring approach.
-        </p>
-        <a href="about.html">Learn About Us →</a>
-    </div>
-
-</div>
-
-<div class="coverage">
-
-    <h2>Covering Nigeria</h2>
 
     <p>
-        Our platform is designed to organise election monitoring
-        information across Nigeria's 36 states and the Federal
-        Capital Territory, including local government areas,
-        electoral wards and polling units.
+        Through structured observation and responsible reporting,
+        we aim to contribute to a more transparent and accountable
+        electoral environment.
     </p>
 
-    <br>
+</section>
 
-    <a href="elections.html" class="btn btn-gold">
-        Explore Our Coverage
-    </a>
+<!-- OUR SERVICES -->
+<section class="services">
 
-</div>
+    <h2 class="section-title">Our Monitoring Activities</h2>
 
-<div class="notice">
+    <div class="service-grid">
 
-    <strong>Important Election Disclaimer:</strong>
+        <div class="service-card">
+            <h3>Election Observation</h3>
+            <p>
+                Supporting responsible observation of electoral
+                activities across different locations in Nigeria.
+            </p>
+        </div>
 
-    Nwachukwu Election Watch is an independent civic monitoring
-    platform and is not INEC. Reports and results submitted by
-    observers are not official election results or declarations.
-    All submissions require appropriate verification.
+        <div class="service-card">
+            <h3>Incident Reporting</h3>
+            <p>
+                Providing a structured channel for documenting
+                reported electoral incidents for review and verification.
+            </p>
+        </div>
 
-</div>
+        <div class="service-card">
+            <h3>Results Documentation</h3>
+            <p>
+                Recording observer-submitted polling unit information
+                for documentation and transparency.
+            </p>
+        </div>
 
-<div class="cta">
+        <div class="service-card">
+            <h3>Public Accountability</h3>
+            <p>
+                Promoting civic awareness, transparency and responsible
+                participation in Nigeria's democratic process.
+            </p>
+        </div>
 
-    <h2>Become Part of the Monitoring Network</h2>
+    </div>
+
+</section>
+
+<!-- NATIONAL COVERAGE -->
+<section class="coverage">
+
+    <h2>Our Coverage Across Nigeria</h2>
 
     <p>
-        Support transparency and responsible election observation
-        by applying to participate in our monitoring network.
+        Nwachukwu Election Watch aims to develop an observation
+        network covering Nigeria's 36 states and the Federal Capital
+        Territory, including local government areas, wards and
+        polling units.
     </p>
 
-    <a href="observers.html" class="btn btn-gold">
-        Apply Now
-    </a>
+</section>
 
-    <a href="contact.html" class="btn"
-       style="background:#071d3b;color:white;">
-        Contact Us
-    </a>
+<!-- DISCLAIMER -->
+<div class="disclaimer">
 
-</div>
+    <h3>Important Public Notice</h3>
 
-</div><footer><h3>Nwachukwu Election Watch (NEW)</h3>
+    <p>
+        Nwachukwu Election Watch is an independent civic monitoring
+        initiative. It is not the Independent National Electoral
+        Commission (INEC) and does not replace any legally authorised
+        electoral authority.
+    </p>
 
-<div class="footer-links">
-
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="team.html">Our Team</a>
-    <a href="elections.html">Elections</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms</a>
+    <p>
+        Information submitted by observers is subject to review and
+        verification. Observer-submitted figures are not official
+        election results, and the platform does not declare election
+        winners.
+    </p>
 
 </div>
 
-<p>
-    Transparency | Accountability | Credible Election Monitoring
-</p>
+<!-- CALL TO ACTION -->
+<section class="cta">
 
-<p style="margin-top:12px;">
-    &copy; 2026 Nwachukwu Election Watch. All Rights Reserved.
-</p>
+    <h2>Be Part of Electoral Transparency</h2>
 
-</footer></body>
+    <p>
+        Participate responsibly in promoting credible elections
+        and accountability across Nigeria.
+    </p>
+
+    <a href="observers.html" class="btn">Become an Observer</a>
+
+    <a href="contact.html" class="btn">Contact Us</a>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <h3>NWACHUKWU ELECTION WATCH (NEW)</h3>
+
+    <p>Transparency | Accountability | Credible Election Monitoring</p>
+
+    <p>
+        Independent Civic Election Monitoring Initiative
+    </p>
+
+    <p>
+        &copy; <span id="year"></span>
+        Nwachukwu Election Watch. All Rights Reserved.
+    </p>
+
+    <p>
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms and Conditions</a>
+    </p>
+
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
 </html>
