@@ -2,7 +2,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Administration dashboard for Nwachukwu Election Watch.">
 <title>Admin Dashboard | Nwachukwu Election Watch</title><style>
 * {
     margin: 0;
@@ -12,445 +11,534 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f4f6fa;
-    color: #222;
-    line-height: 1.6;
+    background: #f2f5f9;
+    color: #17243a;
 }
 
 header {
-    background: #071b3a;
+    background: #071b38;
     color: white;
-    padding: 25px 15px;
-    text-align: center;
-}
-
-header h1 {
-    color: #e5b342;
-}
-
-nav {
-    background: #102b52;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 9px 12px;
-    font-size: 14px;
-}
-
-nav a:hover {
-    background: #e5b342;
-    color: #071b3a;
-    border-radius: 4px;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 30px auto;
     padding: 20px;
-}
-
-.topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 15px;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    gap: 15px;
 }
 
-.topbar h2 {
-    color: #071b3a;
+header h2 {
+    color: #e5b83e;
 }
 
-.login-link {
-    display: inline-block;
-    background: #e5b342;
-    color: #071b3a;
-    padding: 10px 16px;
+header p {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
     border-radius: 5px;
-    text-decoration: none;
+    padding: 10px 15px;
     font-weight: bold;
 }
 
-.notice {
-    background: #fff4d6;
-    border-left: 5px solid #e5b342;
-    padding: 15px;
-    margin-bottom: 25px;
-    border-radius: 4px;
+.logout {
+    background: #d93636;
+    color: white;
 }
 
-.warning {
-    background: #fff0f0;
-    border-left: 5px solid #c62828;
-    padding: 15px;
-    margin-bottom: 25px;
-    border-radius: 4px;
+.container {
+    width: 95%;
+    max-width: 1300px;
+    margin: 25px auto;
 }
 
-.stats {
+.welcome {
+    margin-bottom: 25px;
+}
+
+.welcome h1 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-    margin-bottom: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-.stat-card {
+.card {
     background: white;
     padding: 22px;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-    border-top: 4px solid #e5b342;
+    border-radius: 10px;
+    border-left: 5px solid #d6a72e;
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
 }
 
-.stat-card h3 {
-    color: #102b52;
-    font-size: 15px;
-    margin-bottom: 10px;
+.card h3 {
+    font-size: 14px;
+    color: #65738a;
+    margin-bottom: 12px;
 }
 
-.stat-card .number {
+.card strong {
     font-size: 30px;
-    font-weight: bold;
-    color: #071b3a;
+    color: #071b38;
 }
 
 .section {
     background: white;
-    padding: 22px;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
     margin-bottom: 25px;
-}
-
-.section h3 {
-    color: #071b3a;
-    margin-bottom: 15px;
-}
-
-.quick-links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
-
-.quick-link {
-    display: block;
-    text-decoration: none;
-    background: #102b52;
-    color: white;
     padding: 20px;
-    border-radius: 7px;
-    text-align: center;
-    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.05);
 }
 
-.quick-link:hover {
-    background: #e5b342;
-    color: #071b3a;
+.section h2 {
+    margin-bottom: 15px;
+    color: #071b38;
+    font-size: 20px;
 }
 
-.table-wrapper {
-    width: 100%;
+.table-wrap {
     overflow-x: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 650px;
+    min-width: 700px;
 }
 
 th, td {
-    padding: 13px;
-    border-bottom: 1px solid #ddd;
+    padding: 12px;
     text-align: left;
+    border-bottom: 1px solid #e5e9ef;
+    font-size: 13px;
 }
 
 th {
-    background: #102b52;
+    background: #071b38;
     color: white;
 }
 
-.empty {
-    text-align: center;
-    padding: 25px;
-    color: #777;
+td {
+    max-width: 280px;
+    overflow-wrap: anywhere;
 }
 
 .status {
     display: inline-block;
-    background: #fff4d6;
-    color: #805b00;
-    padding: 5px 10px;
+    padding: 5px 9px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    background: #fff0cc;
+    color: #8a5b00;
+}
+
+.status.approved {
+    background: #d9f7e5;
+    color: #126b38;
+}
+
+.status.rejected {
+    background: #ffe0e0;
+    color: #a21d1d;
+}
+
+.action {
+    padding: 7px 10px;
+    margin: 3px;
+    font-size: 11px;
+}
+
+.approve {
+    background: #168449;
+    color: white;
+}
+
+.reject {
+    background: #c73535;
+    color: white;
+}
+
+.refresh {
+    background: #d6a72e;
+    color: #071b38;
+    margin-bottom: 15px;
+}
+
+.message {
+    padding: 12px;
+    background: #e9f1ff;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    display: none;
+}
+
+.empty {
+    padding: 20px;
+    text-align: center;
+    color: #777;
 }
 
 footer {
-    background: #071b3a;
-    color: white;
     text-align: center;
-    padding: 20px;
-    margin-top: 30px;
+    padding: 25px;
+    background: #071b38;
+    color: white;
+    margin-top: 40px;
+    font-size: 13px;
 }
 
-footer span {
-    color: #e5b342;
-}
-
-@media(max-width:850px) {
-    .stats {
-        grid-template-columns: repeat(2, 1fr);
+@media(max-width:600px) {
+    header h2 {
+        font-size: 18px;
     }
 
-    .quick-links {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(max-width:550px) {
-    .container {
-        padding: 12px;
+    .welcome h1 {
+        font-size: 21px;
     }
 
-    .stats {
-        grid-template-columns: 1fr;
-    }
-
-    .quick-links {
-        grid-template-columns: 1fr;
-    }
-
-    nav a {
-        font-size: 12px;
-        padding: 8px;
+    .section {
+        padding: 13px;
     }
 }
 </style></head><body><header>
-    <h1>NWACHUKWU ELECTION WATCH</h1>
-    <p>Administration Control Centre</p>
-</header><nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="elections.html">Elections</a>
-    <a href="team.html">Our Team</a>
-    <a href="observers.html">Observers</a>
-    <a href="results.html">Results</a>
-    <a href="incidents.html">Incidents</a>
-    <a href="admin.html">Admin</a>
-    <a href="login.html">Login</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-</nav><div class="container"><div class="topbar">
-    <h2>Administration Dashboard</h2>
-    <a href="login.html" class="login-link">Administrator Login</a>
+    <div>
+        <h2>NWACHUKWU ELECTION WATCH</h2>
+        <p>Administrator Control Panel</p>
+    </div><button class="logout" onclick="logout()">Logout</button>
+
+</header><div class="container"><div class="welcome">
+    <h1>Admin Dashboard</h1>
+    <p>Welcome to the Nwachukwu Election Watch monitoring system.</p>
+    <p id="adminEmail" style="margin-top:8px;"></p>
 </div>
 
-<div class="warning">
-    <strong>Access notice:</strong> This page is currently a demonstration.
-    It does not have administrator authentication or access restrictions.
-    Do not publish confidential information here until secure login and
-    database permissions have been implemented.
-</div>
+<div id="message" class="message"></div>
 
-<div class="notice">
-    The figures below are demonstration values, not live election data.
-    They will be connected to the website database during backend development.
-</div>
+<button class="refresh" onclick="loadDashboard()">
+    Refresh Dashboard
+</button>
 
-<div class="stats">
+<div class="cards">
 
-    <div class="stat-card">
-        <h3>Registered Observers</h3>
-        <div class="number">0</div>
-        <p>Applications received</p>
+    <div class="card">
+        <h3>Total Observers</h3>
+        <strong id="observerCount">0</strong>
     </div>
 
-    <div class="stat-card">
+    <div class="card">
         <h3>Election Reports</h3>
-        <div class="number">0</div>
-        <p>Observer result reports</p>
+        <strong id="resultCount">0</strong>
     </div>
 
-    <div class="stat-card">
+    <div class="card">
         <h3>Incident Reports</h3>
-        <div class="number">0</div>
-        <p>Reported incidents</p>
+        <strong id="incidentCount">0</strong>
     </div>
 
-    <div class="stat-card">
-        <h3>States Covered</h3>
-        <div class="number">0</div>
-        <p>States with verified activity</p>
+    <div class="card">
+        <h3>Pending Submissions</h3>
+        <strong id="pendingCount">0</strong>
     </div>
 
 </div>
 
 <div class="section">
-    <h3>Administrative Management</h3>
-
-    <div class="quick-links">
-
-        <a href="observers.html" class="quick-link">
-            Manage Observers
-        </a>
-
-        <a href="results.html" class="quick-link">
-            Review Election Results
-        </a>
-
-        <a href="incidents.html" class="quick-link">
-            Review Incident Reports
-        </a>
-
-        <a href="dashboard.html" class="quick-link">
-            Monitoring Dashboard
-        </a>
-
-        <a href="elections.html" class="quick-link">
-            Election Coverage
-        </a>
-
-        <a href="contact.html" class="quick-link">
-            Contact Messages
-        </a>
-
-    </div>
-</div>
-
-<div class="section">
-    <h3>Recent Observer Applications</h3>
-
-    <div class="table-wrapper">
+    <h2>Observer Registrations</h2>
+    <div class="table-wrap">
         <table>
             <thead>
                 <tr>
-                    <th>Observer Name</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
                     <th>State</th>
                     <th>LGA</th>
-                    <th>Application Date</th>
                     <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
-
-            <tbody>
-                <tr>
-                    <td colspan="5" class="empty">
-                        No observer records available.
-                        Database connection is pending.
-                    </td>
-                </tr>
+            <tbody id="observersTable">
+                <tr><td colspan="7" class="empty">Loading...</td></tr>
             </tbody>
         </table>
     </div>
 </div>
 
 <div class="section">
-    <h3>Recent Election Results Reports</h3>
-
-    <div class="table-wrapper">
+    <h2>Election Results Submissions</h2>
+    <div class="table-wrap">
         <table>
             <thead>
                 <tr>
-                    <th>Election Type</th>
+                    <th>Election</th>
+                    <th>Year</th>
                     <th>State</th>
                     <th>LGA</th>
                     <th>Polling Unit</th>
-                    <th>Review Status</th>
+                    <th>Candidate Votes</th>
+                    <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
-
-            <tbody>
-                <tr>
-                    <td colspan="5" class="empty">
-                        No election reports available.
-                        Database connection is pending.
-                    </td>
-                </tr>
+            <tbody id="resultsTable">
+                <tr><td colspan="8" class="empty">Loading...</td></tr>
             </tbody>
         </table>
     </div>
 </div>
 
 <div class="section">
-    <h3>Recent Incident Reports</h3>
-
-    <div class="table-wrapper">
+    <h2>Reported Election Incidents</h2>
+    <div class="table-wrap">
         <table>
             <thead>
                 <tr>
-                    <th>Incident Category</th>
+                    <th>Reporter</th>
+                    <th>Category</th>
+                    <th>Severity</th>
                     <th>State</th>
                     <th>LGA</th>
-                    <th>Severity</th>
+                    <th>Description</th>
                     <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
-
-            <tbody>
-                <tr>
-                    <td colspan="5" class="empty">
-                        No incident reports available.
-                        Database connection is pending.
-                    </td>
-                </tr>
+            <tbody id="incidentsTable">
+                <tr><td colspan="8" class="empty">Loading...</td></tr>
             </tbody>
         </table>
     </div>
 </div>
 
-<div class="section">
-    <h3>System Status</h3>
-
-    <p>
-        Website frontend:
-        <span class="status">Demonstration available</span>
-    </p>
-
-    <p>
-        Database connection:
-        <span class="status">Not connected</span>
-    </p>
-
-    <p>
-        Administrator authentication:
-        <span class="status">Not configured</span>
-    </p>
-
-    <p>
-        Report verification:
-        <span class="status">Not configured</span>
-    </p>
-
-    <p>
-        Secure file storage:
-        <span class="status">Not configured</span>
-    </p>
-</div>
-
-<div class="notice">
-    <strong>Future development:</strong>
-    This dashboard will be connected to a secure database and
-    administrator authentication system. Access permissions,
-    audit logs and report verification workflows must be implemented
-    before it is used to manage real election information.
-</div>
-
 </div><footer>
-    <p>
-        &copy; 2026 <span>Nwachukwu Election Watch</span>.
-        All Rights Reserved.
-    </p>
-    <p>Transparency | Accountability | Credible Election Monitoring</p>
-</footer></body>
+    Nwachukwu Election Watch © 2026<br>
+    Transparency | Accountability | Credible Election Monitoring
+</footer><script type="module">
+
+import { supabase } from './supabase.js';
+
+const messageBox = document.getElementById('message');
+
+function escapeHTML(value) {
+    return String(value ?? '')
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+}
+
+function showMessage(message) {
+    messageBox.textContent = message;
+    messageBox.style.display = 'block';
+}
+
+function statusHTML(status) {
+    const value = String(status || 'pending').toLowerCase();
+
+    return `<span class="status ${['approved','rejected'].includes(value) ? value : ''}">
+        ${escapeHTML(value)}
+    </span>`;
+}
+
+async function checkAdmin() {
+    const { data: { user }, error } = await supabase.auth.getUser();
+
+    if (error || !user) {
+        window.location.href = 'login.html';
+        return false;
+    }
+
+    if (user.app_metadata?.role !== 'admin') {
+        await supabase.auth.signOut();
+        alert('Access denied. Administrator privileges are required.');
+        window.location.href = 'login.html';
+        return false;
+    }
+
+    document.getElementById('adminEmail').textContent =
+        'Administrator: ' + user.email;
+
+    return true;
+}
+
+async function loadObservers() {
+    const { data, error } = await supabase
+        .from('observers')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+    if (error) throw error;
+
+    document.getElementById('observerCount').textContent = data.length;
+
+    document.getElementById('observersTable').innerHTML =
+        data.length ? data.map(row => `
+        <tr>
+            <td>${escapeHTML(row.full_name)}</td>
+            <td>${escapeHTML(row.email)}</td>
+            <td>${escapeHTML(row.phone)}</td>
+            <td>${escapeHTML(row.state)}</td>
+            <td>${escapeHTML(row.lga)}</td>
+            <td>${statusHTML(row.status)}</td>
+            <td>
+                <button class="action approve"
+                onclick="updateStatus('observers','${row.id}','approved')">
+                Approve</button>
+
+                <button class="action reject"
+                onclick="updateStatus('observers','${row.id}','rejected')">
+                Reject</button>
+            </td>
+        </tr>
+        `).join('') :
+        '<tr><td colspan="7" class="empty">No observer registrations yet.</td></tr>';
+
+    return data;
+}
+
+async function loadResults() {
+    const { data, error } = await supabase
+        .from('election_results')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+    if (error) throw error;
+
+    document.getElementById('resultCount').textContent = data.length;
+
+    document.getElementById('resultsTable').innerHTML =
+        data.length ? data.map(row => `
+        <tr>
+            <td>${escapeHTML(row.election_type)}</td>
+            <td>${escapeHTML(row.election_year)}</td>
+            <td>${escapeHTML(row.state)}</td>
+            <td>${escapeHTML(row.lga)}</td>
+            <td>${escapeHTML(row.polling_unit)}</td>
+            <td>${escapeHTML(JSON.stringify(row.candidate_votes || {}))}</td>
+            <td>${statusHTML(row.status)}</td>
+            <td>
+                <button class="action approve"
+                onclick="updateStatus('election_results','${row.id}','approved')">
+                Approve</button>
+
+                <button class="action reject"
+                onclick="updateStatus('election_results','${row.id}','rejected')">
+                Reject</button>
+            </td>
+        </tr>
+        `).join('') :
+        '<tr><td colspan="8" class="empty">No election reports yet.</td></tr>';
+
+    return data;
+}
+
+async function loadIncidents() {
+    const { data, error } = await supabase
+        .from('incident_reports')
+        .select('*')
+        .order('created_at', { ascending: false });
+
+    if (error) throw error;
+
+    document.getElementById('incidentCount').textContent = data.length;
+
+    document.getElementById('incidentsTable').innerHTML =
+        data.length ? data.map(row => `
+        <tr>
+            <td>${escapeHTML(row.reporter_name || 'Anonymous')}</td>
+            <td>${escapeHTML(row.category)}</td>
+            <td>${escapeHTML(row.severity)}</td>
+            <td>${escapeHTML(row.state)}</td>
+            <td>${escapeHTML(row.lga)}</td>
+            <td>${escapeHTML(row.description)}</td>
+            <td>${statusHTML(row.status)}</td>
+            <td>
+                <button class="action approve"
+                onclick="updateStatus('incident_reports','${row.id}','approved')">
+                Approve</button>
+
+                <button class="action reject"
+                onclick="updateStatus('incident_reports','${row.id}','rejected')">
+                Reject</button>
+            </td>
+        </tr>
+        `).join('') :
+        '<tr><td colspan="8" class="empty">No incident reports yet.</td></tr>';
+
+    return data;
+}
+
+window.updateStatus = async function(table, id, status) {
+
+    if (!confirm(`Are you sure you want to mark this submission as ${status}?`)) {
+        return;
+    }
+
+    const allowedTables = [
+        'observers',
+        'election_results',
+        'incident_reports'
+    ];
+
+    if (!allowedTables.includes(table)) return;
+
+    const { error } = await supabase
+        .from(table)
+        .update({ status: status })
+        .eq('id', id);
+
+    if (error) {
+        showMessage('Update failed: ' + error.message);
+        return;
+    }
+
+    showMessage('Submission status updated successfully.');
+    await loadDashboard();
+};
+
+window.loadDashboard = async function() {
+
+    messageBox.style.display = 'none';
+
+    try {
+        const [observers, results, incidents] = await Promise.all([
+            loadObservers(),
+            loadResults(),
+            loadIncidents()
+        ]);
+
+        const pending =
+            [...observers, ...results, ...incidents]
+            .filter(row => String(row.status).toLowerCase() === 'pending')
+            .length;
+
+        document.getElementById('pendingCount').textContent = pending;
+
+    } catch (error) {
+        console.error(error);
+        showMessage('Could not load dashboard data: ' + error.message);
+    }
+};
+
+window.logout = async function() {
+    await supabase.auth.signOut();
+    window.location.href = 'login.html';
+};
+
+const authorised = await checkAdmin();
+
+if (authorised) {
+    await loadDashboard();
+}
+
+</script></body>
 </html>
