@@ -1,77 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="Learn about Nwachukwu Election Watch, our mission, vision and commitment to transparent election monitoring in Nigeria.">
-
-<title>About Us | Nwachukwu Election Watch</title>
-
-<style>
+<meta name="description" content="Learn about Nwachukwu Election Watch, its mission, vision and commitment to election transparency in Nigeria.">
+<title>About Us | Nwachukwu Election Watch</title><style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
+    font-family: Arial, sans-serif;
     background: #f4f6fa;
-    color: #263449;
+    color: #222;
     line-height: 1.7;
 }
 
 header {
-    background: #071d3b;
+    background: #071b3a;
     color: white;
-    padding: 20px;
+    text-align: center;
+    padding: 30px 15px;
 }
 
-.header-content {
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.logo h2 {
-    color: #f3c64e;
-    font-size: 21px;
-}
-
-.logo p {
-    font-size: 11px;
+header h1 {
+    color: #e5b342;
+    margin-bottom: 5px;
 }
 
 nav {
+    background: #102b52;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    justify-content: center;
+    padding: 10px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
+    padding: 9px 12px;
     font-size: 14px;
 }
 
 nav a:hover {
-    color: #f3c64e;
+    background: #e5b342;
+    color: #071b3a;
+    border-radius: 4px;
 }
 
 .hero {
-    background: linear-gradient(120deg, #071d3b, #164779);
+    background: linear-gradient(rgba(7,27,58,.9), rgba(7,27,58,.9));
     color: white;
     text-align: center;
     padding: 75px 20px;
 }
 
-.hero h1 {
-    font-size: 38px;
+.hero h2 {
+    font-size: 36px;
+    color: #e5b342;
     margin-bottom: 15px;
 }
 
@@ -83,388 +71,353 @@ nav a:hover {
 
 .container {
     max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 18px;
+    margin: 35px auto;
+    padding: 20px;
 }
 
 .section {
     background: white;
     padding: 30px;
-    border-radius: 10px;
     margin-bottom: 25px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+    border-radius: 9px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
 }
 
 .section h2 {
-    color: #071d3b;
+    color: #071b3a;
     margin-bottom: 15px;
-    border-left: 5px solid #d6a928;
-    padding-left: 12px;
+}
+
+.section h3 {
+    color: #102b52;
+    margin: 20px 0 10px;
 }
 
 .section p {
     margin-bottom: 12px;
-    color: #566477;
 }
 
-.values {
+.values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
     margin-top: 20px;
 }
 
 .value-card {
-    background: #f6f8fb;
-    padding: 23px;
-    border-radius: 8px;
-    border-bottom: 4px solid #d6a928;
+    background: #f4f6fa;
+    border-top: 4px solid #e5b342;
+    padding: 20px;
+    border-radius: 7px;
 }
 
 .value-card h3 {
-    color: #071d3b;
-    margin-bottom: 10px;
+    color: #071b3a;
+    margin-bottom: 8px;
 }
 
-.value-card p {
-    font-size: 14px;
+ul {
+    padding-left: 25px;
+    margin-top: 10px;
 }
 
-.objectives {
-    padding-left: 22px;
+li {
+    margin-bottom: 9px;
 }
 
-.objectives li {
-    margin-bottom: 12px;
-    color: #566477;
+.notice {
+    background: #fff4d6;
+    border-left: 5px solid #e5b342;
+    padding: 17px;
+    margin-top: 15px;
 }
 
-.call-to-action {
-    background: #071d3b;
+.cta {
+    background: #071b3a;
     color: white;
     text-align: center;
     padding: 40px 20px;
-    border-radius: 10px;
-    margin-bottom: 30px;
+    border-radius: 9px;
 }
 
-.call-to-action h2 {
+.cta h2 {
+    color: #e5b342;
     margin-bottom: 12px;
 }
 
-.call-to-action p {
-    margin-bottom: 20px;
-}
-
-.button {
+.cta a {
     display: inline-block;
-    background: #d6a928;
-    color: #071d3b;
+    background: #e5b342;
+    color: #071b3a;
     text-decoration: none;
     padding: 12px 22px;
+    margin-top: 20px;
     border-radius: 5px;
     font-weight: bold;
 }
 
 footer {
-    background: #071d3b;
+    background: #071b3a;
     color: white;
     text-align: center;
-    padding: 25px 15px;
-    font-size: 13px;
+    padding: 22px;
+    margin-top: 35px;
 }
 
-footer p {
-    margin: 5px;
+footer span {
+    color: #e5b342;
 }
 
-@media(max-width: 600px) {
-    .hero h1 {
-        font-size: 27px;
+@media(max-width:750px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .hero p {
-        font-size: 15px;
+    .hero h2 {
+        font-size: 28px;
+    }
+}
+
+@media(max-width:500px) {
+    .container {
+        padding: 12px;
     }
 
     .section {
-        padding: 22px;
+        padding: 20px;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 8px;
     }
 }
-</style>
-</head>
+</style></head><body><header>
+    <h1>NWACHUKWU ELECTION WATCH</h1>
+    <p>Transparency | Accountability | Credible Election Monitoring</p>
+</header><nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="elections.html">Elections</a>
+    <a href="team.html">Our Team</a>
+    <a href="observers.html">Observers</a>
+    <a href="results.html">Results</a>
+    <a href="incidents.html">Incidents</a>
+    <a href="admin.html">Admin</a>
+    <a href="login.html">Login</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+</nav><section class="hero">
+    <h2>About Nwachukwu Election Watch</h2><p>
+    Promoting electoral transparency, civic participation,
+    accountability and public confidence through independent
+    election observation and responsible reporting.
+</p>
 
-<body>
-
-<header>
-    <div class="header-content">
-
-        <div class="logo">
-            <h2>NWACHUKWU ELECTION WATCH</h2>
-            <p>TRANSPARENCY | ACCOUNTABILITY | CREDIBLE ELECTIONS</p>
-        </div>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="observers.html">Observers</a>
-            <a href="results.html">Results</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-
-    </div>
-</header>
-
-
-<section class="hero">
-
-    <h1>About Nwachukwu Election Watch</h1>
+</section><div class="container"><section class="section">
+    <h2>Who We Are</h2>
 
     <p>
-        Promoting transparency, accountability and credible
-        election monitoring through responsible civic participation
-        and independent observation across Nigeria.
+        Nwachukwu Election Watch (NEW) is an independent civic
+        election-monitoring platform designed to support transparency,
+        accountability and public participation in Nigeria's electoral
+        process.
     </p>
 
+    <p>
+        The platform is being developed to provide a structured way
+        for election observers and citizens to document polling-unit
+        activities, report election-related incidents and share
+        information that can support credible electoral processes.
+    </p>
+
+    <p>
+        Our approach is based on responsible observation,
+        evidence-based reporting, respect for the law and impartiality.
+    </p>
+
+    <div class="notice">
+        Nwachukwu Election Watch is not the Independent National
+        Electoral Commission (INEC), does not replace INEC and does
+        not have authority to declare official election results.
+    </div>
 </section>
 
+<section class="section">
+    <h2>Our Mission</h2>
 
-<main class="container">
+    <p>
+        To strengthen electoral transparency and accountability
+        in Nigeria by promoting independent observation,
+        responsible incident reporting, civic education and
+        accessible election information.
+    </p>
+</section>
 
-    <!-- WHO WE ARE -->
+<section class="section">
+    <h2>Our Vision</h2>
 
-    <section class="section">
+    <p>
+        To contribute to a Nigeria where elections are conducted
+        peacefully, transparently and credibly, and where citizens
+        can participate confidently in democratic processes.
+    </p>
+</section>
 
-        <h2>Who We Are</h2>
+<section class="section">
+    <h2>Our Objectives</h2>
 
-        <p>
-            Nwachukwu Election Watch (NEW) is an independent
-            civic election monitoring platform designed to
-            support transparency, public accountability and
-            responsible election observation in Nigeria.
-        </p>
+    <ul>
+        <li>Promote independent and impartial election observation.</li>
 
-        <p>
-            The platform provides a digital space where registered
-            observers can submit reports about polling unit
-            activities, election procedures, reported incidents
-            and other relevant observations.
-        </p>
+        <li>Encourage accurate documentation of polling-unit activities.</li>
 
-        <p>
-            Our objective is to encourage responsible participation
-            in democratic processes and promote access to reliable
-            election-monitoring information.
-        </p>
+        <li>Provide a platform for reporting election-related incidents.</li>
 
-        <p>
-            Nwachukwu Election Watch is not the Independent National
-            Electoral Commission (INEC), and it does not replace
-            the official responsibilities of electoral authorities.
-        </p>
+        <li>Promote voter education and civic awareness.</li>
 
-    </section>
+        <li>Support peaceful participation in democratic processes.</li>
 
+        <li>Encourage accountability through evidence-based reporting.</li>
 
-    <!-- OUR MISSION -->
+        <li>Make verified election-monitoring information more accessible.</li>
 
-    <section class="section">
+        <li>Promote respect for electoral laws and democratic institutions.</li>
+    </ul>
+</section>
 
-        <h2>Our Mission</h2>
+<section class="section">
+    <h2>Our Core Values</h2>
 
-        <p>
-            Our mission is to promote credible electoral processes
-            through independent observation, responsible reporting,
-            accurate documentation and public awareness.
-        </p>
+    <div class="values-grid">
 
-        <p>
-            We aim to provide a structured platform for documenting
-            election-related activities while encouraging peaceful
-            democratic participation.
-        </p>
-
-    </section>
-
-
-    <!-- OUR VISION -->
-
-    <section class="section">
-
-        <h2>Our Vision</h2>
-
-        <p>
-            To become a trusted and accessible election-monitoring
-            platform contributing to a more transparent,
-            accountable and participatory democratic environment
-            in Nigeria.
-        </p>
-
-    </section>
-
-
-    <!-- OBJECTIVES -->
-
-    <section class="section">
-
-        <h2>Our Objectives</h2>
-
-        <ul class="objectives">
-
-            <li>
-                Encourage responsible and independent election observation.
-            </li>
-
-            <li>
-                Document polling unit activities and election-related reports.
-            </li>
-
-            <li>
-                Provide a platform for reporting suspected electoral
-                irregularities and incidents.
-            </li>
-
-            <li>
-                Promote peaceful participation and respect for democratic rights.
-            </li>
-
-            <li>
-                Support transparency through proper documentation
-                and verification of submitted information.
-            </li>
-
-            <li>
-                Improve public awareness of electoral processes
-                and civic responsibilities.
-            </li>
-
-        </ul>
-
-    </section>
-
-
-    <!-- CORE VALUES -->
-
-    <section class="section">
-
-        <h2>Our Core Values</h2>
-
-        <div class="values">
-
-            <div class="value-card">
-                <h3>Transparency</h3>
-                <p>
-                    Promoting openness and clear documentation
-                    of election-monitoring activities.
-                </p>
-            </div>
-
-            <div class="value-card">
-                <h3>Accountability</h3>
-                <p>
-                    Encouraging responsible reporting and
-                    appropriate review of submitted information.
-                </p>
-            </div>
-
-            <div class="value-card">
-                <h3>Integrity</h3>
-                <p>
-                    Supporting honest observation, evidence-based
-                    reporting and ethical conduct.
-                </p>
-            </div>
-
-            <div class="value-card">
-                <h3>Neutrality</h3>
-                <p>
-                    Encouraging impartial monitoring without
-                    promoting any political party or candidate.
-                </p>
-            </div>
-
-            <div class="value-card">
-                <h3>Peaceful Participation</h3>
-                <p>
-                    Supporting peaceful democratic participation
-                    and respect for the rights of voters.
-                </p>
-            </div>
-
-            <div class="value-card">
-                <h3>Credibility</h3>
-                <p>
-                    Promoting verification and responsible handling
-                    of election-related information.
-                </p>
-            </div>
-
+        <div class="value-card">
+            <h3>Transparency</h3>
+            <p>
+                We believe election information should be documented
+                responsibly and presented clearly.
+            </p>
         </div>
 
-    </section>
+        <div class="value-card">
+            <h3>Integrity</h3>
+            <p>
+                We promote honesty, accuracy and ethical conduct
+                in election observation.
+            </p>
+        </div>
 
+        <div class="value-card">
+            <h3>Neutrality</h3>
+            <p>
+                We aim to remain impartial and avoid favouring
+                any political party or candidate.
+            </p>
+        </div>
 
-    <!-- HOW WE WORK -->
+        <div class="value-card">
+            <h3>Accountability</h3>
+            <p>
+                We support responsible reporting and proper
+                review of submitted information.
+            </p>
+        </div>
 
-    <section class="section">
+        <div class="value-card">
+            <h3>Peace</h3>
+            <p>
+                We encourage peaceful elections and discourage
+                violence, intimidation and electoral misconduct.
+            </p>
+        </div>
 
-        <h2>How We Work</h2>
+        <div class="value-card">
+            <h3>Public Interest</h3>
+            <p>
+                We place democratic participation and the public
+                interest at the centre of our work.
+            </p>
+        </div>
 
-        <p>
-            Nwachukwu Election Watch is designed to receive
-            election-monitoring submissions from registered
-            observers.
-        </p>
+    </div>
+</section>
 
-        <p>
-            Submitted information can be reviewed, classified
-            and verified before being presented as a monitoring
-            report.
-        </p>
+<section class="section">
+    <h2>How We Work</h2>
 
-        <p>
-            Observer submissions are not automatically official
-            election results. Official election declarations
-            remain the responsibility of the legally authorized
-            electoral authorities.
-        </p>
+    <h3>1. Observer Registration</h3>
+    <p>
+        Individuals interested in election observation can register
+        through the platform. Registration alone does not constitute
+        official accreditation.
+    </p>
 
-    </section>
+    <h3>2. Election Observation</h3>
+    <p>
+        Observers document activities at designated locations
+        in accordance with applicable laws and observation guidelines.
+    </p>
 
+    <h3>3. Incident Documentation</h3>
+    <p>
+        Election-related incidents can be documented with details
+        and supporting evidence where safely available.
+    </p>
 
-    <!-- CALL TO ACTION -->
+    <h3>4. Information Review</h3>
+    <p>
+        Submitted information should be checked for accuracy,
+        consistency and supporting evidence before it is presented
+        as verified information.
+    </p>
 
-    <section class="call-to-action">
+    <h3>5. Public Information</h3>
+    <p>
+        Verified information may be presented to the public in a
+        responsible manner, while protecting personal information
+        and respecting applicable laws.
+    </p>
+</section>
 
-        <h2>Be Part of Responsible Election Monitoring</h2>
-
-        <p>
-            Support transparency and accountability by
-            participating in responsible election observation.
-        </p>
-
-        <a href="observers.html" class="button">
-            Observer Registration
-        </a>
-
-    </section>
-
-</main>
-
-
-<footer>
+<section class="section">
+    <h2>Our Commitment to Electoral Integrity</h2>
 
     <p>
-        &copy; 2026 Nwachukwu Election Watch (NEW).
+        We are committed to promoting credible elections through
+        responsible observation, transparency, public education
+        and respect for democratic institutions.
+    </p>
+
+    <p>
+        We do not present unverified allegations as established facts.
+        Observer-submitted figures are not official INEC results
+        and must not be interpreted as official declarations.
+    </p>
+</section>
+
+<section class="cta">
+    <h2>Be Part of Electoral Accountability</h2>
+
+    <p>
+        Support transparency and responsible election observation
+        across Nigeria.
+    </p>
+
+    <a href="observers.html">Register as an Observer</a>
+</section>
+
+</div><footer>
+    <p>
+        &copy; 2026 <span>Nwachukwu Election Watch</span>.
         All Rights Reserved.
-    </p>
+    </p><p>Transparency | Accountability | Credible Election Monitoring</p>
 
-    <p>
-        Transparency | Accountability | Credible Election Monitoring
-    </p>
-
-</footer>
-
-</body>
+</footer></body>
 </html>
